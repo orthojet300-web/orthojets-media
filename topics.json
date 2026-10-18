@@ -1,0 +1,20 @@
+{
+  "_note": "Episode queue for the Orthojets automation. The scheduled run takes the first item with status 'todo', builds it, and sets status to 'published' with date, release tag and Metricool post id. Add or reorder topics freely. Every number must be verified against the primary source (PubMed) before publishing; if a topic cannot be verified, set status 'blocked' with a reason and move on to the next.",
+  "episodes": [
+    {"n": 1, "slug": "ep01_tad", "title": "Tip-Apex Distance < 25 mm", "status": "published", "source": "Baumgaertner MR et al. JBJS Am 1995;77(7):1058-64", "published": "2026-10 (posted manually)"},
+    {"n": 2, "slug": "ep02_acs", "title": "Acute compartment syndrome: Delta P < 30 mmHg", "status": "ready", "source": "McQueen & Court-Brown JBJS Br 1996;78(1):99-104; Kakar et al. JOT 2007;21(2):99-103", "note": "Rendered; publish via the pipeline as the first automated post."},
+    {"n": 3, "slug": "ep03_kocher", "title": "Kocher criteria: septic arthritis vs transient synovitis of the hip in children", "status": "todo", "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006"},
+    {"n": 4, "slug": "ep04_ottawa_ankle", "title": "Ottawa ankle rules", "status": "todo", "source_hint": "Stiell IG et al. Ann Emerg Med 1992 / JAMA 1993; sensitivity meta-analysis Bachmann BMJ 2003"},
+    {"n": 5, "slug": "ep05_gustilo", "title": "Gustilo-Anderson open fracture classification and antibiotic timing", "status": "todo", "source_hint": "Gustilo & Anderson JBJS Am 1976; Gustilo 1984 (IIIA/B/C); antibiotic timing Lack et al. JOT 2015 (>66 min increased infection)"},
+    {"n": 6, "slug": "ep06_hip_dislocation", "title": "Traumatic hip dislocation: reduce within 6 hours", "status": "todo", "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)"},
+    {"n": 7, "slug": "ep07_scaphoid", "title": "Suspected scaphoid fracture: clinical signs and imaging pathway", "status": "todo", "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture"},
+    {"n": 8, "slug": "ep08_salter_harris", "title": "Salter-Harris classification", "status": "todo", "source_hint": "Salter & Harris JBJS Am 1963"},
+    {"n": 9, "slug": "ep09_gartland", "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns", "status": "todo", "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)"},
+    {"n": 10, "slug": "ep10_mess", "title": "Mangled Extremity Severity Score (MESS >= 7)", "status": "todo", "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)"},
+    {"n": 11, "slug": "ep11_klein_line", "title": "SCFE: Klein's line and Trethowan sign", "status": "todo", "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)"},
+    {"n": 12, "slug": "ep12_fat_embolism", "title": "Fat embolism syndrome: Gurd criteria", "status": "todo", "source_hint": "Gurd AR, Wilson RI. JBJS Br 1974"},
+    {"n": 13, "slug": "ep13_achilles", "title": "Acute Achilles rupture: Simmonds-Thompson test", "status": "todo", "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)"},
+    {"n": 14, "slug": "ep14_cauda_equina", "title": "Cauda equina syndrome red flags", "status": "todo", "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses"},
+    {"n": 15, "slug": "ep15_schatzker", "title": "Schatzker classification of tibial plateau fractures", "status": "todo", "source_hint": "Schatzker J et al. Clin Orthop 1979"}
+  ]
+}
