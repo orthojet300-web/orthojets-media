@@ -44,15 +44,21 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
    - Give it the episode's list of on-screen claims and numbers, plus the PMIDs.
    - It must confirm each claim against PubMed and return PASS or FAIL per claim.
    - On any FAIL, fix the claim and re-render, or set the topic to `blocked`. Never publish a FAIL.
-7. **Host the video.** Run `tools/publish_github.sh epNN_slug out/epNN_slug_1080p.mp4 "<title>"`. It creates a GitHub Release with the MP4 attached and prints the public download URL.
-8. **Schedule on TikTok** with the Metricool connector `createScheduledPost`:
+7. **Host the video.** Run `tools/publish_github.sh epNN_slug out/epNN_slug_1080p.mp4`.
+   - It force-pushes the MP4 to the orphan branch `media` and prints the public raw URL.
+   - GitHub Releases are not permitted for Claude sessions, so a branch is used instead.
+   - The `media` branch only ever holds the current video; Metricool copies the file to its own storage when the post is created.
+8. **Schedule on TikTok** with the Metricool connector `createScheduledPost`.
+   - First call `getScheduledPosts` for the target day. If a TikTok post is already scheduled that day, do not add a second one: move this episode to the next free Tue/Wed/Thu 10:00 slot.
+   - Then create the post:
    - blogId `7507086`, timezone `Africa/Tripoli`
    - date: next day 10:00 (`YYYY-MM-DDT10:00:00+02:00`)
    - info:
      - `providers: [{"network":"tiktok"}]`, `autoPublish: true`
      - `media: [<release URL>]`, `videoCoverMilliseconds: 1500` (the hook frame)
      - `text`: the English caption — hook line, the rule, 3 ✅ tips, 📚 reference, "Save it & share it with a colleague 👨‍⚕️", then hashtags including #orthopedics #orthopedicsurgery #ortho #medtok #medicalstudent #orthojets plus 3–4 topic tags
-     - `tiktokData: {"privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
+     - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
+     - `title` is required by Metricool.
      - `isAigc` is false because the videos are motion graphics rendered with code. Set it to true if TikTok's policy requires it for this content.
 9. **Record.**
    - In `topics.json`, set the item to `published` with the date, release tag, Metricool post id/plannerUrl and PMIDs.
