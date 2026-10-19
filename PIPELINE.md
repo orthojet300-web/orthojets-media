@@ -17,7 +17,10 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
   - The fonts lack Δ, ≤, ≈ and →. Use `ep_common.rich()` with DejaVuB for Δ, and write the others out in words.
 - **Structure (retention-first, from EP03):** `[hook] → [1 s logo flash] → [rest of the episode] → [3 s outro]`.
   - No logo intro at the start. `tools/build_episode.py` assembles this with `kit/add_brand.py --hook-first`.
-  - **Hook:** the big headline must be readable within **0.5 s** of the first frame and fully built by about 1.5 s. Pass `hook_end` (script time, usually 2.6–3.0 s) to `main_cli(TL, SCENES, hook_end=...)`: the logo flash cuts in there.
+  - **Hook:** the big headline must be readable within **0.5 s** of the first frame and fully built by about 1.5 s. Pass `hook_end` and `resume` to `main_cli(TL, SCENES, hook_end=..., resume=...)`, both in script time:
+    - `hook_end` (usually 2.6–3.0 s): the soft logo dissolves in there.
+    - `resume`: the moment the hook has fully faded out and the next scene is starting. The video continues from there after the logo, so the hook never reappears.
+    - Background music runs continuously under the logo.
   - Scenes in this order: "ORTHO TIP #NN" hook, context or diagram, rule plus evidence, Tips & Tricks (3 cards), takeaway with the full reference on screen.
   - Body **57–61 s** with holds, so the finished video is **61–65 s**. That stays above 60 s for TikTok Creator Rewards eligibility while keeping completion high.
   - Change scene or animation every 3–5 s.
@@ -71,7 +74,7 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
    - If PubMed is unavailable or the key claim can't be confirmed, set status `blocked` with a reason, push the change, notify the owner, and stop. Never publish unverified medical content.
 3. **Write the episode.**
    - Copy `episodes/ep02_acs/acs.py` as the template to `episodes/epNN_slug/script.py`.
-   - It must end with `main_cli(TL, SCENES, hook_end=<script s>)` so `script.py dur`, `seg` and `hookend` work.
+   - It must end with `main_cli(TL, SCENES, hook_end=<script s>, resume=<script s>)` so `script.py dur`, `seg` and `hookend` work.
    - The hook scene doubles as the TikTok **cover**. Design it like a thumbnail:
      - The "ORTHO TIP #NN" tag.
      - One big, short headline: a number or 2–4 words.
