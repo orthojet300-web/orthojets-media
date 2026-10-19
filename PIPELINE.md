@@ -61,6 +61,8 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
 
 ## Run steps
 1. **Pick the topic.**
+   - Read `insights.md` first, if it exists. It is the weekly performance report: what topics, hooks and formats did best.
+   - When the queue offers a choice, or when you add new topics, favour what performs best. Keep the medical value high and keep rotating areas.
    - Open `topics.json`. If an item has status `ready`, publish that one: skip to step 6 using its existing render, or rebuild it if `out/` is empty.
    - Otherwise take the first item with status `todo`.
    - **Keep the queue topped up.** If fewer than 5 items have status `todo`, first append 10 new topics to `topics.json` (status `todo`, the next episode numbers and slugs, and a `source_hint` naming the primary paper(s)).
@@ -100,7 +102,12 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
    - It force-pushes the MP4 to the orphan branch `media` and prints the public raw URL.
    - GitHub Releases are not permitted for Claude sessions, so a branch is used instead.
    - The `media` branch only ever holds the current video; Metricool copies the file to its own storage when the post is created.
-8. **Schedule on TikTok** with the Metricool connector `createScheduledPost`.
+8. **Schedule on TikTok, and cross-post to Instagram Reels and YouTube Shorts when they are connected,** with the Metricool connector `createScheduledPost`.
+   - Call `getBrandSettings` first. `networksData` lists the connected networks: TikTok always; Instagram and YouTube once the owner connects them in Metricool.
+   - Put every connected one in **one** post, `providers: [{"network":"tiktok"}, {"network":"instagram"}, {"network":"youtube"}]`, with the same video, time and caption.
+     - Instagram: `instagramData: {"type":"REEL","showReelOnFeed":true}`
+     - YouTube: `youtubeData: {"title":"<≤100 chars, ends with #Shorts>","type":"short","privacy":"public","madeForKids":false,"category":"EDUCATION","tags":[...]}`
+     - If a network rejects the post, schedule TikTok alone and mention the error in the report.
    - First call `getScheduledPosts` for the target day. If a TikTok post is already scheduled that day, do not add a second one: move this episode to the next free Tue/Wed/Thu 10:00 slot.
    - Then create the post:
    - blogId `7507086`, timezone `Africa/Tripoli`
@@ -111,7 +118,15 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
      - `videoCoverMilliseconds`: the frame where the hook is fully on screen. With the hook-first structure that is `(hook_end − 0.4) × 1000` ms, about 2200–2600; `build_episode.py` prints it as "cover frame".
        - Never use a frame inside the logo flash: it shows the same logo for every episode.
        - Extract that frame with ffmpeg and look at it before scheduling. The tag, big number/title and subtitle must all be visible and sharp.
-     - `text`: the English caption — hook line, the rule, 3 ✅ tips, 📚 reference, "Save it & share it with a colleague 👨‍⚕️", then hashtags including #orthopedics #orthopedicsurgery #ortho #medtok #medicalstudent #orthojets plus 3–4 topic tags
+     - `text`: the English caption, in this order:
+       - hook line
+       - the rule
+       - 3 ✅ tips
+       - 📚 reference
+       - "Save it & share it with a colleague 👨‍⚕️"
+       - a blank line, then **one engagement question**: "💬 <a specific, easy-to-answer question that invites experience or opinion from doctors and students> 👇"
+       - a blank line, then the hashtags: #orthopedics #orthopedicsurgery #ortho #medtok #medicalstudent #orthojets plus 3–4 topic tags
+     - `firstCommentText`: the same engagement question. Metricool posts it as the first comment on Instagram and YouTube. TikTok doesn't allow third-party comments, which is why the question is also in the caption.
      - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
      - `title` is required by Metricool.
      - `isAigc` is false because the videos are motion graphics rendered with code. Set it to true if TikTok's policy requires it for this content.
