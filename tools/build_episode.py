@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Render an Orthojets episode end-to-end.
 
+Music: if the private repo orthojets-music is cloned next to this repo (../orthojets-music) or MUSIC_DIR
+is set, a background track is laid under the body (rotating by episode number, -26 LUFS, fades).
+Pass --no-music to keep the body silent.
+
 usage: python3 tools/build_episode.py episodes/epNN_slug/script.py SLUG
 output: out/SLUG_1080p.mp4 (upload copy, ~4.5 Mbps) and out/SLUG_light.mp4 (720p preview)
 
@@ -8,7 +12,7 @@ Body is rendered silent (channel rule); intro/outro keep their sound (add_brand.
 Rendering runs in 2 parallel segments; each segment is a separate process so the
 job survives long renders. Expect ~15-20 min for a 60 s body on 2 cores.
 """
-import os, subprocess, sys, tempfile
+import glob, os, re, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,7 +21,8 @@ def run(cmd, **kw):
     subprocess.run(cmd, check=True, **kw)
 
 def main():
-    script, slug = os.path.abspath(sys.argv[1]), sys.argv[2]
+    pos = [a for a in sys.argv[1:] if not a.startswith('--')]
+    script, slug = os.path.abspath(pos[0]), pos[1]
     wd = os.path.dirname(script)
     dur = float(subprocess.run([sys.executable, script, 'dur'], cwd=wd, capture_output=True, text=True, check=True).stdout.strip().splitlines()[-1])
     nf = int(round(dur * 30)); half = nf // 2
@@ -31,6 +36,17 @@ def main():
     body = os.path.join(tmp, 'body.mp4')
     run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
          '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', body])
+    mdir = os.environ.get('MUSIC_DIR') or os.path.join(os.path.dirname(ROOT), 'orthojets-music')
+    tracks = sorted(glob.glob(os.path.join(mdir, '*.mp3')))
+    if tracks and '--no-music' not in sys.argv:
+        m = re.match(r'ep(\d+)', slug); n = int(m.group(1)) if m else 1
+        track = tracks[(n - 1) % len(tracks)]
+        withm = os.path.join(tmp, 'body_music.mp4')
+        run([sys.executable, os.path.join(ROOT, 'tools', 'add_music.py'), body, track, withm])
+        body = withm
+        print('MUSIC', os.path.basename(track))
+    else:
+        print('MUSIC none (no tracks found in', mdir, ')')
     full = os.path.join(tmp, 'full.mp4')
     run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), body, full, '--light'])
     run(['ffmpeg', '-y', '-loglevel', 'error', '-i', full, '-vf', 'hqdn3d=1.5:1:2:2', '-c:v', 'libx264', '-preset', 'medium',
