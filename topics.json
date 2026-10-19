@@ -41,7 +41,9 @@
         "pmids": [
           "7608228"
         ],
-        "music": "track01_the-mountain-study-music"
+        "music": "track01_the-mountain-study-music",
+        "youtube_post_id": 400213761,
+        "note": "YouTube failed at 18:00 (title contained <); rescheduled YouTube alone 18:20"
       },
       "series": "numbers",
       "part": 1,
@@ -63,7 +65,7 @@
       "status": "published",
       "source": "McQueen & Court-Brown JBJS Br 1996;78(1):99-104; Kakar et al. JOT 2007;21(2):99-103",
       "published": "scheduled 2026-10-20 10:00 Africa/Tripoli",
-      "metricool_post_id": 400156723,
+      "metricool_post_id": 400213844,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=3226306365346365565",
       "pmids": [
         "8898137",

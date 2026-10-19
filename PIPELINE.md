@@ -144,6 +144,10 @@ computed at build time. Series let viewers binge and follow "for the next part".
          Never use generic tags (#fyp #foryou #viral #trending #explore #creatorsearchinsights): no proven reach effect, they dilute the
          niche signal and waste a slot. Put the main search keywords in the caption's first line instead (TikTok search reads caption text).
          Owner decision 2026-10-19: the owner delegated this choice; keep this rule.
+     - **No `<` or `>` anywhere in the caption, tiktok title or YouTube title/tags** (YouTube rejects the upload with
+       "invalid or empty video title" — happened on EP01 2026-10-19). Write them as words: "under/below 25 mm", "over/above 38.5 °C",
+       "at least" for ≥. (On-screen video text may still use < and >.) Also avoid `→` in captions; use a comma or "so".
+       After scheduling, if any provider later shows status ERROR, fix and reschedule that network alone as a separate post.
      - `firstCommentText`: the same engagement question. Metricool posts it as the first comment on Instagram and YouTube. TikTok doesn't allow third-party comments, which is why the question is also in the caption.
      - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
      - `title` is required by Metricool.
