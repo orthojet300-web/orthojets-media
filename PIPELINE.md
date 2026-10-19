@@ -32,6 +32,11 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
 3. **Write the episode.**
    - Copy `episodes/ep02_acs/acs.py` as the template to `episodes/epNN_slug/script.py`.
    - It must end with `main_cli(TL, SCENES)` so `script.py dur` and `script.py seg` work.
+   - The hook scene doubles as the TikTok **cover**. Design it like a thumbnail:
+     - The "ORTHO TIP #NN" tag.
+     - One big, short headline: a number or 2–4 words.
+     - A one-line subtitle saying why it matters.
+     - Everything centred between y 400 and 1300, fully on screen by about 2.3 s into the body.
    - Put the sources and verified figures in the module docstring.
 4. **Check stills before the full render.**
    - Run `python3 script.py still <t> ...` at one real time per scene, using `TL.real(script_t)`.
@@ -59,7 +64,10 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
    - date: next day 10:00 (`YYYY-MM-DDT10:00:00+02:00`)
    - info:
      - `providers: [{"network":"tiktok"}]`, `autoPublish: true`
-     - `media: [<release URL>]`, `videoCoverMilliseconds: 1500` (the hook frame)
+     - `media: [<raw URL from step 7>]`
+     - `videoCoverMilliseconds`: the frame where the hook is fully on screen. That is about **5000** ms: the intro is 3.0 s, minus the 0.35 s crossfade, plus the moment the hook text has fully appeared, around 2.2–2.5 s into the body.
+       - Never use a frame inside the intro (under 3000 ms): it shows the same logo for every episode.
+       - Extract that frame with ffmpeg and look at it before scheduling. The tag, big number/title and subtitle must all be visible and sharp.
      - `text`: the English caption — hook line, the rule, 3 ✅ tips, 📚 reference, "Save it & share it with a colleague 👨‍⚕️", then hashtags including #orthopedics #orthopedicsurgery #ortho #medtok #medicalstudent #orthojets plus 3–4 topic tags
      - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
      - `title` is required by Metricool.
