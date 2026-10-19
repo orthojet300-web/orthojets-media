@@ -21,11 +21,24 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
     - `hook_end` (usually 2.6–3.0 s): the soft logo dissolves in there.
     - `resume`: the moment the hook has fully faded out and the next scene is starting. The video continues from there after the logo, so the hook never reappears.
     - Background music runs continuously under the logo.
-  - Scenes in this order: "ORTHO TIP #NN" hook, context or diagram, rule plus evidence, Tips & Tricks (3 cards), takeaway with the full reference on screen.
+  - Scenes in this order: series-pill hook (see Series), context or diagram, rule plus evidence, Tips & Tricks (3 cards), takeaway with the full reference on screen.
   - Body **57–61 s** with holds, so the finished video is **61–65 s**. That stays above 60 s for TikTok Creator Rewards eligibility while keeping completion high.
   - Change scene or animation every 3–5 s.
   - Keep content within x 60–960 and y 200–1700.
 - Anatomy and every number must be accurate. The audience is orthopedic surgeons and medical students.
+
+## Series (from episode 3 on; owner decision 2026-10-19)
+Every episode belongs to one of four named series, defined in `topics.json` → `series`:
+- `numbers` **ORTHO NUMBERS**: one number every orthopod must know (thresholds, cut-offs, time limits)
+- `classified` **CLASSIFIED**: a classification drawn type by type, with what changes management
+- `rules` **CLINICAL RULES**: a validated clinical decision rule or criteria set
+- `dontmiss` **DON'T MISS**: a can't-miss diagnosis: the signs, the test, the pitfall
+Each topic in `topics.json` has a `series` key. **Part number** = (number of already-published episodes in that series) + 1,
+computed at build time. Series let viewers binge and follow "for the next part".
+- On screen: the hook pill reads `<SERIES TAG>  #<part>` (e.g. `CLINICAL RULES  #1`) instead of `ORTHO TIP #NN`.
+- Caption: right after the hook line add `🧩 <Series name> · Part <part> — follow for the next one`.
+- TikTok title: `<Series name> #<part> · <short title>`. YouTube title: `<short title> | <Series name> #<part> #Shorts`.
+- New topics you add must get a `series`. Keep the queue rotating between series (never 3 of the same series in a row).
 
 ## Quality bar (from episode 3 on — the owner wants best quality)
 - **Richer visuals are mandatory.** Every episode must contain at least one real, animated, anatomically accurate diagram as its centrepiece, not mostly text cards. Examples:
@@ -78,7 +91,7 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
    - Copy `episodes/ep02_acs/acs.py` as the template to `episodes/epNN_slug/script.py`.
    - It must end with `main_cli(TL, SCENES, hook_end=<script s>, resume=<script s>)` so `script.py dur`, `seg` and `hookend` work.
    - The hook scene doubles as the TikTok **cover**. Design it like a thumbnail:
-     - The "ORTHO TIP #NN" tag.
+     - The series tag pill, e.g. `ORTHO NUMBERS  #3` (see Series).
      - One big, short headline: a number or 2–4 words.
      - A one-line subtitle saying why it matters.
      - Everything centred between y 400 and 1300, fully on screen by about 1.5 s.
@@ -136,10 +149,26 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
      - `title` is required by Metricool.
      - `isAigc` is false because the videos are motion graphics rendered with code. Set it to true if TikTok's policy requires it for this content.
 9. **Record.**
-   - In `topics.json`, set the item to `published` with the date, release tag, Metricool post id/plannerUrl and PMIDs.
+   - In `topics.json`, set the item to `published` with the date, release tag, Metricool post id/plannerUrl, PMIDs and `part`.
+   - Also add a `carousel` block for the weekly Instagram carousel (only verified on-screen claims, no new facts):
+     `{"headline": "<big number/title, ≤ 14 chars>", "sub": "<one line, ≤ 40 chars>", "points": ["<3 short claims, ≤ 80 chars each>"], "ref": "<Author et al., Journal Year>"}`
    - Commit `episodes/`, `topics.json` and any kit fixes. Never commit `out/`.
    - Push.
 10. **Report.** Send the owner one short message, in Arabic: the episode title, when it goes live, the Metricool planner link, and the sources (PubMed attribution plus DOI links).
+
+## Weekly carousel (separate scheduled task, Saturday evening; owner decision 2026-10-19)
+1. Pick every episode whose video goes live in the 7 days ending the coming Sunday (from `topics.json`), max 5.
+   If an episode lacks a `carousel` block, write it from its on-screen claims.
+2. `python3 tools/build_carousel.py out/carousel_<YYYYMMDD> <slug> ... --week "<Mon d - Mon d>"` → cover + one slide per
+   episode + follow slide (1080x1350 JPG). Look at every slide: no overlap, nothing cut off, glyphs fine.
+3. `tools/publish_dir.sh carousel_<YYYYMMDD> out/carousel_<YYYYMMDD>` → one raw URL per slide (in order).
+4. Metricool `createScheduledPost` for **Sunday 18:00** Africa/Tripoli: providers Instagram (`instagramData: {"type":"POST"}`)
+   plus TikTok as a photo post when connected (`tiktokData` with `title` "This week's ortho pearls", `photoCoverIndex: 0`,
+   `autoAddMusic: true`); `media` = the slide URLs in order. If TikTok rejects photo posts, schedule Instagram alone.
+   Caption: `This week's ortho pearls 🦴 Save it for your next shift 🔖` + one line per episode (`✅ <headline> — <sub>`) +
+   `📚 References on each slide` + `💬 Which one did you not know? 👇` + the 5 hashtags (#orthopedics #orthopedicsurgery
+   #orthopaedics #medtok #orthojets). Skip the week if there are no episodes.
+5. Record it under `carousels` in `topics.json`, push, and send the owner a short Arabic note.
 
 ## Failure handling
 - Render or upload fails: retry once. If it fails again, leave the topic as `todo`, notify the owner, and stop.

@@ -1,5 +1,27 @@
 {
   "_note": "Episode queue for the Orthojets automation. The scheduled run takes the first item with status 'todo', builds it, and sets status to 'published' with date, release tag and Metricool post id. Add or reorder topics freely. Every number must be verified against the primary source (PubMed) before publishing; if a topic cannot be verified, set status 'blocked' with a reason and move on to the next.",
+  "series": {
+    "numbers": {
+      "name": "Ortho Numbers",
+      "tag": "ORTHO NUMBERS",
+      "about": "one number every orthopod must know (thresholds, cut-offs, time limits)"
+    },
+    "classified": {
+      "name": "Classified",
+      "tag": "CLASSIFIED",
+      "about": "a classification drawn type by type, with what changes management"
+    },
+    "rules": {
+      "name": "Clinical Rules",
+      "tag": "CLINICAL RULES",
+      "about": "a validated clinical decision rule or criteria set"
+    },
+    "dontmiss": {
+      "name": "Don't Miss",
+      "tag": "DON'T MISS",
+      "about": "a can't-miss diagnosis: the signs, the test, the pitfall"
+    }
+  },
   "episodes": [
     {
       "n": 1,
@@ -20,6 +42,18 @@
           "7608228"
         ],
         "music": "track01_the-mountain-study-music"
+      },
+      "series": "numbers",
+      "part": 1,
+      "carousel": {
+        "headline": "TAD < 25 mm",
+        "sub": "The number that saves your lag screw",
+        "points": [
+          "TAD = tip-to-apex distance on AP + lateral X-rays, corrected for magnification",
+          "None of 120 screws with TAD of 25 mm or less cut out",
+          "Mean TAD: 24 mm in healed fractures vs 38 mm in cut-outs"
+        ],
+        "ref": "Baumgaertner et al., JBJS Am 1995;77(7):1058-64"
       }
     },
     {
@@ -36,98 +70,123 @@
         "17304064"
       ],
       "music": "track02_clavier-calm-space-music",
-      "cover_ms": 5000
+      "cover_ms": 5000,
+      "series": "numbers",
+      "part": 2,
+      "carousel": {
+        "headline": "ΔP < 30 mmHg",
+        "sub": "The number that decides a fasciotomy",
+        "points": [
+          "ΔP = diastolic BP minus intracompartmental pressure",
+          "Don't rely on absolute compartment pressure alone",
+          "Palpable pulses do NOT exclude compartment syndrome"
+        ],
+        "ref": "McQueen & Court-Brown, JBJS Br 1996 · Kakar et al., JOT 2007"
+      }
     },
     {
       "n": 3,
       "slug": "ep03_kocher",
       "title": "Kocher criteria: septic arthritis vs transient synovitis of the hip in children",
       "status": "todo",
-      "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006"
+      "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006",
+      "series": "rules"
     },
     {
       "n": 4,
       "slug": "ep04_ottawa_ankle",
       "title": "Ottawa ankle rules",
       "status": "todo",
-      "source_hint": "Stiell IG et al. Ann Emerg Med 1992 / JAMA 1993; sensitivity meta-analysis Bachmann BMJ 2003"
+      "source_hint": "Stiell IG et al. Ann Emerg Med 1992 / JAMA 1993; sensitivity meta-analysis Bachmann BMJ 2003",
+      "series": "rules"
     },
     {
       "n": 5,
       "slug": "ep05_gustilo",
       "title": "Gustilo-Anderson open fracture classification and antibiotic timing",
       "status": "todo",
-      "source_hint": "Gustilo & Anderson JBJS Am 1976; Gustilo 1984 (IIIA/B/C); antibiotic timing Lack et al. JOT 2015 (>66 min increased infection)"
+      "source_hint": "Gustilo & Anderson JBJS Am 1976; Gustilo 1984 (IIIA/B/C); antibiotic timing Lack et al. JOT 2015 (>66 min increased infection)",
+      "series": "classified"
     },
     {
       "n": 6,
       "slug": "ep06_hip_dislocation",
       "title": "Traumatic hip dislocation: reduce within 6 hours",
       "status": "todo",
-      "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)"
+      "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)",
+      "series": "numbers"
     },
     {
       "n": 7,
       "slug": "ep07_scaphoid",
       "title": "Suspected scaphoid fracture: clinical signs and imaging pathway",
       "status": "todo",
-      "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture"
+      "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture",
+      "series": "dontmiss"
     },
     {
       "n": 8,
       "slug": "ep08_salter_harris",
       "title": "Salter-Harris classification",
       "status": "todo",
-      "source_hint": "Salter & Harris JBJS Am 1963"
+      "source_hint": "Salter & Harris JBJS Am 1963",
+      "series": "classified"
     },
     {
       "n": 9,
       "slug": "ep09_gartland",
       "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns",
       "status": "todo",
-      "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)"
+      "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)",
+      "series": "classified"
     },
     {
       "n": 10,
       "slug": "ep10_mess",
       "title": "Mangled Extremity Severity Score (MESS >= 7)",
       "status": "todo",
-      "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)"
+      "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)",
+      "series": "numbers"
     },
     {
       "n": 11,
       "slug": "ep11_klein_line",
       "title": "SCFE: Klein's line and Trethowan sign",
       "status": "todo",
-      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)"
+      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
+      "series": "dontmiss"
     },
     {
       "n": 12,
       "slug": "ep12_fat_embolism",
       "title": "Fat embolism syndrome: Gurd criteria",
       "status": "todo",
-      "source_hint": "Gurd AR, Wilson RI. JBJS Br 1974"
+      "source_hint": "Gurd AR, Wilson RI. JBJS Br 1974",
+      "series": "rules"
     },
     {
       "n": 13,
       "slug": "ep13_achilles",
       "title": "Acute Achilles rupture: Simmonds-Thompson test",
       "status": "todo",
-      "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)"
+      "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)",
+      "series": "dontmiss"
     },
     {
       "n": 14,
       "slug": "ep14_cauda_equina",
       "title": "Cauda equina syndrome red flags",
       "status": "todo",
-      "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses"
+      "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
+      "series": "dontmiss"
     },
     {
       "n": 15,
       "slug": "ep15_schatzker",
       "title": "Schatzker classification of tibial plateau fractures",
       "status": "todo",
-      "source_hint": "Schatzker J et al. Clin Orthop 1979"
+      "source_hint": "Schatzker J et al. Clin Orthop 1979",
+      "series": "classified"
     }
   ]
 }
