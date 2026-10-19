@@ -49,16 +49,17 @@ def main():
         print('MUSIC none (no tracks found in', mdir, ')')
     full = os.path.join(tmp, 'full.mp4')
     run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), body, full, '--light'])
-    # Best-quality upload copy: high-quality x264 so text stays crisp after TikTok re-compression.
-    # Kept under ~95 MB (GitHub's per-file limit is 100 MB); falls back to a capped bitrate if larger.
+    # Best-quality upload copy: x264 slow, high bitrate (~10 Mbps, about 2x the old 4.5) so text stays crisp after
+    # TikTok re-compression. The bitrate is capped from the duration so the file stays under ~90 MB
+    # (GitHub's per-file limit is 100 MB).
     final = os.path.join(out, f'{slug}_1080p.mp4')
-    def enc(rate_args):
-        run(['ffmpeg', '-y', '-loglevel', 'error', '-i', full, '-vf', 'hqdn3d=0.8:0.6:1.2:1.2', '-c:v', 'libx264',
-             '-preset', 'slow', '-tune', 'animation', '-profile:v', 'high', '-level', '4.2', *rate_args,
-             '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', final])
-    enc(['-crf', '16', '-maxrate', '14M', '-bufsize', '28M'])
-    if os.path.getsize(final) > 95e6:
-        enc(['-b:v', '9M', '-maxrate', '11M', '-bufsize', '22M'])
+    dur_full = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', full],
+                                    capture_output=True, text=True, check=True).stdout)
+    kbps = int(min(10000, (90e6 * 8 / dur_full) / 1000 - 200))
+    run(['ffmpeg', '-y', '-loglevel', 'error', '-i', full, '-vf', 'hqdn3d=0.8:0.6:1.2:1.2', '-c:v', 'libx264',
+         '-preset', 'slow', '-tune', 'animation', '-profile:v', 'high', '-level', '4.2',
+         '-b:v', f'{kbps}k', '-maxrate', f'{int(kbps * 1.2)}k', '-bufsize', f'{kbps * 2}k',
+         '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', final])
     os.replace(os.path.join(tmp, 'full_light.mp4'), os.path.join(out, f'{slug}_light.mp4'))
     print('DONE', os.path.join(out, f'{slug}_1080p.mp4'))
 

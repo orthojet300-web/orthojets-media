@@ -48,7 +48,10 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
     - brand colours used
     - the cover frame works as a thumbnail
   - Fix every FAIL and re-check until all pass.
-- **Sharpest file.** `tools/build_episode.py` encodes the upload copy with x264 `-preset slow -crf 16 -tune animation`, at 1080x1920, 30 fps, AAC 192k. It falls back to 9 Mbps if the file would exceed 95 MB. Do not lower these settings.
+- **Sharpest file.** `tools/build_episode.py` encodes the upload copy with x264 `-preset slow -tune animation` at about **10 Mbps**: roughly 2x the old quality, at 1080x1920, 30 fps, AAC 192k.
+  - The bitrate is capped automatically so the file stays under ~90 MB, because GitHub's per-file limit is 100 MB.
+  - Do not lower these settings.
+  - The encode takes about 5–6 min on top of the render.
 
 ## Run steps
 1. **Pick the topic.**
