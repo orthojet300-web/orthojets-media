@@ -128,6 +128,9 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
        - a blank line, then EXACTLY 5 hashtags (Instagram rejects/limits posts with more than 5 since 2026; the same caption goes to every network):
          #orthopedics #orthopedicsurgery <1 topic tag, the most-searched term, e.g. #hipfracture> #medtok #orthojets
          Never more than 5. Put extra topic keywords into the YouTube `tags` list instead (those are hidden and unlimited).
+         Never use generic tags (#fyp #foryou #viral #trending #explore #creatorsearchinsights): no proven reach effect, they dilute the
+         niche signal and waste a slot. Put the main search keywords in the caption's first line instead (TikTok search reads caption text).
+         Owner decision 2026-10-19: the owner delegated this choice; keep this rule.
      - `firstCommentText`: the same engagement question. Metricool posts it as the first comment on Instagram and YouTube. TikTok doesn't allow third-party comments, which is why the question is also in the caption.
      - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
      - `title` is required by Metricool.
