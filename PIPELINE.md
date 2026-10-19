@@ -125,7 +125,9 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
        - 📚 reference
        - "Save it & share it with a colleague 👨‍⚕️"
        - a blank line, then **one engagement question**: "💬 <a specific, easy-to-answer question that invites experience or opinion from doctors and students> 👇"
-       - a blank line, then the hashtags: #orthopedics #orthopedicsurgery #ortho #medtok #medicalstudent #orthojets plus 3–4 topic tags
+       - a blank line, then EXACTLY 5 hashtags (Instagram rejects/limits posts with more than 5 since 2026; the same caption goes to every network):
+         #orthopedics #orthopedicsurgery <1 topic tag, the most-searched term, e.g. #hipfracture> #medtok #orthojets
+         Never more than 5. Put extra topic keywords into the YouTube `tags` list instead (those are hidden and unlimited).
      - `firstCommentText`: the same engagement question. Metricool posts it as the first comment on Instagram and YouTube. TikTok doesn't allow third-party comments, which is why the question is also in the caption.
      - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
      - `title` is required by Metricool.
