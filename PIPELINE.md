@@ -10,7 +10,11 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
   - Tracks live in the PRIVATE repo `orthojet300-web/orthojets-music`. Clone it next to this repo as `../orthojets-music`.
   - `tools/build_episode.py` picks the track by episode number: track = ((N-1) mod count) + 1.
   - Never copy the MP3s into this public repo: the license forbids redistributing them on their own.
-  - If the music repo is unavailable, build without music (`--no-music`) and mention it in the report.
+  - The music repo is PRIVATE: attach it with `add_repo` access **"push"** (that attaches credentials; "read" does not) and clone it.
+    If that fails, retry, then try `gh repo clone`. Music is REQUIRED (owner complaint on EP03, which went out silent):
+    use `--no-music` only if every route failed, and say so at the top of the report.
+  - After the build, check the body really has music: ebur128 integrated loudness between 10 s and 40 s should be about -30 to -24 LUFS
+    (silent bodies measure below -60).
 - Brand:
   - Colors: navy `#223F61`, sky `#78AFD8` and white on dark navy. Use green (120,210,170) and coral (236,112,104) only for right-vs-wrong.
   - Fonts: Montserrat ExtraBold/Black. Small text must be at least 27 px.

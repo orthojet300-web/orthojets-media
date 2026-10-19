@@ -96,7 +96,7 @@
       "source": "Kocher MS et al. JBJS Am 1999;81(12):1662-70; Kocher MS et al. JBJS Am 2004;86(8):1629-35; Caird MS et al. JBJS Am 2006;88(6):1251-7",
       "published": "scheduled 2026-10-21 10:00 Africa/Tripoli (2026-10-20 already taken by EP02)",
       "release": "media branch: ep03_kocher.mp4",
-      "metricool_post_id": 400292564,
+      "metricool_post_id": 400445805,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-403471730596298456",
       "networks": [
         "tiktok",
@@ -113,7 +113,7 @@
         "10.2106/00004623-200408000-00005",
         "10.2106/JBJS.E.00216"
       ],
-      "music": "none (private repo orthojets-music not reachable from this run; built with --no-music)",
+      "music": "track03_quentingaming-interstellar (added afterwards 2026-10-19 22:20; the autopilot run could not reach the music repo)",
       "cover_ms": 2400,
       "part": 1,
       "carousel": {
