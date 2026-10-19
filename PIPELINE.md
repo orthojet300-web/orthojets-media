@@ -15,9 +15,12 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
   - Colors: navy `#223F61`, sky `#78AFD8` and white on dark navy. Use green (120,210,170) and coral (236,112,104) only for right-vs-wrong.
   - Fonts: Montserrat ExtraBold/Black. Small text must be at least 27 px.
   - The fonts lack Δ, ≤, ≈ and →. Use `ep_common.rich()` with DejaVuB for Δ, and write the others out in words.
-- Layout:
+- **Structure (retention-first, from EP03):** `[hook] → [1 s logo flash] → [rest of the episode] → [3 s outro]`.
+  - No logo intro at the start. `tools/build_episode.py` assembles this with `kit/add_brand.py --hook-first`.
+  - **Hook:** the big headline must be readable within **0.5 s** of the first frame and fully built by about 1.5 s. Pass `hook_end` (script time, usually 2.6–3.0 s) to `main_cli(TL, SCENES, hook_end=...)`: the logo flash cuts in there.
   - Scenes in this order: "ORTHO TIP #NN" hook, context or diagram, rule plus evidence, Tips & Tricks (3 cards), takeaway with the full reference on screen.
-  - Body 50–60 s with holds.
+  - Body **57–61 s** with holds, so the finished video is **61–65 s**. That stays above 60 s for TikTok Creator Rewards eligibility while keeping completion high.
+  - Change scene or animation every 3–5 s.
   - Keep content within x 60–960 and y 200–1700.
 - Anatomy and every number must be accurate. The audience is orthopedic surgeons and medical students.
 
@@ -68,12 +71,12 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
    - If PubMed is unavailable or the key claim can't be confirmed, set status `blocked` with a reason, push the change, notify the owner, and stop. Never publish unverified medical content.
 3. **Write the episode.**
    - Copy `episodes/ep02_acs/acs.py` as the template to `episodes/epNN_slug/script.py`.
-   - It must end with `main_cli(TL, SCENES)` so `script.py dur` and `script.py seg` work.
+   - It must end with `main_cli(TL, SCENES, hook_end=<script s>)` so `script.py dur`, `seg` and `hookend` work.
    - The hook scene doubles as the TikTok **cover**. Design it like a thumbnail:
      - The "ORTHO TIP #NN" tag.
      - One big, short headline: a number or 2–4 words.
      - A one-line subtitle saying why it matters.
-     - Everything centred between y 400 and 1300, fully on screen by about 2.3 s into the body.
+     - Everything centred between y 400 and 1300, fully on screen by about 1.5 s.
    - Put the sources and verified figures in the module docstring.
 4. **Check stills before the full render** (then run the design review gate described under Quality bar).
    - Run `python3 script.py still <t> ...` at one real time per scene, using `TL.real(script_t)`.
@@ -102,8 +105,8 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
    - info:
      - `providers: [{"network":"tiktok"}]`, `autoPublish: true`
      - `media: [<raw URL from step 7>]`
-     - `videoCoverMilliseconds`: the frame where the hook is fully on screen. That is about **5000** ms: the intro is 3.0 s, minus the 0.35 s crossfade, plus the moment the hook text has fully appeared, around 2.2–2.5 s into the body.
-       - Never use a frame inside the intro (under 3000 ms): it shows the same logo for every episode.
+     - `videoCoverMilliseconds`: the frame where the hook is fully on screen. With the hook-first structure that is `(hook_end − 0.4) × 1000` ms, about 2200–2600; `build_episode.py` prints it as "cover frame".
+       - Never use a frame inside the logo flash: it shows the same logo for every episode.
        - Extract that frame with ffmpeg and look at it before scheduling. The tag, big number/title and subtitle must all be visible and sharp.
      - `text`: the English caption — hook line, the rule, 3 ✅ tips, 📚 reference, "Save it & share it with a colleague 👨‍⚕️", then hashtags including #orthopedics #orthopedicsurgery #ortho #medtok #medicalstudent #orthojets plus 3–4 topic tags
      - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`

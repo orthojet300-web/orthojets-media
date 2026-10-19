@@ -89,11 +89,15 @@ def make_frame(fi, tlm, scenes):
     z = 1.0 + 0.025 * ((t % 8.5) / 8.5); cw, ch = W / z, H / z
     return img.transform((W, H), Image.EXTENT, ((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2), Image.BILINEAR)
 
-def main_cli(tlm, scenes):
+def main_cli(tlm, scenes, hook_end=None):
+    """hook_end = SCRIPT time at which the hook has been fully readable long enough; the 1 s logo flash is
+    inserted there (add_brand.py --hook-first). 'script.py hookend' prints it in real seconds."""
     if sys.argv[1] == 'still':
         for tt in sys.argv[2:]: make_frame(int(float(tt) * FPS), tlm, scenes).save(f'still_{tt}.jpg', quality=85)
     elif sys.argv[1] == 'dur':
         print(tlm.dur)
+    elif sys.argv[1] == 'hookend':
+        print(tlm.real(hook_end) if hook_end is not None else 3.0)
     else:
         a, b, outp = int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
         p = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS),

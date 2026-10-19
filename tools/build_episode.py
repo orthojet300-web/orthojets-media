@@ -48,7 +48,10 @@ def main():
     else:
         print('MUSIC none (no tracks found in', mdir, ')')
     full = os.path.join(tmp, 'full.mp4')
-    run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), body, full, '--light'])
+    hook_end = float(subprocess.run([sys.executable, script, 'hookend'], cwd=wd, capture_output=True, text=True,
+                                    check=True).stdout.strip().splitlines()[-1])
+    print('HOOK_END', hook_end, '-> cover frame ~', int((hook_end - 0.4) * 1000), 'ms')
+    run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), body, full, '--hook-first', f'{hook_end:.2f}', '--light'])
     # Best-quality upload copy: x264 slow, high bitrate (~10 Mbps, about 2x the old 4.5) so text stays crisp after
     # TikTok re-compression. The bitrate is capped from the duration so the file stays under ~90 MB
     # (GitHub's per-file limit is 100 MB).
