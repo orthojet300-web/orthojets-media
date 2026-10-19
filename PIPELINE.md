@@ -25,6 +25,11 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
 1. **Pick the topic.**
    - Open `topics.json`. If an item has status `ready`, publish that one: skip to step 6 using its existing render, or rebuild it if `out/` is empty.
    - Otherwise take the first item with status `todo`.
+   - **Keep the queue topped up.** If fewer than 5 items have status `todo`, first append 10 new topics to `topics.json` (status `todo`, the next episode numbers and slugs, and a `source_hint` naming the primary paper(s)).
+     - Pick high-yield, practical orthopedic topics that have not been covered yet.
+     - Rotate areas: trauma, paediatrics, spine, sports, hand, arthroplasty, oncology, foot & ankle, emergency orthopedics.
+     - Each topic needs a clear rule, number, classification or test, backed by a findable primary source.
+     - Never repeat a slug or title already in the file.
 2. **Research.**
    - Use the PubMed connector to find the primary source(s) named in `source_hint`. Read the abstract and metadata.
    - Collect only figures that appear in the source. Record PMID and DOI.
