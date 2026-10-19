@@ -21,6 +21,35 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
   - Keep content within x 60–960 and y 200–1700.
 - Anatomy and every number must be accurate. The audience is orthopedic surgeons and medical students.
 
+## Quality bar (from episode 3 on — the owner wants best quality)
+- **Richer visuals are mandatory.** Every episode must contain at least one real, animated, anatomically accurate diagram as its centrepiece, not mostly text cards. Examples:
+  - a bone or joint drawn as an X-ray, like `kit/femur.py`
+  - a cross-section, like the leg compartments in `episodes/ep02_acs`
+  - a classification drawn type by type (Salter-Harris I–V, Gartland, Schatzker, Garden)
+  - a clinical test shown step by step with a simple limb outline
+  - a measurement drawn on the image, like TAD
+- **Animate the diagram so it explains something:**
+  - structures build in
+  - labels point to them
+  - the abnormal part is highlighted
+  - the measurement is drawn
+  - good vs bad is compared side by side
+- Text cards support the diagram; they don't replace it.
+- Draw the anatomy from known proportions and landmarks, check it on stills, and fix anything wrong before rendering. Simplified schematics are fine if they are labelled and correct.
+- **Design review gate (mandatory, before the full render).**
+  - Render one still per scene, plus the cover frame. Give them to a separate reviewer agent that has not seen your code.
+  - It must PASS each still on all of these:
+    - no overlapping or cut-off text
+    - all text at least 27 px and readable on a phone
+    - no tofu or missing-glyph boxes
+    - content inside x 60–960 and y 200–1700
+    - anatomy correct and labels pointing to the right structures
+    - a centrepiece diagram is present
+    - brand colours used
+    - the cover frame works as a thumbnail
+  - Fix every FAIL and re-check until all pass.
+- **Sharpest file.** `tools/build_episode.py` encodes the upload copy with x264 `-preset slow -crf 16 -tune animation`, at 1080x1920, 30 fps, AAC 192k. It falls back to 9 Mbps if the file would exceed 95 MB. Do not lower these settings.
+
 ## Run steps
 1. **Pick the topic.**
    - Open `topics.json`. If an item has status `ready`, publish that one: skip to step 6 using its existing render, or rebuild it if `out/` is empty.
@@ -43,7 +72,7 @@ A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publ
      - A one-line subtitle saying why it matters.
      - Everything centred between y 400 and 1300, fully on screen by about 2.3 s into the body.
    - Put the sources and verified figures in the module docstring.
-4. **Check stills before the full render.**
+4. **Check stills before the full render** (then run the design review gate described under Quality bar).
    - Run `python3 script.py still <t> ...` at one real time per scene, using `TL.real(script_t)`.
    - Look at every still. Fix any overlapping or cut-off text, unreadable small text, wrong anatomy, or missing glyph boxes.
 5. **Render.**

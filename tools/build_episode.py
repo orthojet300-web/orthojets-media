@@ -49,9 +49,16 @@ def main():
         print('MUSIC none (no tracks found in', mdir, ')')
     full = os.path.join(tmp, 'full.mp4')
     run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), body, full, '--light'])
-    run(['ffmpeg', '-y', '-loglevel', 'error', '-i', full, '-vf', 'hqdn3d=1.5:1:2:2', '-c:v', 'libx264', '-preset', 'medium',
-         '-b:v', '4.5M', '-maxrate', '6M', '-bufsize', '12M', '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-movflags', '+faststart',
-         os.path.join(out, f'{slug}_1080p.mp4')])
+    # Best-quality upload copy: high-quality x264 so text stays crisp after TikTok re-compression.
+    # Kept under ~95 MB (GitHub's per-file limit is 100 MB); falls back to a capped bitrate if larger.
+    final = os.path.join(out, f'{slug}_1080p.mp4')
+    def enc(rate_args):
+        run(['ffmpeg', '-y', '-loglevel', 'error', '-i', full, '-vf', 'hqdn3d=0.8:0.6:1.2:1.2', '-c:v', 'libx264',
+             '-preset', 'slow', '-tune', 'animation', '-profile:v', 'high', '-level', '4.2', *rate_args,
+             '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', final])
+    enc(['-crf', '16', '-maxrate', '14M', '-bufsize', '28M'])
+    if os.path.getsize(final) > 95e6:
+        enc(['-b:v', '9M', '-maxrate', '11M', '-bufsize', '22M'])
     os.replace(os.path.join(tmp, 'full_light.mp4'), os.path.join(out, f'{slug}_light.mp4'))
     print('DONE', os.path.join(out, f'{slug}_1080p.mp4'))
 
