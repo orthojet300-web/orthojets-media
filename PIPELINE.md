@@ -1,7 +1,7 @@
 # Orthojets — automated episode pipeline
 
 This repo lets a fresh Claude session make and publish one Orthojets TikTok episode with no human input.
-A scheduled task fires **Monday, Tuesday and Wednesday evenings**. Each run publishes the next episode at **10:00 the following day** (Africa/Tripoli time), so posts land on Tue/Wed/Thu at 10:00.
+A scheduled task fires **Saturday to Wednesday evenings** (18:58). Each run publishes the next episode at **10:00 the following day** (Africa/Tripoli time), so posts land **Sunday to Thursday at 10:00 — 5 per week** (owner decision 2026-10-19; Friday/Saturday off, the Libyan weekend). The weekly Instagram carousel goes out Sunday 18:00.
 
 ## Channel rules (from the owner — do not change)
 - All on-screen medical content is in **English medical language**. The intro and outro keep their Arabic tagline.
@@ -125,7 +125,7 @@ computed at build time. Series let viewers binge and follow "for the next part".
      - Instagram: `instagramData: {"type":"REEL","showReelOnFeed":true}`
      - YouTube: `youtubeData: {"title":"<≤100 chars, ends with #Shorts>","type":"short","privacy":"public","madeForKids":false,"category":"EDUCATION","tags":[...]}`
      - If a network rejects the post, schedule TikTok alone and mention the error in the report.
-   - First call `getScheduledPosts` for the target day. If a TikTok post is already scheduled that day, do not add a second one: move this episode to the next free Tue/Wed/Thu 10:00 slot.
+   - First call `getScheduledPosts` for the target day. If a TikTok post is already scheduled that day, do not add a second one: move this episode to the next free Sun–Thu 10:00 slot (never Friday or Saturday).
    - Then create the post:
    - blogId `7507086`, timezone `Africa/Tripoli`
    - date: next day 10:00 (`YYYY-MM-DDT10:00:00+02:00`)

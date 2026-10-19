@@ -147,7 +147,7 @@ def follow(n):
     for k, (t, col) in enumerate([('SAVE this post', WHITE), ('SHARE it with a colleague', WHITE), ('FOLLOW for new pearls', WHITE)]):
         y = 880 + k * 92; d = ImageDraw.Draw(main); check(d, 250, y, 40, GOOD, 1.0)
         put_l(main, R.text_layer(t, 'MontXB', 42, col), 300, y)
-    put_c(main, pill('NEW TIPS  TUE · WED · THU', 'MontXB', 30, NAVY, SKY + (255,), h=66), W / 2, 1180)
+    put_c(main, pill('NEW TIPS  SUNDAY TO THURSDAY', 'MontXB', 30, NAVY, SKY + (255,), h=66), W / 2, 1180)
     counter(main, n, n)
     return finish(main, glow)
 
