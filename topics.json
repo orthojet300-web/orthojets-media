@@ -90,9 +90,42 @@
       "n": 3,
       "slug": "ep03_kocher",
       "title": "Kocher criteria: septic arthritis vs transient synovitis of the hip in children",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006",
-      "series": "rules"
+      "series": "rules",
+      "source": "Kocher MS et al. JBJS Am 1999;81(12):1662-70; Kocher MS et al. JBJS Am 2004;86(8):1629-35; Caird MS et al. JBJS Am 2006;88(6):1251-7",
+      "published": "scheduled 2026-10-21 10:00 Africa/Tripoli (2026-10-20 already taken by EP02)",
+      "release": "media branch: ep03_kocher.mp4",
+      "metricool_post_id": 400292564,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-403471730596298456",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "pmids": [
+        "10608376",
+        "15292409",
+        "16757758"
+      ],
+      "dois": [
+        "10.2106/00004623-199912000-00002",
+        "10.2106/00004623-200408000-00005",
+        "10.2106/JBJS.E.00216"
+      ],
+      "music": "none (private repo orthojets-music not reachable from this run; built with --no-music)",
+      "cover_ms": 2400,
+      "part": 1,
+      "carousel": {
+        "headline": "KOCHER 4",
+        "sub": "Septic hip or transient synovitis?",
+        "points": [
+          "Fever history, non-weight-bearing, ESR at least 40, WBC over 12,000",
+          "3 of 4 predictors = 93.1% septic; none = under 0.2%",
+          "Add CRP over 2.0 mg/dL (Caird 2006)"
+        ],
+        "ref": "Kocher et al., JBJS Am 1999 · Caird et al., JBJS Am 2006"
+      }
     },
     {
       "n": 4,
