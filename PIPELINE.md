@@ -132,7 +132,8 @@ computed at build time. Series let viewers binge and follow "for the next part".
         same caption, same youtubeData. (Do (a) fully before (b): the media branch keeps only the latest file, and Metricool copies the
         file when the post is created.)
      Never put a Pixabay track on YouTube. Only `youtube_safe/` themes (our own compositions) may be used there — and NEVER use the
-     `youtube_safe/` themes on TikTok or Instagram (owner rule 2026-10-20).
+     `youtube_safe/` ensemble themes (yt1..yt4) on TikTok or Instagram (owner rule 2026-10-20). The original Steinway piano themes
+     (`piano_*.mp3`, tools/piano_theme.py) are approved for every platform (owner 2026-10-21) and sit in both rotations.
    - Call `getBrandSettings` first. `networksData` lists the connected networks: TikTok always; Instagram and YouTube once the owner connects them in Metricool.
    - TikTok + Instagram share one post: `providers: [{"network":"tiktok"}, {"network":"instagram"}]`; YouTube is the separate post above.
      - Instagram: `instagramData: {"type":"REEL","showReelOnFeed":true}`
