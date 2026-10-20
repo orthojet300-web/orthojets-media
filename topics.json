@@ -71,7 +71,7 @@
         "8898137",
         "17304064"
       ],
-      "music": "track02_clavier-calm-space-music",
+      "music": "track02 (Content ID claim on YouTube: blocked worldwide); YouTube re-uploaded 2026-10-20 11:00 with track01",
       "cover_ms": 5000,
       "series": "numbers",
       "part": 2,
@@ -84,7 +84,8 @@
           "Palpable pulses do NOT exclude compartment syndrome"
         ],
         "ref": "McQueen & Court-Brown, JBJS Br 1996 · Kakar et al., JOT 2007"
-      }
+      },
+      "youtube_reupload_post_id": 400855167
     },
     {
       "n": 3,
@@ -96,7 +97,7 @@
       "source": "Kocher MS et al. JBJS Am 1999;81(12):1662-70; Kocher MS et al. JBJS Am 2004;86(8):1629-35; Caird MS et al. JBJS Am 2006;88(6):1251-7",
       "published": "scheduled 2026-10-21 10:00 Africa/Tripoli (2026-10-20 already taken by EP02)",
       "release": "media branch: ep03_kocher.mp4",
-      "metricool_post_id": 400445805,
+      "metricool_post_id": 400855129,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-403471730596298456",
       "networks": [
         "tiktok",
@@ -113,7 +114,7 @@
         "10.2106/00004623-200408000-00005",
         "10.2106/JBJS.E.00216"
       ],
-      "music": "track03_quentingaming-interstellar (added afterwards 2026-10-19 22:20; the autopilot run could not reach the music repo)",
+      "music": "track01_the-mountain-study-music (replaced track03 before publishing: Content ID risk)",
       "cover_ms": 2400,
       "part": 1,
       "carousel": {

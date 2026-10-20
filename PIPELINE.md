@@ -9,6 +9,9 @@ A scheduled task fires **Saturday to Wednesday evenings** (18:58). Each run publ
 - **Audio**: a calm licensed background track plays quietly under the episode body (-26 LUFS, fade in and out). The intro and outro keep their own sound.
   - Tracks live in the PRIVATE repo `orthojet300-web/orthojets-music`. Clone it next to this repo as `../orthojets-music`.
   - `tools/build_episode.py` picks the track by episode number: track = ((N-1) mod count) + 1.
+  - Only the `*.mp3` files at the TOP LEVEL of the music repo are in rotation (see its README). `blocked/` holds tracks that YouTube
+    Content ID claimed (EP02 was blocked worldwide on 2026-10-20) — never use them; `untested/` is not used either.
+    Never add a track to the top level unless it has already been on YouTube with no copyright claim (YouTube Audio Library tracks are safe).
   - Never copy the MP3s into this public repo: the license forbids redistributing them on their own.
   - The music repo is PRIVATE: attach it with `add_repo` access **"push"** (that attaches credentials; "read" does not) and clone it.
     If that fails, retry, then try `gh repo clone`. Music is REQUIRED (owner complaint on EP03, which went out silent):
