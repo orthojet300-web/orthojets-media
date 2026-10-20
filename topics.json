@@ -131,8 +131,8 @@
         ],
         "ref": "Kocher et al., JBJS Am 1999 · Caird et al., JBJS Am 2006"
       },
-      "youtube_post_id": 401159610,
-      "youtube_music": "yt3_quiet_focus (original)"
+      "youtube_post_id": 401609991,
+      "youtube_music": "piano_3_momentum (own)"
     },
     {
       "n": 4,
@@ -144,14 +144,14 @@
       "source": "Stiell IG et al. Ann Emerg Med 1992;21(4):384-90; Stiell IG et al. JAMA 1993;269(9):1127-32; Bachmann LM et al. BMJ 2003;326(7386):417",
       "published": "scheduled 2026-10-22 10:00 Africa/Tripoli (2026-10-21 already taken by EP03)",
       "release": "media branch: ep04_ottawa_ankle.mp4 (+ ep04_ottawa_ankle_yt.mp4 for YouTube)",
-      "metricool_post_id": 401355816,
+      "metricool_post_id": 401623283,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1643734156627166207",
       "networks": [
         "tiktok",
         "instagram",
         "youtube"
       ],
-      "youtube_post_id": 401356128,
+      "youtube_post_id": 401623309,
       "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=5376614028762892933",
       "pmids": [
         "1554175",
@@ -166,8 +166,8 @@
         "10.1136/bmj.326.7386.417",
         "10.1055/s-0044-1800938"
       ],
-      "music": "NONE (built with --no-music: music repo orthojets-music could not be attached in this run - add_repo tool unavailable, gh/git clone denied). Body silent; logo chime + outro sound only.",
-      "youtube_music": "none (youtube_safe/ themes also in the unreachable music repo)",
+      "music": "piano_1_rise (own) - re-rendered 2026-10-21 01:45 after the autopilot run had no music",
+      "youtube_music": "piano_1_rise (own)",
       "cover_ms": 2400,
       "part": 2,
       "carousel": {
