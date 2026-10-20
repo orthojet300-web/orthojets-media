@@ -41,7 +41,9 @@ def main():
          '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', body])
     mdir = os.environ.get('MUSIC_DIR') or os.path.join(os.path.dirname(ROOT), 'orthojets-music')
     own = sorted(glob.glob(os.path.join(ROOT, 'music', '*.mp3')))          # our piano themes, always available
-    tracks = sorted(set(glob.glob(os.path.join(mdir, '*.mp3'))) | set(own)) # + private Pixabay tracks when reachable
+    pool = {os.path.basename(t): t for t in glob.glob(os.path.join(mdir, '*.mp3'))}   # private Pixabay tracks when reachable
+    pool.update({os.path.basename(t): t for t in own})                                  # our piano themes (dedup by name)
+    tracks = [pool[k] for k in sorted(pool)]
     print('MUSIC POOL', [os.path.basename(t) for t in tracks])
     if tracks and '--no-music' not in sys.argv:
         m = re.match(r'ep(\d+)', slug); n = int(m.group(1)) if m else 1
