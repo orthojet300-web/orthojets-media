@@ -44,8 +44,8 @@
         "music": "track01_the-mountain-study-music",
         "youtube_post_id": 400213761,
         "note": "YouTube failed at 18:00 (title contained <); rescheduled YouTube alone 18:20",
-        "youtube_musicfree_post_id": 401134985,
-        "youtube_music": "orthojets_theme_1"
+        "youtube_musicfree_post_id": 401159336,
+        "youtube_music": "yt1_morning_rounds (original)"
       },
       "series": "numbers",
       "part": 1,
@@ -88,8 +88,8 @@
         "ref": "McQueen & Court-Brown, JBJS Br 1996 · Kakar et al., JOT 2007"
       },
       "youtube_reupload_post_id": 400855167,
-      "youtube_musicfree_post_id": 401135077,
-      "youtube_music": "orthojets_theme_2"
+      "youtube_musicfree_post_id": 401159458,
+      "youtube_music": "yt2_soft_horizon (original)"
     },
     {
       "n": 3,
@@ -131,8 +131,8 @@
         ],
         "ref": "Kocher et al., JBJS Am 1999 · Caird et al., JBJS Am 2006"
       },
-      "youtube_post_id": 401135258,
-      "youtube_music": "orthojets_theme_3"
+      "youtube_post_id": 401159610,
+      "youtube_music": "yt3_quiet_focus (original)"
     },
     {
       "n": 4,
@@ -231,5 +231,5 @@
       "series": "classified"
     }
   ],
-  "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube now always gets a separate copy with an ORIGINAL Orthojets theme (music repo youtube_safe/) + logo chime only. Re-uploads: EP01 17:00, EP02 18:00 on 2026-10-20."
+  "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner)."
 }

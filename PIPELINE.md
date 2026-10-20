@@ -131,7 +131,8 @@ computed at build time. Series let viewers binge and follow "for the next part".
         `tools/publish_github.sh <slug>_yt out/<slug>_youtube_1080p.mp4` and create a SECOND post for **youtube only**, same time,
         same caption, same youtubeData. (Do (a) fully before (b): the media branch keeps only the latest file, and Metricool copies the
         file when the post is created.)
-     Never put a Pixabay track on YouTube. Only `youtube_safe/` themes (our own compositions) may be used there.
+     Never put a Pixabay track on YouTube. Only `youtube_safe/` themes (our own compositions) may be used there — and NEVER use the
+     `youtube_safe/` themes on TikTok or Instagram (owner rule 2026-10-20).
    - Call `getBrandSettings` first. `networksData` lists the connected networks: TikTok always; Instagram and YouTube once the owner connects them in Metricool.
    - TikTok + Instagram share one post: `providers: [{"network":"tiktok"}, {"network":"instagram"}]`; YouTube is the separate post above.
      - Instagram: `instagramData: {"type":"REEL","showReelOnFeed":true}`
