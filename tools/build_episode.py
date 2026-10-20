@@ -40,7 +40,9 @@ def main():
     run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
          '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', body])
     mdir = os.environ.get('MUSIC_DIR') or os.path.join(os.path.dirname(ROOT), 'orthojets-music')
-    tracks = sorted(glob.glob(os.path.join(mdir, '*.mp3')))
+    own = sorted(glob.glob(os.path.join(ROOT, 'music', '*.mp3')))          # our piano themes, always available
+    tracks = sorted(set(glob.glob(os.path.join(mdir, '*.mp3'))) | set(own)) # + private Pixabay tracks when reachable
+    print('MUSIC POOL', [os.path.basename(t) for t in tracks])
     if tracks and '--no-music' not in sys.argv:
         m = re.match(r'ep(\d+)', slug); n = int(m.group(1)) if m else 1
         track = tracks[(n - 1) % len(tracks)]
@@ -74,7 +76,7 @@ def main():
     # YouTube: Pixabay tracks get Content ID blocks, so the YouTube copy uses an ORIGINAL Orthojets theme
     # (../orthojets-music/youtube_safe/, composed by tools/compose_music.py) under the body; logo chime + outro kept.
     # No motion sound effects (owner 2026-10-20: effects only for the logo).
-    yt_themes = sorted(glob.glob(os.path.join(mdir, 'youtube_safe', '*.mp3')))
+    yt_themes = own or sorted(glob.glob(os.path.join(mdir, 'youtube_safe', '*.mp3')))   # YouTube: our piano only
     yt_body = silent_body
     if yt_themes and '--no-music' not in sys.argv:
         m = re.match(r'ep(\d+)', slug); n = int(m.group(1)) if m else 1

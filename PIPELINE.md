@@ -13,6 +13,8 @@ A scheduled task fires **Saturday to Wednesday evenings** (18:58). Each run publ
     Content ID claimed (EP02 was blocked worldwide on 2026-10-20) — never use them; `untested/` is not used either.
     Never add a track to the top level unless it has already been on YouTube with no copyright claim (YouTube Audio Library tracks are safe).
   - Never copy the MP3s into this public repo: the license forbids redistributing them on their own.
+  - Our own piano themes live in THIS repo under `music/` and are always used (YouTube gets only these). The private repo adds
+    the Pixabay tracks to the TikTok/Instagram rotation when it can be reached; if it can't, the build still has music.
   - The music repo is PRIVATE: attach it with `add_repo` access **"push"** (that attaches credentials; "read" does not) and clone it.
     If that fails, retry, then try `gh repo clone`. Music is REQUIRED (owner complaint on EP03, which went out silent):
     use `--no-music` only if every route failed, and say so at the top of the report.
