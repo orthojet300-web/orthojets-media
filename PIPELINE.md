@@ -126,7 +126,8 @@ computed at build time. Series let viewers binge and follow "for the next part".
    - **YouTube gets its own post with the music-free file** (owner decision 2026-10-20): YouTube Content ID claimed the Pixabay
      tracks (track01, 02, 03) and blocked EP01 and EP02 worldwide. So:
      a) host `out/<slug>_1080p.mp4` (with music) with publish_github.sh and create ONE post for **tiktok + instagram**;
-     b) then host `out/<slug>_youtube_1080p.mp4` (music-free body, logo chime + outro sound only) with
+     b) then host `out/<slug>_youtube_1080p.mp4` (no library music; original synthesized sound effects on every motion via
+        `tools/add_sfx.py` — owner approved 2026-10-20, YouTube ONLY; plus logo chime + outro sound) with
         `tools/publish_github.sh <slug>_yt out/<slug>_youtube_1080p.mp4` and create a SECOND post for **youtube only**, same time,
         same caption, same youtubeData. (Do (a) fully before (b): the media branch keeps only the latest file, and Metricool copies the
         file when the post is created.)

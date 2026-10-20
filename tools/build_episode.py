@@ -7,7 +7,7 @@ Pass --no-music to keep the body silent.
 
 usage: python3 tools/build_episode.py episodes/epNN_slug/script.py SLUG
 output: out/SLUG_1080p.mp4 (upload copy WITH music, for TikTok + Instagram),
-        out/SLUG_youtube_1080p.mp4 (same video, music-free body, for YouTube: YouTube Content ID claimed our
+        out/SLUG_youtube_1080p.mp4 (same video, music-free body + synthesized motion sound effects (tools/add_sfx.py), for YouTube: YouTube Content ID claimed our
         Pixabay tracks and blocked EP01/EP02 worldwide, 2026-10-20) and out/SLUG_light.mp4 (720p preview)
 
 Body is rendered silent (channel rule); intro/outro keep their sound (add_brand.py).
@@ -74,8 +74,13 @@ def main():
     run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), silent_body, yt_full, '--hook-first', f'{hook_end:.2f}',
          '--resume', f'{resume:.2f}'])
     yt = os.path.join(out, f'{slug}_youtube_1080p.mp4')
+    yt_mux = os.path.join(tmp, 'yt_mux.mp4')
     run(['ffmpeg', '-y', '-loglevel', 'error', '-i', final, '-i', yt_full, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
-         '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', yt])
+         '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', yt_mux])
+    # Original synthesized sound effects on every motion (owner approved 2026-10-20, YouTube only).
+    # Skip the logo sting (it has its chime) and the outro (own sound).
+    run([sys.executable, os.path.join(ROOT, 'tools', 'add_sfx.py'), yt_mux, yt,
+         '--skip', f'{hook_end - 0.45:.2f}-{hook_end + 0.85:.2f}', '--skip', f'{dur_full - 3.4:.2f}-{dur_full:.2f}'])
     print('YOUTUBE', yt)
     print('DONE', os.path.join(out, f'{slug}_1080p.mp4'))
 
