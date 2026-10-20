@@ -7,7 +7,7 @@ Pass --no-music to keep the body silent.
 
 usage: python3 tools/build_episode.py episodes/epNN_slug/script.py SLUG
 output: out/SLUG_1080p.mp4 (upload copy WITH music, for TikTok + Instagram),
-        out/SLUG_youtube_1080p.mp4 (same video, music-free body + synthesized motion sound effects (tools/add_sfx.py), for YouTube: YouTube Content ID claimed our
+        out/SLUG_youtube_1080p.mp4 (same video, original Orthojets theme from youtube_safe/ instead of Pixabay music, for YouTube: YouTube Content ID claimed our
         Pixabay tracks and blocked EP01/EP02 worldwide, 2026-10-20) and out/SLUG_light.mp4 (720p preview)
 
 Body is rendered silent (channel rule); intro/outro keep their sound (add_brand.py).
@@ -70,17 +70,23 @@ def main():
          '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', final])
     os.replace(os.path.join(tmp, 'full_light.mp4'), os.path.join(out, f'{slug}_light.mp4'))
     # YouTube copy: identical picture, audio = silent body + logo chime + outro sound (no library music).
-    yt_full = os.path.join(tmp, 'yt_full.mp4')
-    run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), silent_body, yt_full, '--hook-first', f'{hook_end:.2f}',
-         '--resume', f'{resume:.2f}'])
     yt = os.path.join(out, f'{slug}_youtube_1080p.mp4')
-    yt_mux = os.path.join(tmp, 'yt_mux.mp4')
+    # YouTube: Pixabay tracks get Content ID blocks, so the YouTube copy uses an ORIGINAL Orthojets theme
+    # (../orthojets-music/youtube_safe/, composed by tools/compose_music.py) under the body; logo chime + outro kept.
+    # No motion sound effects (owner 2026-10-20: effects only for the logo).
+    yt_themes = sorted(glob.glob(os.path.join(mdir, 'youtube_safe', '*.mp3')))
+    yt_body = silent_body
+    if yt_themes and '--no-music' not in sys.argv:
+        m = re.match(r'ep(\d+)', slug); n = int(m.group(1)) if m else 1
+        theme = yt_themes[(n - 1) % len(yt_themes)]
+        yt_body = os.path.join(tmp, 'body_theme.mp4')
+        run([sys.executable, os.path.join(ROOT, 'tools', 'add_music.py'), silent_body, theme, yt_body])
+        print('YOUTUBE MUSIC', os.path.basename(theme))
+    yt_full = os.path.join(tmp, 'yt_full.mp4')
+    run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), yt_body, yt_full, '--hook-first', f'{hook_end:.2f}',
+         '--resume', f'{resume:.2f}'])
     run(['ffmpeg', '-y', '-loglevel', 'error', '-i', final, '-i', yt_full, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
-         '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', yt_mux])
-    # Original synthesized sound effects on every motion (owner approved 2026-10-20, YouTube only).
-    # Skip the logo sting (it has its chime) and the outro (own sound).
-    run([sys.executable, os.path.join(ROOT, 'tools', 'add_sfx.py'), yt_mux, yt,
-         '--skip', f'{hook_end - 0.45:.2f}-{hook_end + 0.85:.2f}', '--skip', f'{dur_full - 3.4:.2f}-{dur_full:.2f}'])
+         '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', yt])
     print('YOUTUBE', yt)
     print('DONE', os.path.join(out, f'{slug}_1080p.mp4'))
 
