@@ -6,7 +6,9 @@ is set, a background track is laid under the body (rotating by episode number, -
 Pass --no-music to keep the body silent.
 
 usage: python3 tools/build_episode.py episodes/epNN_slug/script.py SLUG
-output: out/SLUG_1080p.mp4 (upload copy, ~4.5 Mbps) and out/SLUG_light.mp4 (720p preview)
+output: out/SLUG_1080p.mp4 (upload copy WITH music, for TikTok + Instagram),
+        out/SLUG_youtube_1080p.mp4 (same video, music-free body, for YouTube: YouTube Content ID claimed our
+        Pixabay tracks and blocked EP01/EP02 worldwide, 2026-10-20) and out/SLUG_light.mp4 (720p preview)
 
 Body is rendered silent (channel rule); intro/outro keep their sound (add_brand.py).
 Rendering runs in 2 parallel segments; each segment is a separate process so the
@@ -34,6 +36,7 @@ def main():
     if p1.wait() or p2.wait(): sys.exit('segment render failed')
     lst = os.path.join(tmp, 'l.txt'); open(lst, 'w').write(f"file '{a}'\nfile '{b}'\n")
     body = os.path.join(tmp, 'body.mp4')
+    silent_body = body
     run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
          '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', body])
     mdir = os.environ.get('MUSIC_DIR') or os.path.join(os.path.dirname(ROOT), 'orthojets-music')
@@ -66,6 +69,14 @@ def main():
          '-b:v', f'{kbps}k', '-maxrate', f'{int(kbps * 1.2)}k', '-bufsize', f'{kbps * 2}k',
          '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', final])
     os.replace(os.path.join(tmp, 'full_light.mp4'), os.path.join(out, f'{slug}_light.mp4'))
+    # YouTube copy: identical picture, audio = silent body + logo chime + outro sound (no library music).
+    yt_full = os.path.join(tmp, 'yt_full.mp4')
+    run([sys.executable, os.path.join(ROOT, 'kit', 'add_brand.py'), silent_body, yt_full, '--hook-first', f'{hook_end:.2f}',
+         '--resume', f'{resume:.2f}'])
+    yt = os.path.join(out, f'{slug}_youtube_1080p.mp4')
+    run(['ffmpeg', '-y', '-loglevel', 'error', '-i', final, '-i', yt_full, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
+         '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', yt])
+    print('YOUTUBE', yt)
     print('DONE', os.path.join(out, f'{slug}_1080p.mp4'))
 
 if __name__ == '__main__':

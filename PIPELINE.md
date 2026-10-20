@@ -123,8 +123,16 @@ computed at build time. Series let viewers binge and follow "for the next part".
    - GitHub Releases are not permitted for Claude sessions, so a branch is used instead.
    - The `media` branch only ever holds the current video; Metricool copies the file to its own storage when the post is created.
 8. **Schedule on TikTok, and cross-post to Instagram Reels and YouTube Shorts when they are connected,** with the Metricool connector `createScheduledPost`.
+   - **YouTube gets its own post with the music-free file** (owner decision 2026-10-20): YouTube Content ID claimed the Pixabay
+     tracks (track01, 02, 03) and blocked EP01 and EP02 worldwide. So:
+     a) host `out/<slug>_1080p.mp4` (with music) with publish_github.sh and create ONE post for **tiktok + instagram**;
+     b) then host `out/<slug>_youtube_1080p.mp4` (music-free body, logo chime + outro sound only) with
+        `tools/publish_github.sh <slug>_yt out/<slug>_youtube_1080p.mp4` and create a SECOND post for **youtube only**, same time,
+        same caption, same youtubeData. (Do (a) fully before (b): the media branch keeps only the latest file, and Metricool copies the
+        file when the post is created.)
+     Only when the music repo has a `youtube_safe/` track (e.g. from YouTube Audio Library) may YouTube get a music version.
    - Call `getBrandSettings` first. `networksData` lists the connected networks: TikTok always; Instagram and YouTube once the owner connects them in Metricool.
-   - Put every connected one in **one** post, `providers: [{"network":"tiktok"}, {"network":"instagram"}, {"network":"youtube"}]`, with the same video, time and caption.
+   - TikTok + Instagram share one post: `providers: [{"network":"tiktok"}, {"network":"instagram"}]`; YouTube is the separate post above.
      - Instagram: `instagramData: {"type":"REEL","showReelOnFeed":true}`
      - YouTube: `youtubeData: {"title":"<≤100 chars, ends with #Shorts>","type":"short","privacy":"public","madeForKids":false,"category":"EDUCATION","tags":[...]}`
      - If a network rejects the post, schedule TikTok alone and mention the error in the report.
