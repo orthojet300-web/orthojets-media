@@ -49,6 +49,14 @@ computed at build time. Series let viewers binge and follow "for the next part".
 - TikTok title: `<Series name> #<part> · <short title>`. YouTube title: `<short title> | <Series name> #<part> #Shorts`.
 - New topics you add must get a `series`. Keep the queue rotating between series (never 3 of the same series in a row).
 
+## Visual themes (owner decision 2026-10-23)
+- Brand constants never change: navy base, logo, Montserrat, the logo sting and outro.
+- `kit/ep_common.py` sets the accent colour (the `SKY` name every script uses) from the episode's series automatically:
+  numbers = sky, rules = gold, classified = violet, dontmiss = rose. Always use `SKY` (never hard-code a colour) for accents.
+- The background style + camera move change every 5 episodes (~weekly): stars, grid, waves, aurora (`THEME_BG`).
+- Green GOOD / coral WARN keep their right-vs-wrong meaning in every theme.
+- Override for tests: ORTHO_SERIES=..., ORTHO_BG=0..3 before `script.py still ...`.
+
 ## Quality bar (from episode 3 on — the owner wants best quality)
 - **Richer visuals are mandatory.** Every episode must contain at least one real, animated, anatomically accurate diagram as its centrepiece, not mostly text cards. Examples:
   - a bone or joint drawn as an X-ray, like `kit/femur.py`
