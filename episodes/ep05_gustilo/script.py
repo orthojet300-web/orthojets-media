@@ -341,7 +341,7 @@ def s7(t, main, glow, fx):
     label(main, 'Wound  ·  Contamination  ·  Soft tissue', W / 2, 680, a * eo(prog(t, 44.3, 44.8)), SKY, 38, 'MontXB', 0)
     label(main, 'Antibiotics early, cover early', W / 2, 790, a * eo(prog(t, 44.6, 45.1)), GOOD, 46, 'MontBlack', 0)
     q = eo(prog(t, 45.0, 45.6))
-    put(main, card(860, 330, fill=(24, 44, 70, 160), outline=(120, 175, 216, 80)), 515, 1080, a * q)
+    put(main, card(860, 330, fill=(24, 44, 70, 160), outline=SKY + (80,)), 515, 1080, a * q)
     for i, (au, ref) in enumerate([('Gustilo RB, Anderson JT.', 'J Bone Joint Surg Am. 1976;58(4):453–8'),
                                    ('Gustilo RB, et al.', 'J Trauma. 1984;24(8):742–6'),
                                    ('Lack WD, et al.', 'J Orthop Trauma. 2015;29(1):1–6')]):
