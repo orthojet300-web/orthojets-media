@@ -40,7 +40,15 @@ def main():
     run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
          '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', body])
     mdir = os.environ.get('MUSIC_DIR') or os.path.join(os.path.dirname(ROOT), 'orthojets-music')
-    own = sorted(glob.glob(os.path.join(ROOT, 'music', '*.mp3')))          # our piano themes, always available
+    own = sorted(glob.glob(os.path.join(ROOT, 'music', '*.mp3')))          # our own themes (if any), always available
+    # Encrypted copies of the licensed TikTok/Instagram tracks live in music/vault/*.enc (the licence forbids sharing the
+    # files, so they are only usable with the key, which is kept in the private scheduled-task prompt). If the private
+    # repo isn't reachable but ORTHO_MUSIC_KEY is set, decrypt them into a temp music dir.
+    if not glob.glob(os.path.join(mdir, '*.mp3')) and os.environ.get('ORTHO_MUSIC_KEY'):
+        mdir = tempfile.mkdtemp(prefix='music_')
+        for enc in glob.glob(os.path.join(ROOT, 'music', 'vault', '*.enc')):
+            subprocess.run(['openssl', 'enc', '-d', '-aes-256-cbc', '-pbkdf2', '-pass', 'env:ORTHO_MUSIC_KEY', '-in', enc,
+                            '-out', os.path.join(mdir, os.path.basename(enc)[:-4])], check=True)
     pool = {os.path.basename(t): t for t in glob.glob(os.path.join(mdir, '*.mp3'))}   # private Pixabay tracks when reachable
     pool.update({os.path.basename(t): t for t in own})                                  # our piano themes (dedup by name)
     tracks = [pool[k] for k in sorted(pool)]
