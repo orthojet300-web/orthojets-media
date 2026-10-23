@@ -11,3 +11,5 @@ Encrypted copies (AES-256, openssl -pbkdf2) of the TikTok/Instagram tracks from 
 cannot reach the private repo still have music. Not usable without the key (kept only in the private scheduled-task prompt;
 never commit it). build_episode.py decrypts them when ORTHO_MUSIC_KEY is set and ../orthojets-music is missing.
 YouTube never uses these (Content ID) — YouTube gets tracks from youtube_safe only (YouTube Audio Library, pending from owner).
+
+vault/yt__*.enc = YouTube Audio Library tracks (YouTube copies only), decrypted into <music>/youtube_safe/.

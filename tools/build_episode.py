@@ -47,8 +47,11 @@ def main():
     if not glob.glob(os.path.join(mdir, '*.mp3')) and os.environ.get('ORTHO_MUSIC_KEY'):
         mdir = tempfile.mkdtemp(prefix='music_')
         for enc in glob.glob(os.path.join(ROOT, 'music', 'vault', '*.enc')):
+            name = os.path.basename(enc)[:-4]
+            dst = os.path.join(mdir, 'youtube_safe', name[4:]) if name.startswith('yt__') else os.path.join(mdir, name)
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
             subprocess.run(['openssl', 'enc', '-d', '-aes-256-cbc', '-pbkdf2', '-pass', 'env:ORTHO_MUSIC_KEY', '-in', enc,
-                            '-out', os.path.join(mdir, os.path.basename(enc)[:-4])], check=True)
+                            '-out', dst], check=True)
     pool = {os.path.basename(t): t for t in glob.glob(os.path.join(mdir, '*.mp3'))}   # private Pixabay tracks when reachable
     pool.update({os.path.basename(t): t for t in own})                                  # our piano themes (dedup by name)
     tracks = [pool[k] for k in sorted(pool)]
