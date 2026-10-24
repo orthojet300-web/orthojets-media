@@ -34,8 +34,8 @@ The weekday English episodes (Sun–Thu, PIPELINE.md) are unchanged.
    a separate reviewer agent must PASS the stills (correct anatomy, readable Arabic, nothing cut off, brand look).
 6. `python3 arabic/tools/build_ar.py EP SLUG --skip-tts` (~12 min). Check duration, audio (voice audible over music), frames.
 7. Independent fact-check agent: PASS per claim against PubMed, or fix / block.
-8. Cover: a frame with the FULL hook question (see ar01 cover.jpg: series pill «عظامك ببساطة · N», English topic pill,
-   two-line Arabic question, the hook illustration). Host video + cover with tools/publish_dir.sh.
+8. Cover (owner 2026-10-24): `python3 arabic/tools/make_cover.py EP/st/<hook still>.png EP/cover.jpg N "<line 1>" "<line 2>"` —
+   series badge «عظامك ببساطة» + «كل يوم سبت» with the episode number, the English topic pill, the two-line Arabic question, hook art. Host video + cover with tools/publish_dir.sh.
 9. Metricool (brand 7507086): ONE post for tiktok + instagram (REEL) + youtube (short), Saturday 10:00, same video.
    - Use `videoThumbnailUrl` = cover for instagram/youtube when accepted; otherwise fall back to `videoCoverMilliseconds`.
    - Caption: Arabic hook question, 3 short Arabic points, `📚` refs, "احفظه وشاركه مع من يهمه الأمر 💙",
