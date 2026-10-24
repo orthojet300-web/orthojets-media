@@ -9,7 +9,7 @@ The `carousel` block in topics.json:
   {"headline": "TAD < 25 mm", "sub": "one short line", "points": ["...", "...", "..."], "ref": "Author et al., Journal Year"}
 Every point must be one of the episode's verified on-screen claims (no new facts on the carousel).
 """
-import json, os, sys
+import json, os, re, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
@@ -45,7 +45,12 @@ def seg_text(txt, font, size, col, track=1):
     return out
 
 def wrap(txt, font, size, maxw):
-    f = F(font, size); words = txt.split(); lines, cur = [], ''
+    f = F(font, size); words = []
+    for w_ in txt.split():  # keep a number and its unit on one line ("1 cm", "25 mm", "66 min")
+        if words and re.fullmatch(r'[\d.,]+%?', words[-1]) and re.fullmatch(r'(cm|mm|mmHg|min|h|s|mg/dL|steps)[,;.:)]*', w_):
+            words[-1] += ' ' + w_
+        else: words.append(w_)
+    lines, cur = [], ''
     for w_ in words:
         t = (cur + ' ' + w_).strip()
         if f.getlength(t) <= maxw or not cur: cur = t

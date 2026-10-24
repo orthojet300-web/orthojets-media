@@ -352,5 +352,27 @@
       "series": "classified"
     }
   ],
-  "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner)."
+  "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner).",
+  "carousels": [
+    {
+      "date": "2026-10-25 18:00 Africa/Tripoli",
+      "week": "Oct 19 - 25",
+      "episodes": [
+        "ep01_tad",
+        "ep02_acs",
+        "ep03_kocher",
+        "ep04_ottawa_ankle",
+        "ep05_gustilo"
+      ],
+      "slides": 7,
+      "networks": [
+        "instagram",
+        "tiktok"
+      ],
+      "media": "media branch: carousel_20261025/slide01-07.jpg",
+      "metricool_post_id": 405208614,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5415755961258390488",
+      "note": "EP01 included: its Instagram/YouTube cross-post went live 2026-10-19 and it had never been in a carousel"
+    }
+  ]
 }
