@@ -234,9 +234,50 @@
       "n": 6,
       "slug": "ep06_hip_dislocation",
       "title": "Traumatic hip dislocation: reduce within 6 hours",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)",
-      "series": "numbers"
+      "series": "numbers",
+      "source": "Hougaard K, Thomsen PB. Arch Orthop Trauma Surg 1986;106(1):32-5; Hougaard K, Thomsen PB. J Bone Joint Surg Am 1987;69(5):679-83; Kellam P, Ostrum RF. J Orthop Trauma 2016;30(1):10-6; Gautier E et al. JBJS Br 2000;82(5):679-83; Cornwall R, Radomisli TE. Clin Orthop 2000;(377):84-91; Mandell JC et al. Arthroscopy 2018;34(3):917-27",
+      "published": "scheduled 2026-10-26 10:00 Africa/Tripoli (2026-10-25 taken by EP05)",
+      "release": "media branch: ep06_hip_dislocation.mp4 (+ ep06_hip_dislocation_yt.mp4 for YouTube)",
+      "metricool_post_id": 405150557,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-9187677107243825675",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "youtube_post_id": 405151898,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4989504511631406938",
+      "pmids": [
+        "3566493",
+        "3597467",
+        "26849386",
+        "10963165",
+        "10943188",
+        "29146169"
+      ],
+      "dois": [
+        "10.1007/BF00435649",
+        "10.1097/BOT.0000000000000419",
+        "10.1302/0301-620x.82b5.10426",
+        "10.1097/00003086-200008000-00012",
+        "10.1016/j.arthro.2017.08.295"
+      ],
+      "music": "track01_the-mountain-study-music (vault)",
+      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library)",
+      "cover_ms": 2400,
+      "part": 3,
+      "carousel": {
+        "headline": "6 HOURS",
+        "sub": "to reduce a dislocated hip",
+        "points": [
+          "AVN 4.8% if reduced within 6 h vs 52.9% after 6 h",
+          "Excellent/good hip at 14 years: 88% vs 42%",
+          "Reduced after 12 h: AVN odds ratio 5.6 (meta-analysis)"
+        ],
+        "ref": "Hougaard & Thomsen, Arch Orthop Trauma Surg 1986"
+      }
     },
     {
       "n": 7,
