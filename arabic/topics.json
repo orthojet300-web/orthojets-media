@@ -1,0 +1,13 @@
+{
+  "_note": "«عظامك ببساطة» — weekly Arabic explainer for the GENERAL PUBLIC, every Saturday 10:00 Africa/Tripoli. Built by the Friday scheduled task following arabic/PIPELINE.md. Take the first 'todo'. Every claim verified on PubMed. Keep adding topics when fewer than 4 are 'todo'.",
+  "episodes": [
+    {"n": 1, "slug": "ar01_growth_plate", "title_ar": "لماذا قد يكون كسر صغير عند الطفل أخطر من كسر كبير عند البالغ؟ (صفيحة النمو)", "status": "ready", "publish": "2026-10-31 10:00"},
+    {"n": 2, "slug": "ar02_sprain_or_fracture", "title_ar": "التواء أم كسر؟ متى تحتاج الأشعة بعد التواء الكاحل", "status": "todo", "source_hint": "Ottawa ankle rules, Stiell JAMA 1993; Bachmann BMJ 2003 (lay version: 4 bony spots + cannot walk 4 steps)"},
+    {"n": 3, "slug": "ar03_osteoporosis", "title_ar": "هشاشة العظام: العدو الصامت", "status": "todo", "source_hint": "osteoporosis definition (T-score), fragility fracture epidemiology, risk factors, prevention (calcium/vitamin D/weight-bearing exercise) - recent reviews"},
+    {"n": 4, "slug": "ar04_greenstick", "title_ar": "لماذا تنثني عظام الأطفال ولا تنكسر؟ (كسر الغصن الأخضر)", "status": "todo", "source_hint": "paediatric bone biomechanics, greenstick/torus (buckle) fractures"},
+    {"n": 5, "slug": "ar05_back_pain_red_flags", "title_ar": "ألم الظهر: متى يكون خطيراً؟", "status": "todo", "source_hint": "low back pain red flags; most acute LBP improves within weeks; cauda equina warning signs"},
+    {"n": 6, "slug": "ar06_cast_care", "title_ar": "الجبيرة: افعل ولا تفعل", "status": "todo", "source_hint": "cast care, warning signs (pain out of proportion, numbness, colour change), compartment syndrome awareness"},
+    {"n": 7, "slug": "ar07_carpal_tunnel", "title_ar": "تنميل اليد ليلاً: النفق الرسغي", "status": "todo", "source_hint": "carpal tunnel syndrome symptoms, median nerve, night splint evidence"},
+    {"n": 8, "slug": "ar08_bone_healing", "title_ar": "كيف يلتئم الكسر؟ رحلة العظم من الكسر إلى الشفاء", "status": "todo", "source_hint": "fracture healing stages: haematoma, soft callus, hard callus, remodelling; smoking delays union"}
+  ]
+}
