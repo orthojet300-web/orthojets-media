@@ -2,3 +2,7 @@ out/
 __pycache__/
 *.pyc
 still_*.jpg
+arabic/episodes/*/st/
+arabic/episodes/*/aud/
+arabic/episodes/*/video_noaudio.mp4
+arabic/episodes/*/music.wav
