@@ -6,7 +6,7 @@ A scheduled task fires **Saturday to Wednesday evenings** (18:58). Each run publ
 ## Channel rules (from the owner — do not change)
 - All on-screen medical content is in **English medical language**. The intro and outro keep their Arabic tagline.
 - **Reading time**: after each text block appears, hold it for 1.5–3.5 s, using the `Timeline` holds in `kit/ep_common.py`.
-- **Audio**: a calm licensed background track plays quietly under the episode body (-26 LUFS, fade in and out). The intro and outro keep their own sound.
+- **Audio**: a calm licensed background track plays quietly under the episode body (-32 LUFS, fade in and out). The intro and outro keep their own sound.
   - Tracks live in the PRIVATE repo `orthojet300-web/orthojets-music`. Clone it next to this repo as `../orthojets-music`.
   - `tools/build_episode.py` picks the track by episode number: track = ((N-1) mod count) + 1.
   - Only the `*.mp3` files at the TOP LEVEL of the music repo are in rotation (see its README). `blocked/` holds tracks that YouTube

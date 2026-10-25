@@ -21,7 +21,7 @@ def lufs(p):
 
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
-    target = -26.0
+    target = -32.0   # owner 2026-10-25: music was distracting; was -26
     if '--lufs' in sys.argv: target = float(sys.argv[sys.argv.index('--lufs') + 1])
     body, track, out = args[:3]
     d = dur(body); gain = target - lufs(track)

@@ -9,7 +9,7 @@ The weekday English episodes (Sun–Thu, PIPELINE.md) are unchanged.
   Medical labels in English on screen; narration in Arabic. Small `orthojets` watermark at the bottom.
 - Voice: Piper `ar_JO-kareem-medium`, Fusha with FULL tashkeel, `--length-scale 0.75`. Pause form (وقف) is applied by
   `tools/waqf.py` to the TTS text only. Captions: one word at a time (Cairo 900, 104 px, white with navy stroke, y = 445).
-- Music: `tools/music.py` (our own soft pad + bells, no percussion) at -30 LUFS under the voice at -16. Same file on all
+- Music: `tools/music.py` (our own soft pad + bells, no percussion) at -36 LUFS under the voice at -16 (owner 2026-10-25: quieter, it distracted). Same file on all
   three platforms (no third-party music -> no Content ID).
 - Structure: hook question (curiosity + stakes) -> 1 s logo sting -> explanation built step by step with ONE animated
   diagram that evolves (camera moves, zooms, highlights) -> what it means for you -> practical lesson -> CTA
