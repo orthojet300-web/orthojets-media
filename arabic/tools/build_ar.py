@@ -24,7 +24,7 @@ def main():
     tmp = tempfile.mkdtemp(prefix=slug + '_')
     v, m, body = os.path.join(tmp, 'v.wav'), os.path.join(tmp, 'm.wav'), os.path.join(tmp, 'body.mp4')
     run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(ep, 'voice.wav'), '-af', 'loudnorm=I=-16:TP=-1.5', '-ar', '44100', '-ac', '2', v])
-    run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(ep, 'music.wav'), '-af', 'loudnorm=I=-36:TP=-10', '-ar', '44100', '-ac', '2', m])
+    run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(ep, 'music.wav'), '-af', 'loudnorm=I=-36:TP=-9', '-ar', '44100', '-ac', '2', m])
     run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(ep, 'video_noaudio.mp4'), '-i', v, '-i', m, '-filter_complex',
          '[1:a][2:a]amix=inputs=2:normalize=0:duration=first[a]', '-map', '0:v', '-map', '[a]', '-c:v', 'copy',
          '-c:a', 'aac', '-b:a', '192k', body])
