@@ -284,9 +284,48 @@
       "n": 7,
       "slug": "ep07_scaphoid",
       "title": "Suspected scaphoid fracture: clinical signs and imaging pathway",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture",
-      "series": "dontmiss"
+      "series": "dontmiss",
+      "part": 1,
+      "source": "Parvizi J et al. J Hand Surg Br 1998;23(3):324-7; Yin ZG et al. JBJS Br 2012;94(8):1077-85; Backer HC et al. J Wrist Surg 2020;9(1):81-89; Mallee WH et al. Cochrane 2015;CD010023",
+      "published": "scheduled 2026-10-27 10:00 Africa/Tripoli (2026-10-26 taken by EP06)",
+      "release": "media branch: ep07_scaphoid.mp4 / ep07_scaphoid_yt.mp4",
+      "pmids": [
+        "9665518",
+        "22844049",
+        "32025360",
+        "26045406"
+      ],
+      "dois": [
+        "10.1016/s0266-7681(98)80050-8",
+        "10.1302/0301-620X.94B8.28998",
+        "10.1055/s-0039-1693147",
+        "10.1002/14651858.CD010023.pub2"
+      ],
+      "metricool_post_id": 405840140,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6929511505856055779",
+      "youtube_post_id": 405840494,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=334637362156424493",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "cover_ms": 2400,
+      "music": "track04_sigmamusicart-emotional-piano (TikTok/Instagram, from music/vault)",
+      "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
+      "checks": "design review ALL PASS (2nd round); independent fact check 14/14 PASS",
+      "carousel": {
+        "headline": "3 SIGNS",
+        "sub": "Suspected scaphoid fracture",
+        "points": [
+          "Snuffbox, tubercle, thumb compression: each 100% sensitive",
+          "All 3 combined within 24 h: specificity 74% (alone 9-48%)",
+          "Normal X-ray? MRI most accurate: sens 97.7%, spec 99.8%"
+        ],
+        "ref": "Parvizi et al., J Hand Surg Br 1998"
+      }
     },
     {
       "n": 8,
