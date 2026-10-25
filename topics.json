@@ -336,6 +336,14 @@
       "series": "classified"
     },
     {
+      "n": 14,
+      "slug": "ep14_cauda_equina",
+      "title": "Cauda equina syndrome red flags",
+      "status": "todo",
+      "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
+      "series": "dontmiss"
+    },
+    {
       "n": 9,
       "slug": "ep09_gartland",
       "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns",
@@ -350,14 +358,6 @@
       "status": "todo",
       "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)",
       "series": "numbers"
-    },
-    {
-      "n": 11,
-      "slug": "ep11_klein_line",
-      "title": "SCFE: Klein's line and Trethowan sign",
-      "status": "todo",
-      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
-      "series": "dontmiss"
     },
     {
       "n": 12,
@@ -376,11 +376,11 @@
       "series": "dontmiss"
     },
     {
-      "n": 14,
-      "slug": "ep14_cauda_equina",
-      "title": "Cauda equina syndrome red flags",
+      "n": 11,
+      "slug": "ep11_klein_line",
+      "title": "SCFE: Klein's line and Trethowan sign",
       "status": "todo",
-      "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
+      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
       "series": "dontmiss"
     },
     {
