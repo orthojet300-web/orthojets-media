@@ -1,460 +1,460 @@
 {
- "_note": "Episode queue for the Orthojets automation. The scheduled run takes the first item with status 'todo', builds it, and sets status to 'published' with date, release tag and Metricool post id. Add or reorder topics freely. Every number must be verified against the primary source (PubMed) before publishing; if a topic cannot be verified, set status 'blocked' with a reason and move on to the next.",
- "series": {
-  "numbers": {
-   "name": "Ortho Numbers",
-   "tag": "ORTHO NUMBERS",
-   "about": "one number every orthopod must know (thresholds, cut-offs, time limits)"
+  "_note": "Episode queue for the Orthojets automation. The scheduled run takes the first item with status 'todo', builds it, and sets status to 'published' with date, release tag and Metricool post id. Add or reorder topics freely. Every number must be verified against the primary source (PubMed) before publishing; if a topic cannot be verified, set status 'blocked' with a reason and move on to the next.",
+  "series": {
+    "numbers": {
+      "name": "Ortho Numbers",
+      "tag": "ORTHO NUMBERS",
+      "about": "one number every orthopod must know (thresholds, cut-offs, time limits)"
+    },
+    "classified": {
+      "name": "Classified",
+      "tag": "CLASSIFIED",
+      "about": "a classification drawn type by type, with what changes management"
+    },
+    "rules": {
+      "name": "Clinical Rules",
+      "tag": "CLINICAL RULES",
+      "about": "a validated clinical decision rule or criteria set"
+    },
+    "dontmiss": {
+      "name": "Don't Miss",
+      "tag": "DON'T MISS",
+      "about": "a can't-miss diagnosis: the signs, the test, the pitfall"
+    }
   },
-  "classified": {
-   "name": "Classified",
-   "tag": "CLASSIFIED",
-   "about": "a classification drawn type by type, with what changes management"
-  },
-  "rules": {
-   "name": "Clinical Rules",
-   "tag": "CLINICAL RULES",
-   "about": "a validated clinical decision rule or criteria set"
-  },
-  "dontmiss": {
-   "name": "Don't Miss",
-   "tag": "DON'T MISS",
-   "about": "a can't-miss diagnosis: the signs, the test, the pitfall"
-  }
- },
- "episodes": [
-  {
-   "n": 1,
-   "slug": "ep01_tad",
-   "title": "Tip-Apex Distance < 25 mm",
-   "status": "published",
-   "source": "Baumgaertner MR et al. JBJS Am 1995;77(7):1058-64",
-   "published": "2026-10 (posted manually)",
-   "crosspost": {
-    "networks": [
-     "instagram",
-     "youtube"
-    ],
-    "scheduled": "2026-10-19 18:00 Africa/Tripoli",
-    "metricool_post_id": 400156580,
-    "cover_ms": 5500,
-    "pmids": [
-     "7608228"
-    ],
-    "music": "track01_the-mountain-study-music",
-    "youtube_post_id": 400213761,
-    "note": "YouTube failed at 18:00 (title contained <); rescheduled YouTube alone 18:20",
-    "youtube_musicfree_post_id": 401159336,
-    "youtube_music": "yt1_morning_rounds (original)"
-   },
-   "series": "numbers",
-   "part": 1,
-   "carousel": {
-    "headline": "TAD < 25 mm",
-    "sub": "The number that saves your lag screw",
-    "points": [
-     "TAD = tip-to-apex distance on AP + lateral X-rays, corrected for magnification",
-     "None of 120 screws with TAD of 25 mm or less cut out",
-     "Mean TAD: 24 mm in healed fractures vs 38 mm in cut-outs"
-    ],
-    "ref": "Baumgaertner et al., JBJS Am 1995;77(7):1058-64"
-   }
-  },
-  {
-   "n": 2,
-   "slug": "ep02_acs",
-   "title": "Acute compartment syndrome: Delta P < 30 mmHg",
-   "status": "published",
-   "source": "McQueen & Court-Brown JBJS Br 1996;78(1):99-104; Kakar et al. JOT 2007;21(2):99-103",
-   "published": "scheduled 2026-10-20 10:00 Africa/Tripoli",
-   "metricool_post_id": 400213844,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=3226306365346365565",
-   "pmids": [
-    "8898137",
-    "17304064"
-   ],
-   "music": "track02 (Content ID claim on YouTube: blocked worldwide); YouTube re-uploaded 2026-10-20 11:00 with track01",
-   "cover_ms": 5000,
-   "series": "numbers",
-   "part": 2,
-   "carousel": {
-    "headline": "ΔP < 30 mmHg",
-    "sub": "The number that decides a fasciotomy",
-    "points": [
-     "ΔP = diastolic BP minus intracompartmental pressure",
-     "Don't rely on absolute compartment pressure alone",
-     "Palpable pulses do NOT exclude compartment syndrome"
-    ],
-    "ref": "McQueen & Court-Brown, JBJS Br 1996 · Kakar et al., JOT 2007"
-   },
-   "youtube_reupload_post_id": 400855167,
-   "youtube_musicfree_post_id": 401159458,
-   "youtube_music": "yt2_soft_horizon (original)"
-  },
-  {
-   "n": 3,
-   "slug": "ep03_kocher",
-   "title": "Kocher criteria: septic arthritis vs transient synovitis of the hip in children",
-   "status": "published",
-   "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006",
-   "series": "rules",
-   "source": "Kocher MS et al. JBJS Am 1999;81(12):1662-70; Kocher MS et al. JBJS Am 2004;86(8):1629-35; Caird MS et al. JBJS Am 2006;88(6):1251-7",
-   "published": "scheduled 2026-10-21 10:00 Africa/Tripoli (2026-10-20 already taken by EP02)",
-   "release": "media branch: ep03_kocher.mp4",
-   "metricool_post_id": 401088290,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-403471730596298456",
-   "networks": [
-    "tiktok",
-    "instagram",
-    "youtube"
-   ],
-   "pmids": [
-    "10608376",
-    "15292409",
-    "16757758"
-   ],
-   "dois": [
-    "10.2106/00004623-199912000-00002",
-    "10.2106/00004623-200408000-00005",
-    "10.2106/JBJS.E.00216"
-   ],
-   "music": "track01_the-mountain-study-music (replaced track03 before publishing: Content ID risk)",
-   "cover_ms": 2400,
-   "part": 1,
-   "carousel": {
-    "headline": "KOCHER 4",
-    "sub": "Septic hip or transient synovitis?",
-    "points": [
-     "Fever history, non-weight-bearing, ESR at least 40, WBC over 12,000",
-     "3 of 4 predictors = 93.1% septic; none = under 0.2%",
-     "Add CRP over 2.0 mg/dL (Caird 2006)"
-    ],
-    "ref": "Kocher et al., JBJS Am 1999 · Caird et al., JBJS Am 2006"
-   },
-   "youtube_post_id": 401609991,
-   "youtube_music": "piano_3_momentum (own)"
-  },
-  {
-   "n": 4,
-   "slug": "ep04_ottawa_ankle",
-   "title": "Ottawa ankle rules",
-   "status": "published",
-   "source_hint": "Stiell IG et al. Ann Emerg Med 1992 / JAMA 1993; sensitivity meta-analysis Bachmann BMJ 2003",
-   "series": "rules",
-   "source": "Stiell IG et al. Ann Emerg Med 1992;21(4):384-90; Stiell IG et al. JAMA 1993;269(9):1127-32; Bachmann LM et al. BMJ 2003;326(7386):417",
-   "published": "scheduled 2026-10-22 10:00 Africa/Tripoli (2026-10-21 already taken by EP03)",
-   "release": "media branch: ep04_ottawa_ankle.mp4 (+ ep04_ottawa_ankle_yt.mp4 for YouTube)",
-   "metricool_post_id": 401623283,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1643734156627166207",
-   "networks": [
-    "tiktok",
-    "instagram",
-    "youtube"
-   ],
-   "youtube_post_id": 401623309,
-   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=5376614028762892933",
-   "pmids": [
-    "1554175",
-    "8433468",
-    "12595378",
-    "22962897",
-    "40041750"
-   ],
-   "dois": [
-    "10.1016/s0196-0644(05)82656-3",
-    "10.1001/jama.269.9.1127",
-    "10.1136/bmj.326.7386.417",
-    "10.1055/s-0044-1800938"
-   ],
-   "music": "piano_1_rise (own) - re-rendered 2026-10-21 01:45 after the autopilot run had no music",
-   "youtube_music": "piano_1_rise (own)",
-   "cover_ms": 2400,
-   "part": 2,
-   "carousel": {
-    "headline": "OTTAWA 4+4",
-    "sub": "Ankle X-ray or not?",
-    "points": [
-     "Tender posterior edge/tip of either malleolus (distal 6 cm), 5th MT base or navicular",
-     "Or can't bear weight for 4 steps, right after injury and in the ED",
-     "Negative LR 0.08: fracture under 1.4% when the rule is negative"
-    ],
-    "ref": "Stiell et al., JAMA 1993 · Bachmann et al., BMJ 2003"
-   }
-  },
-  {
-   "n": 5,
-   "slug": "ep05_gustilo",
-   "title": "Gustilo-Anderson open fracture classification and antibiotic timing",
-   "status": "published",
-   "source_hint": "Gustilo & Anderson JBJS Am 1976; Gustilo 1984 (IIIA/B/C); antibiotic timing Lack et al. JOT 2015 (>66 min increased infection)",
-   "series": "classified",
-   "source": "Gustilo RB, Anderson JT. J Bone Joint Surg Am 1976;58(4):453-8; Gustilo RB et al. J Trauma 1984;24(8):742-6; Lack WD et al. J Orthop Trauma 2015;29(1):1-6; Elniel AR, Giannoudis PV. EFORT Open Rev 2018; Brumback RJ, Jones AL. JBJS Am 1994;76(8):1162-6; Indian J Orthop 2018 (PMC6142800)",
-   "published": "scheduled 2026-10-25 10:00 Africa/Tripoli (2026-10-22 taken by EP04; Fri/Sat off)",
-   "release": "media branch: ep05_gustilo.mp4 (+ ep05_gustilo_yt.mp4 for YouTube)",
-   "metricool_post_id": 403700952,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=4738264099020359525",
-   "networks": [
-    "tiktok",
-    "instagram",
-    "youtube"
-   ],
-   "youtube_post_id": 404151435,
-   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=8278181456638328967",
-   "pmids": [
-    "773941",
-    "6471139",
-    "25526095",
-    "29951271",
-    "8056796",
-    "30237604"
-   ],
-   "dois": [
-    "10.1097/00005373-198408000-00009",
-    "10.1097/BOT.0000000000000262",
-    "10.1302/2058-5241.3.170072",
-    "10.2106/00004623-199408000-00006",
-    "10.4103/ortho.IJOrtho_319_17"
-   ],
-   "music": "user_track_calm95_loop (re-rendered 2026-10-23 in the violet Classified theme)",
-   "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library), violet render",
-   "cover_ms": 2400,
-   "part": 1,
-   "carousel": {
-    "headline": "GUSTILO I-III",
-    "sub": "Grade open fractures right",
-    "points": [
-     "Type I under 1 cm, clean; Type II over 1 cm, no flaps; III high energy",
-     "Wound sepsis IIIA 4%, IIIB 52%, IIIC 42% (Gustilo 1984)",
-     "Antibiotics after 66 min: OR 3.78 for deep infection (Lack 2015)"
-    ],
-    "ref": "Gustilo et al., J Trauma 1984 · Lack et al., JOT 2015"
-   }
-  },
-  {
-   "n": 6,
-   "slug": "ep06_hip_dislocation",
-   "title": "Traumatic hip dislocation: reduce within 6 hours",
-   "status": "published",
-   "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)",
-   "series": "numbers",
-   "source": "Hougaard K, Thomsen PB. Arch Orthop Trauma Surg 1986;106(1):32-5; Hougaard K, Thomsen PB. J Bone Joint Surg Am 1987;69(5):679-83; Kellam P, Ostrum RF. J Orthop Trauma 2016;30(1):10-6; Gautier E et al. JBJS Br 2000;82(5):679-83; Cornwall R, Radomisli TE. Clin Orthop 2000;(377):84-91; Mandell JC et al. Arthroscopy 2018;34(3):917-27",
-   "published": "scheduled 2026-10-26 10:00 Africa/Tripoli (2026-10-25 taken by EP05)",
-   "release": "media branch: ep06_hip_dislocation.mp4 (+ ep06_hip_dislocation_yt.mp4 for YouTube)",
-   "metricool_post_id": 405751710,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-9187677107243825675",
-   "networks": [
-    "tiktok",
-    "instagram",
-    "youtube"
-   ],
-   "youtube_post_id": 405751774,
-   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4989504511631406938",
-   "pmids": [
-    "3566493",
-    "3597467",
-    "26849386",
-    "10963165",
-    "10943188",
-    "29146169"
-   ],
-   "dois": [
-    "10.1007/BF00435649",
-    "10.1097/BOT.0000000000000419",
-    "10.1302/0301-620x.82b5.10426",
-    "10.1097/00003086-200008000-00012",
-    "10.1016/j.arthro.2017.08.295"
-   ],
-   "music": "track01_the-mountain-study-music (vault)",
-   "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library)",
-   "cover_ms": 2400,
-   "part": 3,
-   "carousel": {
-    "headline": "6 HOURS",
-    "sub": "to reduce a dislocated hip",
-    "points": [
-     "AVN 4.8% if reduced within 6 h vs 52.9% after 6 h",
-     "Excellent/good hip at 14 years: 88% vs 42%",
-     "Reduced after 12 h: AVN odds ratio 5.6 (meta-analysis)"
-    ],
-    "ref": "Hougaard & Thomsen, Arch Orthop Trauma Surg 1986"
-   },
-   "music_note": "re-rendered 2026-10-25 with music 6 dB quieter (-32 LUFS) on owner request"
-  },
-  {
-   "n": 7,
-   "slug": "ep07_scaphoid",
-   "title": "Suspected scaphoid fracture: clinical signs and imaging pathway",
-   "status": "published",
-   "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture",
-   "series": "dontmiss",
-   "part": 1,
-   "source": "Parvizi J et al. J Hand Surg Br 1998;23(3):324-7; Yin ZG et al. JBJS Br 2012;94(8):1077-85; Backer HC et al. J Wrist Surg 2020;9(1):81-89; Mallee WH et al. Cochrane 2015;CD010023",
-   "published": "scheduled 2026-10-27 10:00 Africa/Tripoli (2026-10-26 taken by EP06)",
-   "release": "media branch: ep07_scaphoid.mp4 / ep07_scaphoid_yt.mp4",
-   "pmids": [
-    "9665518",
-    "22844049",
-    "32025360",
-    "26045406"
-   ],
-   "dois": [
-    "10.1016/s0266-7681(98)80050-8",
-    "10.1302/0301-620X.94B8.28998",
-    "10.1055/s-0039-1693147",
-    "10.1002/14651858.CD010023.pub2"
-   ],
-   "metricool_post_id": 405840140,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6929511505856055779",
-   "youtube_post_id": 405840494,
-   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=334637362156424493",
-   "networks": [
-    "tiktok",
-    "instagram",
-    "youtube"
-   ],
-   "cover_ms": 2400,
-   "music": "track04_sigmamusicart-emotional-piano (TikTok/Instagram, from music/vault)",
-   "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
-   "checks": "design review ALL PASS (2nd round); independent fact check 14/14 PASS",
-   "carousel": {
-    "headline": "3 SIGNS",
-    "sub": "Suspected scaphoid fracture",
-    "points": [
-     "Snuffbox, tubercle, thumb compression: each 100% sensitive",
-     "All 3 combined within 24 h: specificity 74% (alone 9-48%)",
-     "Normal X-ray? MRI most accurate: sens 97.7%, spec 99.8%"
-    ],
-    "ref": "Parvizi et al., J Hand Surg Br 1998"
-   }
-  },
-  {
-   "n": 8,
-   "slug": "ep08_salter_harris",
-   "title": "Salter-Harris classification: the 5 types and which ones change management",
-   "status": "published",
-   "source_hint": "Salter & Harris JBJS Am 1963",
-   "series": "classified",
-   "part": 2,
-   "source": "Peterson HA et al. J Pediatr Orthop 1994;14(4):423-30; Basener CJ et al. J Orthop Trauma 2009;23(9):663-7; Sepulveda M et al. EFORT Open Rev 2022;7(4):264-73; Mann DC, Rajmaira S. J Pediatr Orthop 1990;10(6):713-6; Venkatadass K et al. Indian J Orthop 2020;55(1):35-46; Brown JH, DeLuca SA. Am Fam Physician 1992;46(4):1180-4 (type definitions)",
-   "published": "scheduled 2026-10-28 10:00 Africa/Tripoli (2026-10-27 taken by EP07)",
-   "release": "media branch: ep08_salter_harris.mp4 / ep08_salter_harris_yt.mp4",
-   "pmids": [
-    "8077422",
-    "19897989",
-    "37931413",
-    "2250054",
-    "33569097",
-    "1414883"
-   ],
-   "dois": [
-    "10.1097/01241398-199407000-00002",
-    "10.1097/BOT.0b013e3181a4f25b",
-    "10.1530/EOR-21-0110",
-    "10.1097/01241398-199011000-00002",
-    "10.1007/s43465-020-00270-9"
-   ],
-   "metricool_post_id": 406939588,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-693920178162939760",
-   "youtube_post_id": 406940195,
-   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6030625501119988913",
-   "networks": [
-    "tiktok",
-    "instagram",
-    "youtube"
-   ],
-   "cover_ms": 2400,
-   "music": "track05_leberch-inspirational-calm-piano (TikTok/Instagram, from music/vault; private repo not reachable)",
-   "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
-   "checks": "design review ALL PASS (3rd round); independent fact check 13/13 PASS",
-   "carousel": {
-    "headline": "SALTER-HARRIS",
-    "sub": "III & IV = into the joint",
-    "points": [
-     "Type II most common: 54% of 951 physeal fractures",
-     "III & IV break the joint surface: anatomic reduction + fixation",
-     "Distal femur: growth disturbance 52%, 58% even in type II"
-    ],
-    "ref": "Basener et al., J Orthop Trauma 2009"
-   }
-  },
-  {
-   "n": 14,
-   "slug": "ep14_cauda_equina",
-   "title": "Cauda equina syndrome red flags",
-   "status": "todo",
-   "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
-   "series": "dontmiss"
-  },
-  {
-   "n": 9,
-   "slug": "ep09_gartland",
-   "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns",
-   "status": "todo",
-   "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)",
-   "series": "classified"
-  },
-  {
-   "n": 10,
-   "slug": "ep10_mess",
-   "title": "Mangled Extremity Severity Score (MESS >= 7)",
-   "status": "todo",
-   "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)",
-   "series": "numbers"
-  },
-  {
-   "n": 12,
-   "slug": "ep12_fat_embolism",
-   "title": "Fat embolism syndrome: Gurd criteria",
-   "status": "todo",
-   "source_hint": "Gurd AR, Wilson RI. JBJS Br 1974",
-   "series": "rules"
-  },
-  {
-   "n": 13,
-   "slug": "ep13_achilles",
-   "title": "Acute Achilles rupture: Simmonds-Thompson test",
-   "status": "todo",
-   "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)",
-   "series": "dontmiss"
-  },
-  {
-   "n": 11,
-   "slug": "ep11_klein_line",
-   "title": "SCFE: Klein's line and Trethowan sign",
-   "status": "todo",
-   "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
-   "series": "dontmiss"
-  },
-  {
-   "n": 15,
-   "slug": "ep15_schatzker",
-   "title": "Schatzker classification of tibial plateau fractures",
-   "status": "todo",
-   "source_hint": "Schatzker J et al. Clin Orthop 1979",
-   "series": "classified"
-  }
- ],
- "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner).",
- "carousels": [
-  {
-   "date": "2026-10-25 18:00 Africa/Tripoli",
-   "week": "Oct 19 - 25",
-   "episodes": [
-    "ep01_tad",
-    "ep02_acs",
-    "ep03_kocher",
-    "ep04_ottawa_ankle",
-    "ep05_gustilo"
-   ],
-   "slides": 7,
-   "networks": [
-    "instagram",
-    "tiktok"
-   ],
-   "media": "media branch: carousel_20261025/slide01-07.jpg",
-   "metricool_post_id": 405208614,
-   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5415755961258390488",
-   "note": "EP01 included: its Instagram/YouTube cross-post went live 2026-10-19 and it had never been in a carousel"
-  }
- ]
+  "episodes": [
+    {
+      "n": 1,
+      "slug": "ep01_tad",
+      "title": "Tip-Apex Distance < 25 mm",
+      "status": "published",
+      "source": "Baumgaertner MR et al. JBJS Am 1995;77(7):1058-64",
+      "published": "2026-10 (posted manually)",
+      "crosspost": {
+        "networks": [
+          "instagram",
+          "youtube"
+        ],
+        "scheduled": "2026-10-19 18:00 Africa/Tripoli",
+        "metricool_post_id": 400156580,
+        "cover_ms": 5500,
+        "pmids": [
+          "7608228"
+        ],
+        "music": "track01_the-mountain-study-music",
+        "youtube_post_id": 400213761,
+        "note": "YouTube failed at 18:00 (title contained <); rescheduled YouTube alone 18:20",
+        "youtube_musicfree_post_id": 401159336,
+        "youtube_music": "yt1_morning_rounds (original)"
+      },
+      "series": "numbers",
+      "part": 1,
+      "carousel": {
+        "headline": "TAD < 25 mm",
+        "sub": "The number that saves your lag screw",
+        "points": [
+          "TAD = tip-to-apex distance on AP + lateral X-rays, corrected for magnification",
+          "None of 120 screws with TAD of 25 mm or less cut out",
+          "Mean TAD: 24 mm in healed fractures vs 38 mm in cut-outs"
+        ],
+        "ref": "Baumgaertner et al., JBJS Am 1995;77(7):1058-64"
+      }
+    },
+    {
+      "n": 2,
+      "slug": "ep02_acs",
+      "title": "Acute compartment syndrome: Delta P < 30 mmHg",
+      "status": "published",
+      "source": "McQueen & Court-Brown JBJS Br 1996;78(1):99-104; Kakar et al. JOT 2007;21(2):99-103",
+      "published": "scheduled 2026-10-20 10:00 Africa/Tripoli",
+      "metricool_post_id": 400213844,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=3226306365346365565",
+      "pmids": [
+        "8898137",
+        "17304064"
+      ],
+      "music": "track02 (Content ID claim on YouTube: blocked worldwide); YouTube re-uploaded 2026-10-20 11:00 with track01",
+      "cover_ms": 5000,
+      "series": "numbers",
+      "part": 2,
+      "carousel": {
+        "headline": "ΔP < 30 mmHg",
+        "sub": "The number that decides a fasciotomy",
+        "points": [
+          "ΔP = diastolic BP minus intracompartmental pressure",
+          "Don't rely on absolute compartment pressure alone",
+          "Palpable pulses do NOT exclude compartment syndrome"
+        ],
+        "ref": "McQueen & Court-Brown, JBJS Br 1996 · Kakar et al., JOT 2007"
+      },
+      "youtube_reupload_post_id": 400855167,
+      "youtube_musicfree_post_id": 401159458,
+      "youtube_music": "yt2_soft_horizon (original)"
+    },
+    {
+      "n": 3,
+      "slug": "ep03_kocher",
+      "title": "Kocher criteria: septic arthritis vs transient synovitis of the hip in children",
+      "status": "published",
+      "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006",
+      "series": "rules",
+      "source": "Kocher MS et al. JBJS Am 1999;81(12):1662-70; Kocher MS et al. JBJS Am 2004;86(8):1629-35; Caird MS et al. JBJS Am 2006;88(6):1251-7",
+      "published": "scheduled 2026-10-21 10:00 Africa/Tripoli (2026-10-20 already taken by EP02)",
+      "release": "media branch: ep03_kocher.mp4",
+      "metricool_post_id": 401088290,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-403471730596298456",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "pmids": [
+        "10608376",
+        "15292409",
+        "16757758"
+      ],
+      "dois": [
+        "10.2106/00004623-199912000-00002",
+        "10.2106/00004623-200408000-00005",
+        "10.2106/JBJS.E.00216"
+      ],
+      "music": "track01_the-mountain-study-music (replaced track03 before publishing: Content ID risk)",
+      "cover_ms": 2400,
+      "part": 1,
+      "carousel": {
+        "headline": "KOCHER 4",
+        "sub": "Septic hip or transient synovitis?",
+        "points": [
+          "Fever history, non-weight-bearing, ESR at least 40, WBC over 12,000",
+          "3 of 4 predictors = 93.1% septic; none = under 0.2%",
+          "Add CRP over 2.0 mg/dL (Caird 2006)"
+        ],
+        "ref": "Kocher et al., JBJS Am 1999 · Caird et al., JBJS Am 2006"
+      },
+      "youtube_post_id": 401609991,
+      "youtube_music": "piano_3_momentum (own)"
+    },
+    {
+      "n": 4,
+      "slug": "ep04_ottawa_ankle",
+      "title": "Ottawa ankle rules",
+      "status": "published",
+      "source_hint": "Stiell IG et al. Ann Emerg Med 1992 / JAMA 1993; sensitivity meta-analysis Bachmann BMJ 2003",
+      "series": "rules",
+      "source": "Stiell IG et al. Ann Emerg Med 1992;21(4):384-90; Stiell IG et al. JAMA 1993;269(9):1127-32; Bachmann LM et al. BMJ 2003;326(7386):417",
+      "published": "scheduled 2026-10-22 10:00 Africa/Tripoli (2026-10-21 already taken by EP03)",
+      "release": "media branch: ep04_ottawa_ankle.mp4 (+ ep04_ottawa_ankle_yt.mp4 for YouTube)",
+      "metricool_post_id": 401623283,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1643734156627166207",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "youtube_post_id": 401623309,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=5376614028762892933",
+      "pmids": [
+        "1554175",
+        "8433468",
+        "12595378",
+        "22962897",
+        "40041750"
+      ],
+      "dois": [
+        "10.1016/s0196-0644(05)82656-3",
+        "10.1001/jama.269.9.1127",
+        "10.1136/bmj.326.7386.417",
+        "10.1055/s-0044-1800938"
+      ],
+      "music": "piano_1_rise (own) - re-rendered 2026-10-21 01:45 after the autopilot run had no music",
+      "youtube_music": "piano_1_rise (own)",
+      "cover_ms": 2400,
+      "part": 2,
+      "carousel": {
+        "headline": "OTTAWA 4+4",
+        "sub": "Ankle X-ray or not?",
+        "points": [
+          "Tender posterior edge/tip of either malleolus (distal 6 cm), 5th MT base or navicular",
+          "Or can't bear weight for 4 steps, right after injury and in the ED",
+          "Negative LR 0.08: fracture under 1.4% when the rule is negative"
+        ],
+        "ref": "Stiell et al., JAMA 1993 · Bachmann et al., BMJ 2003"
+      }
+    },
+    {
+      "n": 5,
+      "slug": "ep05_gustilo",
+      "title": "Gustilo-Anderson open fracture classification and antibiotic timing",
+      "status": "published",
+      "source_hint": "Gustilo & Anderson JBJS Am 1976; Gustilo 1984 (IIIA/B/C); antibiotic timing Lack et al. JOT 2015 (>66 min increased infection)",
+      "series": "classified",
+      "source": "Gustilo RB, Anderson JT. J Bone Joint Surg Am 1976;58(4):453-8; Gustilo RB et al. J Trauma 1984;24(8):742-6; Lack WD et al. J Orthop Trauma 2015;29(1):1-6; Elniel AR, Giannoudis PV. EFORT Open Rev 2018; Brumback RJ, Jones AL. JBJS Am 1994;76(8):1162-6; Indian J Orthop 2018 (PMC6142800)",
+      "published": "scheduled 2026-10-25 10:00 Africa/Tripoli (2026-10-22 taken by EP04; Fri/Sat off)",
+      "release": "media branch: ep05_gustilo.mp4 (+ ep05_gustilo_yt.mp4 for YouTube)",
+      "metricool_post_id": 403700952,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=4738264099020359525",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "youtube_post_id": 404151435,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=8278181456638328967",
+      "pmids": [
+        "773941",
+        "6471139",
+        "25526095",
+        "29951271",
+        "8056796",
+        "30237604"
+      ],
+      "dois": [
+        "10.1097/00005373-198408000-00009",
+        "10.1097/BOT.0000000000000262",
+        "10.1302/2058-5241.3.170072",
+        "10.2106/00004623-199408000-00006",
+        "10.4103/ortho.IJOrtho_319_17"
+      ],
+      "music": "user_track_calm95_loop (re-rendered 2026-10-23 in the violet Classified theme)",
+      "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library), violet render",
+      "cover_ms": 2400,
+      "part": 1,
+      "carousel": {
+        "headline": "GUSTILO I-III",
+        "sub": "Grade open fractures right",
+        "points": [
+          "Type I under 1 cm, clean; Type II over 1 cm, no flaps; III high energy",
+          "Wound sepsis IIIA 4%, IIIB 52%, IIIC 42% (Gustilo 1984)",
+          "Antibiotics after 66 min: OR 3.78 for deep infection (Lack 2015)"
+        ],
+        "ref": "Gustilo et al., J Trauma 1984 · Lack et al., JOT 2015"
+      }
+    },
+    {
+      "n": 6,
+      "slug": "ep06_hip_dislocation",
+      "title": "Traumatic hip dislocation: reduce within 6 hours",
+      "status": "published",
+      "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)",
+      "series": "numbers",
+      "source": "Hougaard K, Thomsen PB. Arch Orthop Trauma Surg 1986;106(1):32-5; Hougaard K, Thomsen PB. J Bone Joint Surg Am 1987;69(5):679-83; Kellam P, Ostrum RF. J Orthop Trauma 2016;30(1):10-6; Gautier E et al. JBJS Br 2000;82(5):679-83; Cornwall R, Radomisli TE. Clin Orthop 2000;(377):84-91; Mandell JC et al. Arthroscopy 2018;34(3):917-27",
+      "published": "scheduled 2026-10-26 10:00 Africa/Tripoli (2026-10-25 taken by EP05)",
+      "release": "media branch: ep06_hip_dislocation.mp4 (+ ep06_hip_dislocation_yt.mp4 for YouTube)",
+      "metricool_post_id": 405751710,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-9187677107243825675",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "youtube_post_id": 405751774,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4989504511631406938",
+      "pmids": [
+        "3566493",
+        "3597467",
+        "26849386",
+        "10963165",
+        "10943188",
+        "29146169"
+      ],
+      "dois": [
+        "10.1007/BF00435649",
+        "10.1097/BOT.0000000000000419",
+        "10.1302/0301-620x.82b5.10426",
+        "10.1097/00003086-200008000-00012",
+        "10.1016/j.arthro.2017.08.295"
+      ],
+      "music": "track01_the-mountain-study-music (vault)",
+      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library)",
+      "cover_ms": 2400,
+      "part": 3,
+      "carousel": {
+        "headline": "6 HOURS",
+        "sub": "to reduce a dislocated hip",
+        "points": [
+          "AVN 4.8% if reduced within 6 h vs 52.9% after 6 h",
+          "Excellent/good hip at 14 years: 88% vs 42%",
+          "Reduced after 12 h: AVN odds ratio 5.6 (meta-analysis)"
+        ],
+        "ref": "Hougaard & Thomsen, Arch Orthop Trauma Surg 1986"
+      },
+      "music_note": "re-rendered 2026-10-25 with music 6 dB quieter (-32 LUFS) on owner request"
+    },
+    {
+      "n": 7,
+      "slug": "ep07_scaphoid",
+      "title": "Suspected scaphoid fracture: clinical signs and imaging pathway",
+      "status": "published",
+      "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture",
+      "series": "dontmiss",
+      "part": 1,
+      "source": "Parvizi J et al. J Hand Surg Br 1998;23(3):324-7; Yin ZG et al. JBJS Br 2012;94(8):1077-85; Backer HC et al. J Wrist Surg 2020;9(1):81-89; Mallee WH et al. Cochrane 2015;CD010023",
+      "published": "scheduled 2026-10-27 10:00 Africa/Tripoli (2026-10-26 taken by EP06)",
+      "release": "media branch: ep07_scaphoid.mp4 / ep07_scaphoid_yt.mp4",
+      "pmids": [
+        "9665518",
+        "22844049",
+        "32025360",
+        "26045406"
+      ],
+      "dois": [
+        "10.1016/s0266-7681(98)80050-8",
+        "10.1302/0301-620X.94B8.28998",
+        "10.1055/s-0039-1693147",
+        "10.1002/14651858.CD010023.pub2"
+      ],
+      "metricool_post_id": 405840140,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6929511505856055779",
+      "youtube_post_id": 405840494,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=334637362156424493",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "cover_ms": 2400,
+      "music": "track04_sigmamusicart-emotional-piano (TikTok/Instagram, from music/vault)",
+      "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
+      "checks": "design review ALL PASS (2nd round); independent fact check 14/14 PASS",
+      "carousel": {
+        "headline": "3 SIGNS",
+        "sub": "Suspected scaphoid fracture",
+        "points": [
+          "Snuffbox, tubercle, thumb compression: each 100% sensitive",
+          "All 3 combined within 24 h: specificity 74% (alone 9-48%)",
+          "Normal X-ray? MRI most accurate: sens 97.7%, spec 99.8%"
+        ],
+        "ref": "Parvizi et al., J Hand Surg Br 1998"
+      }
+    },
+    {
+      "n": 8,
+      "slug": "ep08_salter_harris",
+      "title": "Salter-Harris classification: the 5 types and which ones change management",
+      "status": "published",
+      "source_hint": "Salter & Harris JBJS Am 1963",
+      "series": "classified",
+      "part": 2,
+      "source": "Peterson HA et al. J Pediatr Orthop 1994;14(4):423-30; Basener CJ et al. J Orthop Trauma 2009;23(9):663-7; Sepulveda M et al. EFORT Open Rev 2022;7(4):264-73; Mann DC, Rajmaira S. J Pediatr Orthop 1990;10(6):713-6; Venkatadass K et al. Indian J Orthop 2020;55(1):35-46; Brown JH, DeLuca SA. Am Fam Physician 1992;46(4):1180-4 (type definitions)",
+      "published": "scheduled 2026-10-28 10:00 Africa/Tripoli (2026-10-27 taken by EP07)",
+      "release": "media branch: ep08_salter_harris.mp4 / ep08_salter_harris_yt.mp4",
+      "pmids": [
+        "8077422",
+        "19897989",
+        "37931413",
+        "2250054",
+        "33569097",
+        "1414883"
+      ],
+      "dois": [
+        "10.1097/01241398-199407000-00002",
+        "10.1097/BOT.0b013e3181a4f25b",
+        "10.1530/EOR-21-0110",
+        "10.1097/01241398-199011000-00002",
+        "10.1007/s43465-020-00270-9"
+      ],
+      "metricool_post_id": 406939588,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-693920178162939760",
+      "youtube_post_id": 406940195,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6030625501119988913",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "cover_ms": 2400,
+      "music": "track05_leberch-inspirational-calm-piano (TikTok/Instagram, from music/vault; private repo not reachable)",
+      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
+      "checks": "design review ALL PASS (3rd round); independent fact check 13/13 PASS",
+      "carousel": {
+        "headline": "SALTER-HARRIS",
+        "sub": "III & IV = into the joint",
+        "points": [
+          "Type II most common: 54% of 951 physeal fractures",
+          "III & IV break the joint surface: anatomic reduction + fixation",
+          "Distal femur: growth disturbance 52%, 58% even in type II"
+        ],
+        "ref": "Basener et al., J Orthop Trauma 2009"
+      }
+    },
+    {
+      "n": 14,
+      "slug": "ep14_cauda_equina",
+      "title": "Cauda equina syndrome red flags",
+      "status": "todo",
+      "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
+      "series": "dontmiss"
+    },
+    {
+      "n": 9,
+      "slug": "ep09_gartland",
+      "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns",
+      "status": "todo",
+      "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)",
+      "series": "classified"
+    },
+    {
+      "n": 10,
+      "slug": "ep10_mess",
+      "title": "Mangled Extremity Severity Score (MESS >= 7)",
+      "status": "todo",
+      "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)",
+      "series": "numbers"
+    },
+    {
+      "n": 12,
+      "slug": "ep12_fat_embolism",
+      "title": "Fat embolism syndrome: Gurd criteria",
+      "status": "todo",
+      "source_hint": "Gurd AR, Wilson RI. JBJS Br 1974",
+      "series": "rules"
+    },
+    {
+      "n": 13,
+      "slug": "ep13_achilles",
+      "title": "Acute Achilles rupture: Simmonds-Thompson test",
+      "status": "todo",
+      "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)",
+      "series": "dontmiss"
+    },
+    {
+      "n": 11,
+      "slug": "ep11_klein_line",
+      "title": "SCFE: Klein's line and Trethowan sign",
+      "status": "todo",
+      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
+      "series": "dontmiss"
+    },
+    {
+      "n": 15,
+      "slug": "ep15_schatzker",
+      "title": "Schatzker classification of tibial plateau fractures",
+      "status": "todo",
+      "source_hint": "Schatzker J et al. Clin Orthop 1979",
+      "series": "classified"
+    }
+  ],
+  "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner).",
+  "carousels": [
+    {
+      "date": "2026-10-25 18:00 Africa/Tripoli",
+      "week": "Oct 19 - 25",
+      "episodes": [
+        "ep01_tad",
+        "ep02_acs",
+        "ep03_kocher",
+        "ep04_ottawa_ankle",
+        "ep05_gustilo"
+      ],
+      "slides": 7,
+      "networks": [
+        "instagram",
+        "tiktok"
+      ],
+      "media": "media branch: carousel_20261025/slide01-07.jpg",
+      "metricool_post_id": 405208614,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5415755961258390488",
+      "note": "EP01 included: its Instagram/YouTube cross-post went live 2026-10-19 and it had never been in a carousel"
+    }
+  ]
 }
