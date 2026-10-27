@@ -380,10 +380,53 @@
     {
       "n": 14,
       "slug": "ep14_cauda_equina",
-      "title": "Cauda equina syndrome red flags",
-      "status": "todo",
+      "title": "Cauda equina syndrome: red flags, the bladder scan and the 48 h window",
+      "status": "published",
       "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
-      "series": "dontmiss"
+      "series": "dontmiss",
+      "part": 2,
+      "source": "Ahn UM et al. Spine 2000;25(12):1515-22; Dionne N et al. Musculoskelet Sci Pract 2019;42:125-33; Katzouraki G et al. Bone Joint J 2020;102-B(6):677-82; Boktor J et al. Bone Joint J 2023;105-B(5):487-95; Srikandarajah N et al. Spine 2015;40(8):580-3; Najjar E et al. Bone Joint J 2026;108-B(3):416-24",
+      "published": "scheduled 2026-10-29 10:00 Africa/Tripoli (2026-10-28 taken by EP08)",
+      "release": "media branch: ep14_cauda_equina.mp4 / ep14_cauda_equina_yt.mp4",
+      "pmids": [
+        "10851100",
+        "31132655",
+        "32475252",
+        "37121596",
+        "25646751",
+        "41763246"
+      ],
+      "dois": [
+        "10.1097/00007632-200006150-00010",
+        "10.1016/j.msksp.2019.05.004",
+        "10.1302/0301-620X.102B6.BJJ-2020-0195.R1",
+        "10.1302/0301-620X.105B5.BJJ-2022-0739.R2",
+        "10.1097/BRS.0000000000000813",
+        "10.1302/0301-620X.108B3.BJJ-2025-0986.R2"
+      ],
+      "metricool_post_id": 408104549,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5474759125632138451",
+      "youtube_post_id": 408107170,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=74820618145448991",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "cover_ms": 2400,
+      "music": "user_track2_calm_tiktok (TikTok/Instagram, from music/vault; private repo not reachable)",
+      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
+      "checks": "design review ALL PASS (3rd round); independent fact check 13/13 PASS after 2 wording fixes",
+      "carousel": {
+        "headline": "48 HOURS",
+        "sub": "Cauda equina: decompress early",
+        "points": [
+          "Red flags: sensitivity only 19-43%, specificity 62-88%",
+          "Bladder scan PVR 200 ml or more: sensitivity 94.1%, NPV 98.7%",
+          "CES-I bladder dysfunction: 15.6% within 48 h vs 56% after"
+        ],
+        "ref": "Ahn et al., Spine 2000"
+      }
     },
     {
       "n": 9,
