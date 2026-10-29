@@ -432,9 +432,51 @@
       "n": 9,
       "slug": "ep09_gartland",
       "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)",
-      "series": "classified"
+      "series": "classified",
+      "part": 3,
+      "source": "Gartland JJ. Surg Gynecol Obstet 1959;109(2):145-54; Wang JH et al. J Pediatr Orthop 2019;39(8):e578-85; Babal JC et al. J Pediatr Orthop 2010;30(3):253-63; Vuillermin C et al. JBJS Essent Surg Tech 2018;8(2):e10; Jose Jerome JT et al. J Pediatr Soc North Am 2026;16:100377; Joist A et al. J Neurosurg 1999;90(6):1053-6",
+      "published": "scheduled 2026-11-01 10:00 Africa/Tripoli (Sunday; Fri/Sat off)",
+      "release": "media branch: ep09_gartland.mp4 / ep09_gartland_yt.mp4",
+      "pmids": [
+        "13675986",
+        "31393293",
+        "20357592",
+        "30233982",
+        "42306145",
+        "10350251"
+      ],
+      "dois": [
+        "10.1097/BPO.0000000000001096",
+        "10.1097/BPO.0b013e3181d213a6",
+        "10.2106/JBJS.ST.16.00011",
+        "10.1016/j.jposna.2026.100377",
+        "10.3171/jns.1999.90.6.1053"
+      ],
+      "metricool_post_id": 410636085,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=8828246009656066519",
+      "youtube_post_id": 410636636,
+      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6059050753164201982",
+      "networks": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "cover_ms": 2400,
+      "music": "user_track2_calm_tiktok (TikTok/Instagram, from music/vault; private repo not reachable)",
+      "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
+      "checks": "design review ALL PASS (2nd round); independent fact check 15/15 PASS (2 optional wording fixes applied)",
+      "carousel": {
+        "headline": "GARTLAND",
+        "sub": "Supracondylar: cast or pins?",
+        "points": [
+          "Operated: type I 0%, type II 57%, type III 100%",
+          "AHL misses the capitellum: odds of surgery x200",
+          "Nerve palsy in 11.3%: AIN in extension, ulnar in flexion"
+        ],
+        "ref": "Wang et al., J Pediatr Orthop 2019"
+      }
     },
     {
       "n": 10,
