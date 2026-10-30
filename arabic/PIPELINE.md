@@ -1,8 +1,13 @@
 # «عظامك ببساطة» — Arabic explainer series for the general public (Saturday 10:00)
 
 Owner decision 2026-10-24: one Arabic animated explainer every **Saturday 10:00 Africa/Tripoli**, aimed at the general
-public (patients, parents, students), on TikTok, Instagram and YouTube. Built by the scheduled task on **Friday evening**.
+public (patients, parents, non-medical people), on TikTok, Instagram and YouTube. Built by the scheduled task on **Friday evening**.
 The weekday English episodes (Sun–Thu, PIPELINE.md) are unchanged.
+
+**Audience (owner decision 2026-10-30): ordinary non-medical people only** (patients, parents, the general public), not
+doctors or medical students; those are the audience of the English episodes (PIPELINE.md). Use simple everyday Arabic,
+explain every term, everyday examples, what it means for you and when to see a doctor; no classifications, management
+details or jargon-heavy content. Topics, hooks, captions and engagement questions all target the general public.
 
 ## Format (owner-approved, from the Growth Plate episode — keep)
 - Flat cartoon explainer, LIGHT palette (sky-white gradient), navy `#223F61` + sky `#78AFD8`, coral/green only for wrong/right.

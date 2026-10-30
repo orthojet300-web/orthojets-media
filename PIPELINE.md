@@ -4,6 +4,12 @@ This repo lets a fresh Claude session make and publish one Orthojets TikTok epis
 A scheduled task fires **Saturday to Wednesday evenings** (18:58). Each run publishes the next episode at **10:00 the following day** (Africa/Tripoli time), so posts land **Sunday to Thursday at 10:00 — 5 per week** (owner decision 2026-10-19; Friday/Saturday off, the Libyan weekend). The weekly Instagram carousel goes out Sunday 18:00.
 
 ## Channel rules (from the owner — do not change)
+- **Audience (owner decision 2026-10-30): the English episodes are MEDICAL content for doctors, medical students and
+  healthcare professionals** (orthopods, ED doctors, residents, interns, nurses/physios). Write for them: full medical
+  terminology, numbers, classifications, decision rules, management and pitfalls; no lay explanations, no "see your doctor"
+  framing. Topics, hooks, captions, engagement questions and hashtags all target clinicians and students.
+  The Arabic series «عظامك ببساطة» (arabic/PIPELINE.md) is the opposite: plain-language education for the general public.
+  Never mix the two: no lay topics in the English queue, no clinician-level content in the Arabic one.
 - All on-screen medical content is in **English medical language**. The intro and outro keep their Arabic tagline.
 - **Reading time**: after each text block appears, hold it for 1.5–3.5 s, using the `Timeline` holds in `kit/ep_common.py`.
 - **Audio**: a calm licensed background track plays quietly under the episode body (-32 LUFS, fade in and out). The intro and outro keep their own sound.

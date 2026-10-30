@@ -45,8 +45,10 @@ The episode autopilot reads this before choosing topics. **Last update: 2026-10-
 ## Saturday
 - Metricool activity, Saturday vs Sun–Thu average: TikTok 71% (10:00 slot 72%), Instagram 59% — below the 80% bar.
 - Only 1 week of data: provisional answer **no extra English Saturday post**. Final yes/no in the 2026-11-08 report.
-- The Arabic public series «عظامك ببساطة» already starts Sat 2026-10-31 10:00 (owner decision 2026-10-24): use its numbers as
-  the real Saturday test.
+- The Arabic public series «عظامك ببساطة» already starts Sat 2026-10-31 10:00 (owner decision 2026-10-24). It targets a
+  DIFFERENT audience (general public, Arabic) from the English episodes (doctors and medical students, owner 2026-10-30),
+  so its numbers are NOT a valid test of an English Saturday post: judge that only on Metricool activity data for the
+  clinician audience. Report the two series separately.
 
 ## History
 - 2026-10-19: Metricool returned no TikTok data (brand connected 2026-10-19). No recommendations.
