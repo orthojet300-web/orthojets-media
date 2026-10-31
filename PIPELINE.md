@@ -1,7 +1,7 @@
 # Orthojets — automated episode pipeline
 
 This repo lets a fresh Claude session make and publish one Orthojets TikTok episode with no human input.
-A scheduled task fires **Saturday to Wednesday evenings** (18:58). Each run publishes the next episode at **10:00 the following day** (Africa/Tripoli time), so posts land **Sunday to Thursday at 10:00 — 5 per week** (owner decision 2026-10-19; Friday/Saturday off, the Libyan weekend). The weekly Instagram carousel goes out Sunday 18:00.
+A scheduled task fires **Saturday to Wednesday evenings** (18:58). Each run publishes the next episode at **10:00 the following day** (Africa/Tripoli time), so posts land **Sunday to Thursday at 10:00 — 5 per week** (owner decision 2026-10-19; Friday/Saturday off, the Libyan weekend). The weekly carousel is posted by hand by the owner on Sunday 18:00 (not via Metricool, see Weekly carousel).
 
 ## Channel rules (from the owner — do not change)
 - **Audience (owner decision 2026-10-30): the English episodes are MEDICAL content for doctors, medical students and
@@ -200,13 +200,17 @@ computed at build time. Series let viewers binge and follow "for the next part".
 2. `python3 tools/build_carousel.py out/carousel_<YYYYMMDD> <slug> ... --week "<Mon d - Mon d>"` → cover + one slide per
    episode + follow slide (1080x1350 JPG). Look at every slide: no overlap, nothing cut off, glyphs fine.
 3. `tools/publish_dir.sh carousel_<YYYYMMDD> out/carousel_<YYYYMMDD>` → one raw URL per slide (in order).
-4. Metricool `createScheduledPost` for **Sunday 18:00** Africa/Tripoli: providers Instagram (`instagramData: {"type":"POST"}`)
-   plus TikTok as a photo post when connected (`tiktokData` with `title` "This week's ortho pearls", `photoCoverIndex: 0`,
-   `autoAddMusic: true`); `media` = the slide URLs in order. If TikTok rejects photo posts, schedule Instagram alone.
-   Caption: `This week's ortho pearls 🦴 Save it for your next shift 🔖` + one line per episode (`✅ <headline> — <sub>`) +
-   `📚 References on each slide` + `💬 Which one did you not know? 👇` + the 5 hashtags (#orthopedics #orthopedicsurgery
-   #orthopaedics #medtok #orthojets). Skip the week if there are no episodes.
-5. Record it under `carousels` in `topics.json`, push, and send the owner a short Arabic note.
+4. **MANUAL posting — do NOT schedule the carousel in Metricool** (owner decision 2026-10-31: the Metricool plan allows
+   only 20 posts per calendar month, kept for the episodes). The owner posts it himself on Instagram (carousel) and TikTok
+   (photo post) on Sunday around 18:00 Africa/Tripoli. Instead:
+   - `SendUserFile` all slide JPGs in order (status proactive) so he can download them on his phone.
+   - `SendUserMessage` with the caption ready to copy:
+     `This week's ortho pearls 🦴 Save it for your next shift 🔖` + one line per episode (`✅ <headline> — <sub>`) +
+     `📚 References on each slide` + `💬 Which one did you not know? 👇` + the 5 hashtags (#orthopedics #orthopedicsurgery
+     #orthopaedics #medtok #orthojets), plus the TikTok title "This week's ortho pearls" and the raw slide URLs as a backup.
+   Skip the week if there are no episodes.
+5. Record it under `carousels` in `topics.json` with `"manual": true` (no Metricool id), push, and send the owner a short Arabic note
+   (PushNotification) saying the slides and caption are ready to post by hand on Sunday at 18:00.
 
 ## Failure handling
 - Render or upload fails: retry once. If it fails again, leave the topic as `todo`, notify the owner, and stop.
