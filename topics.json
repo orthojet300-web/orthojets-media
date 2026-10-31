@@ -582,6 +582,25 @@
       "metricool_post_id": 405208614,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5415755961258390488",
       "note": "EP01 included: its Instagram/YouTube cross-post went live 2026-10-19 and it had never been in a carousel"
+    },
+    {
+      "date": "2026-11-01 18:00 Africa/Tripoli",
+      "week": "Oct 26 - Nov 1",
+      "episodes": [
+        "ep06_hip_dislocation",
+        "ep07_scaphoid",
+        "ep08_salter_harris",
+        "ep14_cauda_equina",
+        "ep09_gartland"
+      ],
+      "slides": 7,
+      "networks": [
+        "instagram",
+        "tiktok"
+      ],
+      "media": "media branch: carousel_20261101/slide01-07.jpg",
+      "metricool_post_id": 412398421,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=490881107550031169"
     }
   ]
 }
