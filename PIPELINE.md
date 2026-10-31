@@ -138,20 +138,27 @@ computed at build time. Series let viewers binge and follow "for the next part".
    - It force-pushes the MP4 to the orphan branch `media` and prints the public raw URL.
    - GitHub Releases are not permitted for Claude sessions, so a branch is used instead.
    - The `media` branch only ever holds the current video; Metricool copies the file to its own storage when the post is created.
-8. **Schedule on TikTok, and cross-post to Instagram Reels and YouTube Shorts when they are connected,** with the Metricool connector `createScheduledPost`.
-   - **YouTube gets its own post with the music-free file** (owner decision 2026-10-20): YouTube Content ID claimed the Pixabay
+8. **Schedule ONE Metricool post for TikTok + Instagram Reels; YouTube is posted BY HAND by the owner.**
+   - **Metricool Free plan = 20 posts per calendar month** (owner decision 2026-10-31). A post counts once however many networks it has.
+     So: Metricool gets ONLY the tiktok + instagram post. Never create a YouTube post, the carousel or the Arabic episode in Metricool.
+   - **Monthly quota check (before scheduling):** call `getScheduledPosts` from the 1st to the last day of the target date's month
+     (it returns published and pending posts). Count the posts, ignoring any whose providers are ALL status ERROR. If the count is
+     already 20 or more, do NOT schedule: this episode is posted by hand too (deliver the TikTok/Instagram file and caption as in (c)
+     below and say so in the report). The owner keeps 5 episodes per week and posts the last days of each month by hand.
+   - **YouTube gets its own file** (owner decision 2026-10-20): YouTube Content ID claimed the Pixabay
      tracks (track01, 02, 03) and blocked EP01 and EP02 worldwide. So:
      a) host `out/<slug>_1080p.mp4` (with music) with publish_github.sh and create ONE post for **tiktok + instagram**;
-     b) then host `out/<slug>_youtube_1080p.mp4` (original Orthojets theme from the music repo's `youtube_safe/` instead of Pixabay music,
-        logo chime + outro sound; NO motion sound effects — owner decision 2026-10-20) with
-        `tools/publish_github.sh <slug>_yt out/<slug>_youtube_1080p.mp4` and create a SECOND post for **youtube only**, same time,
-        same caption, same youtubeData. (Do (a) fully before (b): the media branch keeps only the latest file, and Metricool copies the
-        file when the post is created.)
+     b) do NOT schedule YouTube. `out/<slug>_youtube_1080p.mp4` (original Orthojets theme from the music repo's `youtube_safe/` instead of Pixabay music,
+        logo chime + outro sound; NO motion sound effects — owner decision 2026-10-20) is delivered to the owner:
+        `SendUserFile` it (status proactive), then `SendUserMessage` with, ready to copy: the YouTube title (≤100 chars, ends with
+        #Shorts, no < or >), the description (= the caption) and the tags list, and the reminder to upload it as a public Short,
+        not made for kids, category Education, on the same day at 10:00.
+     c) if the quota is full, also `SendUserFile` `out/<slug>_1080p.mp4` and send the caption + TikTok title to copy.
      Never put a Pixabay track on YouTube. Only `youtube_safe/` tracks (YouTube Audio Library downloads, `yal_*`) may be used there — and NEVER use the
      `youtube_safe/` ensemble themes (yt1..yt4) on TikTok or Instagram (owner rule 2026-10-20). The original Steinway piano themes
      (`piano_*.mp3`, tools/piano_theme.py) are approved for every platform (owner 2026-10-21) and sit in both rotations.
    - Call `getBrandSettings` first. `networksData` lists the connected networks: TikTok always; Instagram and YouTube once the owner connects them in Metricool.
-   - TikTok + Instagram share one post: `providers: [{"network":"tiktok"}, {"network":"instagram"}]`; YouTube is the separate post above.
+   - TikTok + Instagram share one post: `providers: [{"network":"tiktok"}, {"network":"instagram"}]`; YouTube is manual (above).
      - Instagram: `instagramData: {"type":"REEL","showReelOnFeed":true}`
      - YouTube: `youtubeData: {"title":"<≤100 chars, ends with #Shorts>","type":"short","privacy":"public","madeForKids":false,"category":"EDUCATION","tags":[...]}`
      - If a network rejects the post, schedule TikTok alone and mention the error in the report.
@@ -187,12 +194,12 @@ computed at build time. Series let viewers binge and follow "for the next part".
      - `title` is required by Metricool.
      - `isAigc` is false because the videos are motion graphics rendered with code. Set it to true if TikTok's policy requires it for this content.
 9. **Record.**
-   - In `topics.json`, set the item to `published` with the date, release tag, Metricool post id/plannerUrl, PMIDs and `part`.
+   - In `topics.json`, set the item to `published` with the date, release tag, Metricool post id/plannerUrl, `"youtube": "manual"` (or `"manual": true` if the monthly quota was full), PMIDs and `part`.
    - Also add a `carousel` block for the weekly Instagram carousel (only verified on-screen claims, no new facts):
      `{"headline": "<big number/title, ≤ 14 chars>", "sub": "<one line, ≤ 40 chars>", "points": ["<3 short claims, ≤ 80 chars each>"], "ref": "<Author et al., Journal Year>"}`
    - Commit `episodes/`, `topics.json` and any kit fixes. Never commit `out/`.
    - Push.
-10. **Report.** Send the owner one short message, in Arabic: the episode title, when it goes live, the Metricool planner link, and the sources (PubMed attribution plus DOI links).
+10. **Report.** Send the owner one short message, in Arabic: the episode title, when it goes live, the Metricool planner link, how many of this month's 20 Metricool posts are used, that the YouTube file + title are in the session to upload by hand, and the sources (PubMed attribution plus DOI links).
 
 ## Weekly carousel (separate scheduled task, Saturday evening; owner decision 2026-10-19)
 1. Pick every episode whose video goes live in the 7 days ending the coming Sunday (from `topics.json`), max 5.

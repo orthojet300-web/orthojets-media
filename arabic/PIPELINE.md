@@ -41,10 +41,13 @@ details or jargon-heavy content. Topics, hooks, captions and engagement question
 7. Independent fact-check agent: PASS per claim against PubMed, or fix / block.
 8. Cover (owner 2026-10-24): `python3 arabic/tools/make_cover.py EP/st/<hook still>.png EP/cover.jpg N "<line 1>" "<line 2>"` —
    series badge «عظامك ببساطة» + «كل يوم سبت» with the episode number, the English topic pill, the two-line Arabic question, hook art. Host video + cover with tools/publish_dir.sh.
-9. Metricool (brand 7507086): ONE post for tiktok + instagram (REEL) + youtube (short), Saturday 10:00, same video.
-   - Use `videoThumbnailUrl` = cover for instagram/youtube when accepted; otherwise fall back to `videoCoverMilliseconds`.
+9. **MANUAL posting — do NOT use Metricool createScheduledPost** (owner decision 2026-10-31: the Metricool Free plan allows
+   only 20 posts per calendar month, kept for the English episodes). The owner posts this episode himself on Saturday 10:00
+   on TikTok, Instagram (Reel) and YouTube (Short). Deliver to him: `SendUserFile` the final MP4 and `EP/cover.jpg`
+   (status proactive), then `SendUserMessage` with, ready to copy: the caption, the TikTok title, the YouTube title and
+   YouTube tags, and the reminder to post Saturday 10:00 on all three. Then a short Arabic PushNotification.
    - Caption: Arabic hook question, 3 short Arabic points, `📚` refs, "احفظه وشاركه مع من يهمه الأمر 💙",
      `💬` a simple question for the public, the disclaimer line, then exactly 5 hashtags:
      `#عظامك_ببساطة #صحة #طب #orthojets #<topic tag>`. No `<` or `>`.
    - tiktokData.title / youtubeData.title (≤100 chars, Arabic, ends with #Shorts on YouTube).
-10. Mark the topic `published` with ids; commit and push; short Arabic report to the owner.
+10. Mark the topic `published` with `"manual": true` (no Metricool id); commit and push; short Arabic report to the owner.
