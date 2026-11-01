@@ -572,22 +572,6 @@
       "series": "dontmiss"
     },
     {
-      "n": 11,
-      "slug": "ep11_klein_line",
-      "title": "SCFE: Klein's line and Trethowan sign",
-      "status": "todo",
-      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
-      "series": "dontmiss"
-    },
-    {
-      "n": 15,
-      "slug": "ep15_schatzker",
-      "title": "Schatzker classification of tibial plateau fractures",
-      "status": "todo",
-      "source_hint": "Schatzker J et al. Clin Orthop 1979",
-      "series": "classified"
-    },
-    {
       "n": 16,
       "slug": "ep16_canadian_cspine",
       "title": "Canadian C-spine rule: who needs neck imaging after trauma",
@@ -596,20 +580,20 @@
       "series": "rules"
     },
     {
-      "n": 17,
-      "slug": "ep17_garden",
-      "title": "Garden classification of femoral neck fractures: fix or replace",
-      "status": "todo",
-      "source_hint": "Garden RS JBJS Br 1961; Parker MJ / Kazley JM reviews (displaced vs undisplaced)",
-      "series": "classified"
-    },
-    {
       "n": 18,
       "slug": "ep18_lisfranc",
       "title": "Lisfranc injury: fleck sign and the weight-bearing X-ray",
       "status": "todo",
       "source_hint": "Myerson MS 1986; Sherief TI et al. 2007 (missed Lisfranc); weight-bearing radiograph studies",
       "series": "dontmiss"
+    },
+    {
+      "n": 17,
+      "slug": "ep17_garden",
+      "title": "Garden classification of femoral neck fractures: fix or replace",
+      "status": "todo",
+      "source_hint": "Garden RS JBJS Br 1961; Parker MJ / Kazley JM reviews (displaced vs undisplaced)",
+      "series": "classified"
     },
     {
       "n": 19,
@@ -628,11 +612,19 @@
       "series": "rules"
     },
     {
-      "n": 21,
-      "slug": "ep21_weber",
-      "title": "Danis-Weber ankle fractures and the syndesmosis",
+      "n": 11,
+      "slug": "ep11_klein_line",
+      "title": "SCFE: Klein's line and Trethowan sign",
       "status": "todo",
-      "source_hint": "Weber BG 1972; medial clear space / stress view studies (e.g. Michelson 2004)",
+      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
+      "series": "dontmiss"
+    },
+    {
+      "n": 15,
+      "slug": "ep15_schatzker",
+      "title": "Schatzker classification of tibial plateau fractures",
+      "status": "todo",
+      "source_hint": "Schatzker J et al. Clin Orthop 1979",
       "series": "classified"
     },
     {
@@ -652,11 +644,11 @@
       "series": "numbers"
     },
     {
-      "n": 24,
-      "slug": "ep24_neer",
-      "title": "Neer classification of proximal humerus fractures and when surgery helps",
+      "n": 21,
+      "slug": "ep21_weber",
+      "title": "Danis-Weber ankle fractures and the syndesmosis",
       "status": "todo",
-      "source_hint": "Neer CS JBJS Am 1970; Rangan A et al. JAMA 2015 (PROFHER trial)",
+      "source_hint": "Weber BG 1972; medial clear space / stress view studies (e.g. Michelson 2004)",
       "series": "classified"
     },
     {
@@ -666,6 +658,14 @@
       "status": "todo",
       "source_hint": "Graf R. Arch Orthop Trauma Surg 1980; Ortolani / Barlow screening reviews",
       "series": "dontmiss"
+    },
+    {
+      "n": 24,
+      "slug": "ep24_neer",
+      "title": "Neer classification of proximal humerus fractures and when surgery helps",
+      "status": "todo",
+      "source_hint": "Neer CS JBJS Am 1970; Rangan A et al. JAMA 2015 (PROFHER trial)",
+      "series": "classified"
     }
   ],
   "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner).",
