@@ -1,7 +1,7 @@
 # «عظامك ببساطة» — Arabic explainer series for the general public (Saturday 10:00)
 
 Owner decision 2026-10-24: one Arabic animated explainer every **Saturday 10:00 Africa/Tripoli**, aimed at the general
-public (patients, parents, non-medical people), on TikTok, Instagram and YouTube. Built by the scheduled task on **Friday evening**.
+public (patients, parents, non-medical people), on TikTok and Instagram (no YouTube, owner decision 2026-11-01). Built by the scheduled task on **Friday evening**.
 The weekday English episodes (Sun–Thu, PIPELINE.md) are unchanged.
 
 **Audience (owner decision 2026-10-30): ordinary non-medical people only** (patients, parents, the general public), not
@@ -43,11 +43,10 @@ details or jargon-heavy content. Topics, hooks, captions and engagement question
    series badge «عظامك ببساطة» + «كل يوم سبت» with the episode number, the English topic pill, the two-line Arabic question, hook art. Host video + cover with tools/publish_dir.sh.
 9. **MANUAL posting — do NOT use Metricool createScheduledPost** (owner decision 2026-10-31: the Metricool Free plan allows
    only 20 posts per calendar month, kept for the English episodes). The owner posts this episode himself on Saturday 10:00
-   on TikTok, Instagram (Reel) and YouTube (Short). Deliver to him: `SendUserFile` the final MP4 and `EP/cover.jpg`
-   (status proactive), then `SendUserMessage` with, ready to copy: the caption, the TikTok title, the YouTube title and
-   YouTube tags, and the reminder to post Saturday 10:00 on all three. Then a short Arabic PushNotification.
+   on TikTok and Instagram (Reel). Deliver to him: `SendUserFile` the final MP4 and `EP/cover.jpg`
+   (status proactive), then `SendUserMessage` with, ready to copy: the caption and the TikTok title, and the reminder to post Saturday 10:00 on both. Then a short Arabic PushNotification.
    - Caption: Arabic hook question, 3 short Arabic points, `📚` refs, "احفظه وشاركه مع من يهمه الأمر 💙",
      `💬` a simple question for the public, the disclaimer line, then exactly 5 hashtags:
      `#عظامك_ببساطة #صحة #طب #orthojets #<topic tag>`. No `<` or `>`.
-   - tiktokData.title / youtubeData.title (≤100 chars, Arabic, ends with #Shorts on YouTube).
+   - TikTok title (≤100 chars, Arabic).
 10. Mark the topic `published` with `"manual": true` (no Metricool id); commit and push; short Arabic report to the owner.

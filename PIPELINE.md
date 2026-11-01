@@ -52,7 +52,7 @@ Each topic in `topics.json` has a `series` key. **Part number** = (number of alr
 computed at build time. Series let viewers binge and follow "for the next part".
 - On screen: the hook pill reads `<SERIES TAG>  #<part>` (e.g. `CLINICAL RULES  #1`) instead of `ORTHO TIP #NN`.
 - Caption: right after the hook line add `🧩 <Series name> · Part <part> — follow for the next one`.
-- TikTok title: `<Series name> #<part> · <short title>`. YouTube title: `<short title> | <Series name> #<part> #Shorts`.
+- TikTok title: `<Series name> #<part> · <short title>`. (No YouTube since 2026-11-01.)
 - New topics you add must get a `series`. Keep the queue rotating between series (never 3 of the same series in a row).
 
 ## Visual themes (owner decision 2026-10-23)
@@ -138,29 +138,22 @@ computed at build time. Series let viewers binge and follow "for the next part".
    - It force-pushes the MP4 to the orphan branch `media` and prints the public raw URL.
    - GitHub Releases are not permitted for Claude sessions, so a branch is used instead.
    - The `media` branch only ever holds the current video; Metricool copies the file to its own storage when the post is created.
-8. **Schedule ONE Metricool post for TikTok + Instagram Reels; YouTube is posted BY HAND by the owner.**
+8. **Schedule ONE Metricool post for TikTok + Instagram Reels. NO YouTube at all** (owner decision 2026-11-01: the channel
+   publishes on TikTok and Instagram only; never make, deliver or schedule anything for YouTube).
    - **Metricool Free plan = 20 posts per calendar month** (owner decision 2026-10-31). A post counts once however many networks it has.
      So: Metricool gets ONLY the tiktok + instagram post. Never create a YouTube post, the carousel or the Arabic episode in Metricool.
    - **Monthly quota check (before scheduling):** call `getScheduledPosts` from the 1st to the last day of the target date's month
      (it returns published and pending posts). Count the posts, ignoring any whose providers are ALL status ERROR. If the count is
-     already 20 or more, do NOT schedule: this episode is posted by hand too (deliver the TikTok/Instagram file and caption as in (c)
-     below and say so in the report). The owner keeps 5 episodes per week and posts the last days of each month by hand.
-   - **YouTube gets its own file** (owner decision 2026-10-20): YouTube Content ID claimed the Pixabay
-     tracks (track01, 02, 03) and blocked EP01 and EP02 worldwide. So:
-     a) host `out/<slug>_1080p.mp4` (with music) with publish_github.sh and create ONE post for **tiktok + instagram**;
-     b) do NOT schedule YouTube. `out/<slug>_youtube_1080p.mp4` (original Orthojets theme from the music repo's `youtube_safe/` instead of Pixabay music,
-        logo chime + outro sound; NO motion sound effects — owner decision 2026-10-20) is delivered to the owner:
-        `SendUserFile` it (status proactive), then `SendUserMessage` with, ready to copy: the YouTube title (≤100 chars, ends with
-        #Shorts, no < or >), the description (= the caption) and the tags list, and the reminder to upload it as a public Short,
-        not made for kids, category Education, on the same day at 10:00.
-     c) if the quota is full, also `SendUserFile` `out/<slug>_1080p.mp4` and send the caption + TikTok title to copy.
-     Never put a Pixabay track on YouTube. Only `youtube_safe/` tracks (YouTube Audio Library downloads, `yal_*`) may be used there — and NEVER use the
-     `youtube_safe/` ensemble themes (yt1..yt4) on TikTok or Instagram (owner rule 2026-10-20). The original Steinway piano themes
-     (`piano_*.mp3`, tools/piano_theme.py) are approved for every platform (owner 2026-10-21) and sit in both rotations.
-   - Call `getBrandSettings` first. `networksData` lists the connected networks: TikTok always; Instagram and YouTube once the owner connects them in Metricool.
-   - TikTok + Instagram share one post: `providers: [{"network":"tiktok"}, {"network":"instagram"}]`; YouTube is manual (above).
+     already 20 or more, do NOT schedule: this episode is posted by hand: `SendUserFile` `out/<slug>_1080p.mp4` (status proactive)
+     and `SendUserMessage` the caption + TikTok title ready to copy, and say so in the report. The owner keeps 5 episodes per week
+     and posts the last days of each month by hand.
+   - Host `out/<slug>_1080p.mp4` (with music) with publish_github.sh and create ONE post for **tiktok + instagram**.
+     `build_episode.py` also writes `out/<slug>_youtube_1080p.mp4`; ignore it (not used any more).
+     NEVER use the `youtube_safe/` ensemble themes (yt1..yt4) on TikTok or Instagram (owner rule 2026-10-20). The original Steinway
+     piano themes (`piano_*.mp3`, tools/piano_theme.py) are approved (owner 2026-10-21).
+   - Call `getBrandSettings` first. `networksData` lists the connected networks (use only tiktok and instagram, even if youtube is still connected).
+   - TikTok + Instagram share one post: `providers: [{"network":"tiktok"}, {"network":"instagram"}]`.
      - Instagram: `instagramData: {"type":"REEL","showReelOnFeed":true}`
-     - YouTube: `youtubeData: {"title":"<≤100 chars, ends with #Shorts>","type":"short","privacy":"public","madeForKids":false,"category":"EDUCATION","tags":[...]}`
      - If a network rejects the post, schedule TikTok alone and mention the error in the report.
    - First call `getScheduledPosts` for the target day. If a TikTok post is already scheduled that day, do not add a second one: move this episode to the next free Sun–Thu 10:00 slot (never Friday or Saturday).
    - Then create the post:
@@ -181,7 +174,7 @@ computed at build time. Series let viewers binge and follow "for the next part".
        - a blank line, then **one engagement question**: "💬 <a specific, easy-to-answer question that invites experience or opinion from doctors and students> 👇"
        - a blank line, then EXACTLY 5 hashtags (Instagram rejects/limits posts with more than 5 since 2026; the same caption goes to every network):
          #orthopedics #orthopedicsurgery <1 topic tag, the most-searched term, e.g. #hipfracture> #medtok #orthojets
-         Never more than 5. Put extra topic keywords into the YouTube `tags` list instead (those are hidden and unlimited).
+         Never more than 5.
          Never use generic tags (#fyp #foryou #viral #trending #explore #creatorsearchinsights): no proven reach effect, they dilute the
          niche signal and waste a slot. Put the main search keywords in the caption's first line instead (TikTok search reads caption text).
          Owner decision 2026-10-19: the owner delegated this choice; keep this rule.
@@ -189,17 +182,17 @@ computed at build time. Series let viewers binge and follow "for the next part".
        "invalid or empty video title" — happened on EP01 2026-10-19). Write them as words: "under/below 25 mm", "over/above 38.5 °C",
        "at least" for ≥. (On-screen video text may still use < and >.) Also avoid `→` in captions; use a comma or "so".
        After scheduling, if any provider later shows status ERROR, fix and reschedule that network alone as a separate post.
-     - `firstCommentText`: the same engagement question. Metricool posts it as the first comment on Instagram and YouTube. TikTok doesn't allow third-party comments, which is why the question is also in the caption.
+     - `firstCommentText`: the same engagement question. Metricool posts it as the first comment on Instagram. TikTok doesn't allow third-party comments, which is why the question is also in the caption.
      - `tiktokData: {"title":"Ortho Tip #NN · <short title>","privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"isAigc":false}`
      - `title` is required by Metricool.
      - `isAigc` is false because the videos are motion graphics rendered with code. Set it to true if TikTok's policy requires it for this content.
 9. **Record.**
-   - In `topics.json`, set the item to `published` with the date, release tag, Metricool post id/plannerUrl, `"youtube": "manual"` (or `"manual": true` if the monthly quota was full), PMIDs and `part`.
+   - In `topics.json`, set the item to `published` with the date, release tag, Metricool post id/plannerUrl, `"manual": true` if the monthly quota was full, PMIDs and `part`.
    - Also add a `carousel` block for the weekly Instagram carousel (only verified on-screen claims, no new facts):
      `{"headline": "<big number/title, ≤ 14 chars>", "sub": "<one line, ≤ 40 chars>", "points": ["<3 short claims, ≤ 80 chars each>"], "ref": "<Author et al., Journal Year>"}`
    - Commit `episodes/`, `topics.json` and any kit fixes. Never commit `out/`.
    - Push.
-10. **Report.** Send the owner one short message, in Arabic: the episode title, when it goes live, the Metricool planner link, how many of this month's 20 Metricool posts are used, that the YouTube file + title are in the session to upload by hand, and the sources (PubMed attribution plus DOI links).
+10. **Report.** Send the owner one short message, in Arabic: the episode title, when it goes live, the Metricool planner link, how many of this month's 20 Metricool posts are used, and the sources (PubMed attribution plus DOI links).
 
 ## Weekly carousel (separate scheduled task, Saturday evening; owner decision 2026-10-19)
 1. Pick every episode whose video goes live in the 7 days ending the coming Sunday (from `topics.json`), max 5.
