@@ -566,10 +566,38 @@
     {
       "n": 13,
       "slug": "ep13_achilles",
-      "title": "Acute Achilles rupture: Simmonds-Thompson test",
-      "status": "todo",
+      "title": "Acute Achilles rupture: calf squeeze (Simmonds-Thompson) and Matles tests, the X-ray clue",
+      "status": "published",
       "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)",
-      "series": "dontmiss"
+      "series": "dontmiss",
+      "part": 3,
+      "published": "scheduled 2026-11-04 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-03 taken by EP12)",
+      "release": "media branch: ep13_achilles.mp4",
+      "music": "track05_leberch-inspirational-calm-piano.mp3",
+      "metricool": {
+        "id": 414359586,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4643102293434547665"
+      },
+      "pmids": [
+        "9548122",
+        "20580519",
+        "34974982"
+      ],
+      "dois": [
+        "10.1177/03635465980260021801",
+        "10.1016/j.jemermed.2010.05.015",
+        "10.1053/j.jfas.2021.12.003"
+      ],
+      "carousel": {
+        "headline": "96% TEST",
+        "sub": "Calf squeeze for Achilles rupture",
+        "points": [
+          "Prone calf squeeze: no plantar flexion = rupture (sens 96%, spec 93%)",
+          "Palpable gap sensitivity only 73%: no gap does not rule it out",
+          "Lateral film ankle in neutral (100 deg or less): test the Achilles"
+        ],
+        "ref": "Maffulli, Am J Sports Med 1998; Kiely et al., J Emerg Med 2010"
+      }
     },
     {
       "n": 16,
