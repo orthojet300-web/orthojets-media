@@ -603,9 +603,35 @@
       "n": 16,
       "slug": "ep16_canadian_cspine",
       "title": "Canadian C-spine rule: who needs neck imaging after trauma",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Stiell IG et al. JAMA 2001 (derivation); Stiell NEJM 2003 (CCR vs NEXUS)",
-      "series": "rules"
+      "series": "rules",
+      "part": 4,
+      "published": "scheduled 2026-11-05 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-04 taken by EP13)",
+      "release": "media branch: ep16_canadian_cspine.mp4",
+      "music": "track01_the-mountain-study-music.mp3",
+      "metricool": {
+        "id": 415579085,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1054082236253162794"
+      },
+      "pmids": [
+        "11597285",
+        "14695411"
+      ],
+      "dois": [
+        "10.1001/jama.286.15.1841",
+        "10.1056/NEJMoa031375"
+      ],
+      "carousel": {
+        "headline": "3 QUESTIONS",
+        "sub": "Canadian C-spine rule: image or not?",
+        "points": [
+          "High-risk factor (age 65+, dangerous mechanism, paresthesias): image",
+          "Low-risk factor present + rotates 45 deg left and right: no imaging",
+          "Vs NEXUS: sensitivity 99.4% vs 90.7%, missed 1 vs 16 injuries"
+        ],
+        "ref": "Stiell et al., JAMA 2001; Stiell et al., NEJM 2003"
+      }
     },
     {
       "n": 18,
