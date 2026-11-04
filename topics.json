@@ -637,9 +637,56 @@
       "n": 18,
       "slug": "ep18_lisfranc",
       "title": "Lisfranc injury: fleck sign and the weight-bearing X-ray",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Myerson MS 1986; Sherief TI et al. 2007 (missed Lisfranc); weight-bearing radiograph studies",
-      "series": "dontmiss"
+      "series": "dontmiss",
+      "part": 4,
+      "source": "Lau S et al. Emerg Med J 2017;34(1):52-6; Ponkilainen VT et al. Arch Orthop Trauma Surg 2020;140(10):1423-9; Chen C et al. J Foot Ankle Res 2023;16(1):9; Rikken QGH et al. Injury 2022;53(6):2326-32; Kennelly H et al. Emerg Med Australas 2019;31(5):741-4; Ross G et al. J Orthop Trauma 1996;10(2):119-22; Pourmorteza M, Vosoughi AR. Eur J Trauma Emerg Surg 2022;48(1):471-9; Pearsall C et al. Foot Ankle Spec 2024;17(6):632-8; Lattermann C et al. Clin J Sport Med 2007;17(4):311-5 (caption)",
+      "published": "scheduled 2026-11-08 10:00 Africa/Tripoli (Sunday; TikTok + Instagram; 2026-11-05 taken by EP16, Fri/Sat off)",
+      "release": "media branch: ep18_lisfranc.mp4",
+      "music": "track05_leberch-inspirational-calm-piano.mp3 (from music/vault; private repo not reachable)",
+      "metricool": {
+        "id": 416817095,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6558702588296512913"
+      },
+      "pmids": [
+        "27013521",
+        "32140830",
+        "36855126",
+        "35279293",
+        "30780193",
+        "8932671",
+        "32561962",
+        "37278226",
+        "17620787"
+      ],
+      "dois": [
+        "10.1136/emermed-2015-205317",
+        "10.1007/s00402-020-03391-w",
+        "10.1186/s13047-023-00608-0",
+        "10.1016/j.injury.2022.02.044",
+        "10.1111/1742-6723.13237",
+        "10.1097/00005131-199602000-00008",
+        "10.1007/s00068-020-01415-z",
+        "10.1177/19386400231175376",
+        "10.1097/JSM.0b013e31811ed0ba"
+      ],
+      "cover_ms": 2400,
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "checks": "design review ALL PASS (3rd round); independent fact check 11/12 PASS, 1 wording FAIL fixed before render (Lau: \"can follow minor trauma\") + 3 optional wording fixes applied",
+      "carousel": {
+        "headline": "LISFRANC?",
+        "sub": "1 in 5 is missed: load both feet",
+        "points": [
+          "Medial MT2 base must line up with medial C2 on the AP film",
+          "Non-weight-bearing films miss 24% of Lisfranc injuries",
+          "Bilateral WB: C1-MT2 2.1 mm wider than the other side = specific"
+        ],
+        "ref": "Ponkilainen et al., Arch Orthop Trauma Surg 2020"
+      }
     },
     {
       "n": 17,
