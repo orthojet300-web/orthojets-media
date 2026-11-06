@@ -1,0 +1,388 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Cairo;src:url(../../fonts/Cairo.ttf);font-weight:200 1000;}
+@font-face{font-family:Mont;src:url(../../fonts/Montserrat.ttf);font-weight:100 900;}
+html,body{margin:0;padding:0;background:#E3F0F8;}
+svg{display:block}
+</style></head>
+<body>
+<svg id="v" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+const NAVY="#223F61", SKY="#78AFD8", SKYD="#4E8BBF", SKYL="#CFE5F5", WHITE="#FFFFFF",
+ BONE="#F4EAD3", BONED="#E2CFA6", CANAL="#EFDDB8", CORAL="#EC7068", GREEN="#5FBF94", SKIN="#F3D2B8", PHY="#8FC0E6";
+let TL=null;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;};
+const eout=x=>{x=clamp(x);return 1-Math.pow(1-x,3);};
+const P=(t,a,b)=>ease((t-a)/(b-a));
+const lerp=(a,b,p)=>a+(b-a)*p;
+let ctx2=document.createElement('canvas').getContext('2d');
+function tw(s,size,w=700,fam='Mont'){ctx2.font=`${w} ${size}px ${fam}`;return ctx2.measureText(s).width;}
+
+// ---------- shared UI ----------
+function pill(x,y,text,o,{bg=NAVY,fg=WHITE,size=32,w=700,anchor='middle'}={}){
+  if(o<=0)return '';
+  const W=tw(text,size,w)+44,H=size+26;
+  let x0=anchor==='middle'?x-W/2:anchor==='start'?x:x-W;
+  const s=lerp(.85,1,eout(o));
+  return `<g opacity="${clamp(o)}" transform="translate(${x0+W/2},${y}) scale(${s}) translate(${-W/2},${-H/2})">
+   <rect width="${W}" height="${H}" rx="${H/2}" fill="${bg}"/>
+   <text x="${W/2}" y="${H/2+size*0.36}" text-anchor="middle" font-family="Mont" font-weight="${w}" font-size="${size}" fill="${fg}">${text}</text></g>`;
+}
+function callout(tx,ty,lx,ly,text,o,opt={}){
+  if(o<=0)return '';
+  const p=eout(o*1.4);
+  const ex=lerp(tx,lx,p),ey=lerp(ty,ly,p);
+  return `<g opacity="${clamp(o*2)}"><line x1="${tx}" y1="${ty}" x2="${ex}" y2="${ey}" stroke="${opt.bg||NAVY}" stroke-width="4"/>
+   <circle cx="${tx}" cy="${ty}" r="10" fill="${WHITE}" stroke="${opt.bg||NAVY}" stroke-width="5"/></g>`+pill(lx,ly,text,clamp((o-0.25)*1.6),opt);
+}
+function refText(s,o){ if(o<=0)return '';
+  return `<text x="540" y="1735" text-anchor="middle" font-family="Mont" font-weight="600" font-size="28" fill="${NAVY}" opacity="${0.75*clamp(o)}">${s}</text>`;}
+function bg(){
+  return `<defs><linearGradient id="bgg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9E2F2"/><stop offset="1" stop-color="#F3F8FC"/></linearGradient>
+  <pattern id="dots" width="34" height="30" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="4" fill="${BONED}"/><circle cx="25" cy="22" r="3" fill="${BONED}"/></pattern>
+  <pattern id="cols" width="22" height="20" patternUnits="userSpaceOnUse"><ellipse cx="11" cy="10" rx="8" ry="3.2" fill="${SKYD}" opacity=".55"/></pattern>
+  <radialGradient id="glow"><stop offset="0" stop-color="${SKY}" stop-opacity=".55"/><stop offset="1" stop-color="${SKY}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="cglow"><stop offset="0" stop-color="${CORAL}" stop-opacity=".55"/><stop offset="1" stop-color="${CORAL}" stop-opacity="0"/></radialGradient>
+  </defs><rect width="1080" height="1920" fill="url(#bgg)"/>
+  <circle cx="900" cy="300" r="380" fill="url(#glow)" opacity=".5"/><circle cx="120" cy="1500" r="420" fill="url(#glow)" opacity=".35"/>`;
+}
+function watermark(){
+  return `<text x="540" y="1850" text-anchor="middle" font-family="Mont" font-weight="800" font-size="36" letter-spacing="1"><tspan fill="${NAVY}">ortho</tspan><tspan fill="${SKYD}">jets</tspan></text>`;
+}
+
+// ================= ar02: sprain or fracture? (Ottawa ankle rules, general public) =================
+let ST=[]; // segment start times (filled from the timeline)
+function mix(a,b,p){const h=s=>[1,3,5].map(i=>parseInt(s.substr(i,2),16));const A=h(a),B=h(b);return '#'+A.map((v,i)=>Math.round(lerp(v,B[i],p)).toString(16).padStart(2,'0')).join('');}
+const LIG="#3E78AE", FINGER="#F3C9A8";
+function defs2(){
+  return `<defs><linearGradient id="fadeg" gradientUnits="userSpaceOnUse" x1="0" y1="560" x2="0" y2="700"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
+  <mask id="fadeTop" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1920"><rect x="0" y="0" width="1080" height="1920" fill="url(#fadeg)"/></mask></defs>`;
+}
+function rotP(x,y,cx,cy,deg){const r=deg*Math.PI/180,dx=x-cx,dy=y-cy;return [cx+dx*Math.cos(r)-dy*Math.sin(r),cy+dx*Math.sin(r)+dy*Math.cos(r)];}
+function band(x1,y1,x2,y2,col,w=22,tear=0){
+  // a rope-like ligament; tear 0..1 opens a frayed gap in the middle
+  if(tear<=0) return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${NAVY}" stroke-width="${w+8}" stroke-linecap="round"/>
+    <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="${w}" stroke-linecap="round"/>
+    <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${WHITE}" stroke-width="3" stroke-dasharray="6 10" opacity=".7"/>`;
+  const mx=(x1+x2)/2,my=(y1+y2)/2,g=0.5-0.16*tear, ax=lerp(x1,x2,g),ay=lerp(y1,y2,g),bx=lerp(x1,x2,1-g),by=lerp(y1,y2,1-g);
+  const fr=(x,y,dx,dy)=>[-1,0,1].map(k=>`<line x1="${x}" y1="${y}" x2="${x+dx*14+k*dy*7}" y2="${y+dy*14-k*dx*7}" stroke="${col}" stroke-width="5" stroke-linecap="round"/>`).join('');
+  const L=Math.hypot(x2-x1,y2-y1),ux=(x2-x1)/L,uy=(y2-y1)/L;
+  return band(x1,y1,ax,ay,col,w)+band(bx,by,x2,y2,col,w)+fr(ax,ay,ux,uy)+fr(bx,by,-ux,-uy);
+}
+// ---------- ankle, front view (right ankle: fibula on the viewer's left = outer side, tibia on the right) ----------
+const TIBIA=`M478 520 L642 520 L640 880 C650 940 700 985 712 1040 C722 1090 712 1130 690 1140 C672 1146 660 1120 655 1090 C650 1072 640 1064 622 1064 L455 1064 C440 1064 432 1052 432 1036 C432 990 470 940 478 880 Z`;
+const FIBULA=`M362 520 L402 520 L404 900 C410 960 420 1010 418 1070 C416 1140 400 1200 370 1215 C345 1222 330 1200 330 1170 C330 1100 345 1000 358 920 Z`;
+const TALUS=`M446 1074 C476 1062 620 1062 646 1074 C658 1110 656 1170 640 1205 C610 1240 476 1240 448 1205 C433 1170 433 1110 446 1074 Z`;
+const CALC=`M412 1252 C440 1238 630 1238 662 1255 C694 1280 694 1360 664 1386 C614 1410 456 1410 414 1386 C388 1362 388 1280 412 1252 Z`;
+function boneP(d,extra=''){return `<path d="${d}" fill="${BONE}" stroke="${NAVY}" stroke-width="6" stroke-linejoin="round" ${extra}/><path d="${d}" fill="url(#dots)" opacity=".7"/>`;}
+function ankleSVG(st,t){
+  // st: lig (0..1), sprain (0..1), frac (0..1), hlL/hlM (0..1 glow on malleoli)
+  const rot=-9*(st.sprain||0), C=[655,1070];
+  const R=(x,y)=>rotP(x,y,C[0],C[1],rot);
+  let o=`<path d="M326 520 L326 880 C316 960 252 1060 246 1160 C240 1290 268 1420 300 1470 L782 1470 C814 1420 836 1290 826 1170 C818 1070 760 960 752 880 L752 520 Z" fill="${SKIN}" opacity=".5"/>`;
+  // foot group (talus + calcaneus) rotates into inversion during the sprain
+  o+=`<g transform="rotate(${rot},${C[0]},${C[1]})">${boneP(CALC)}${boneP(TALUS)}
+      <path d="M470 1072 C520 1064 590 1064 628 1072" fill="none" stroke="${SKYL}" stroke-width="12" stroke-linecap="round"/></g>`;
+  // fibula (may fracture)
+  const fr=st.frac||0;
+  if(fr>0){
+    const cut='L460 1095 L420 1060 L400 1078 L378 1050 L355 1072 L300 1066 Z';
+    o+=`<defs><clipPath id="fUp"><path d="M300 400 L460 400 ${cut}"/></clipPath><clipPath id="fLo"><path d="M300 1400 L460 1400 ${cut}"/></clipPath></defs>
+      <g clip-path="url(#fUp)">${boneP(FIBULA)}</g><g clip-path="url(#fLo)" transform="translate(${-14*fr},${10*fr}) rotate(${-5*fr},400,1070)">${boneP(FIBULA)}</g>
+      <path d="M340 1069 L355 1072 L378 1050 L400 1078 L416 1062" fill="none" stroke="${CORAL}" stroke-width="9" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="${200*(1-clamp(fr*1.6))}"/>`;
+  } else o+=boneP(FIBULA);
+  o+=boneP(TIBIA);
+  o+=`<path d="M455 1064 L622 1064" stroke="${SKYL}" stroke-width="10" stroke-linecap="round"/>`;
+  // ligaments
+  const lg=st.lig||0, sp=st.sprain||0;
+  if(lg>0){
+    const lc=sp>0?mix(LIG,CORAL,clamp(sp*1.5)):LIG;
+    const a1=R(456,1190), a2=R(432,1300), d1=R(640,1196), d2=R(650,1280);
+    o+=`<g opacity="${lg}">`+band(398,1168,a1[0],a1[1],lc,22,clamp((sp-0.35)*2))+band(372,1206,a2[0],a2[1],lc,22,clamp((sp-0.5)*2))
+       +band(694,1128,d1[0],d1[1],LIG,20)+band(698,1132,d2[0],d2[1],LIG,20)+'</g>';
+  }
+  // malleolus glows
+  const pulse=0.65+0.35*Math.sin(t*6);
+  if(st.hlL>0) o+=`<circle cx="372" cy="1170" r="90" fill="url(#glow)" opacity="${st.hlL*pulse*1.6}"/><circle cx="372" cy="1170" r="58" fill="none" stroke="${SKYD}" stroke-width="7" opacity="${st.hlL}"/>`;
+  if(st.hlM>0) o+=`<circle cx="690" cy="1105" r="90" fill="url(#glow)" opacity="${st.hlM*pulse*1.6}"/><circle cx="690" cy="1105" r="54" fill="none" stroke="${SKYD}" stroke-width="7" opacity="${st.hlM}"/>`;
+  if(fr>0) o+=`<circle cx="390" cy="1066" r="120" fill="url(#cglow)" opacity="${fr*pulse}"/>`;
+  return o;
+}
+function sceneAnkle(t){ // segments 1..5
+  let o=bg()+defs2();
+  const s=ST;
+  const sprain=P(t,s[4]+0.6,s[4]+2.4)*(1-P(t,s[5]-0.2,s[5]+0.5));
+  const frac=P(t,s[5]+1.0,s[5]+1.8);
+  const z=P(t,s[4]-0.2,s[4]+0.8);
+  const sc=lerp(1,1.32,z), fx=lerp(540,470,z), fy=lerp(995,1170,z);
+  const intro=P(t,s[1]-0.3,s[1]+0.5);
+  o+=`<g opacity="${intro}" mask="url(#fadeTop)"><g transform="translate(540,${lerp(995,1080,z)}) scale(${sc*lerp(1.08,1,intro)}) translate(${-fx},${-fy})">`;
+  o+=ankleSVG({lig:P(t,s[3],s[3]+0.8),sprain,frac,hlL:P(t,s[2]+1.2,s[2]+1.7)*(1-P(t,s[3]-0.3,s[3])),hlM:P(t,s[2]+1.4,s[2]+1.9)*(1-P(t,s[3]-0.3,s[3]))},t);
+  o+='</g></g>';
+  const lab1=1-P(t,s[2]+1.0,s[2]+1.4);
+  o+=`<g opacity="${lab1}">`+callout(560,800,800,760,'Tibia',P(t,s[1]+1.3,s[1]+1.8),{bg:NAVY,size:34,w:800})
+     +callout(382,800,200,740,'Fibula',P(t,s[1]+1.7,s[1]+2.2),{bg:NAVY,size:34,w:800})
+     +callout(560,1150,860,1300,'Talus',P(t,s[1]+2.1,s[1]+2.6),{bg:NAVY,size:34,w:800})+'</g>';
+  const lab2=P(t,s[2]+1.3,s[2]+1.8)*(1-P(t,s[3]-0.3,s[3]));
+  o+=`<g opacity="${lab2}">`+callout(360,1190,230,1420,'Outer ankle bone',lab2,{bg:SKYD,size:30,w:800})+callout(694,1110,850,1360,'Inner ankle bone',lab2,{bg:SKYD,size:30,w:800})+'</g>';
+  o+=pill(540,640,'LIGAMENTS = strong "ropes"',P(t,s[3]+0.5,s[3]+1.0)*(1-P(t,s[4]-0.3,s[4])),{bg:LIG,size:34,w:800});
+  o+=pill(540,640,'SPRAIN = stretched / torn ligament',P(t,s[4]+0.9,s[4]+1.4)*(1-P(t,s[5]-0.3,s[5])),{bg:CORAL,size:32,w:800});
+  if(t>s[4]+3.6&&t<s[5]){const a=P(t,s[4]+3.7,s[4]+4.1)*(1-P(t,s[5]-0.3,s[5]));
+    o+=`<g opacity="${a}">`+pill(540,1560,'Bone intact',a,{bg:GREEN,size:34,w:800})+'</g>';}
+  o+=pill(540,640,'FRACTURE = broken bone',P(t,s[5]+1.2,s[5]+1.7),{bg:CORAL,size:36,w:800});
+  o+=pill(250,1600,'Front view · right ankle',intro*0.9,{bg:WHITE,fg:NAVY,size:26,w:700});
+  return o;
+}
+// ---------- foot side views (local box 440 x 620; toes to the right) ----------
+const FOOT_SKIN=`M105 0 L235 0 C236 180 240 300 255 350 C270 395 320 430 380 470 C420 495 440 530 436 570 C434 600 415 612 385 612 L95 612 C55 612 35 585 40 540 C45 495 75 455 88 400 C98 330 104 180 105 0 Z`;
+const FOOT_SKIN_ARCH=`M105 0 L235 0 C236 180 240 300 255 350 C270 395 320 430 380 470 C420 495 440 530 436 570 C434 600 415 612 385 612 C340 612 320 590 260 590 C200 590 180 612 140 612 L95 612 C55 612 35 585 40 540 C45 495 75 455 88 400 C98 330 104 180 105 0 Z`;
+const CALC_S=`M88 470 C98 440 170 440 222 455 C262 466 292 482 296 512 C298 542 270 560 222 566 L112 568 C80 565 76 520 88 470 Z`;
+const TALUS_S=`M168 388 C196 372 248 374 266 396 C278 414 274 440 258 452 L178 456 C162 442 158 402 168 388 Z`;
+function sideFoot(kind,t){
+  let o=`<path d="${kind==='lat'?FOOT_SKIN:FOOT_SKIN_ARCH}" fill="${SKIN}" stroke="${NAVY}" stroke-width="4" opacity=".9"/>`;
+  if(kind==='lat'){
+    o+=boneP(`M168 0 L236 0 L238 330 C240 360 232 378 216 384 L172 384 Z`,'opacity=".55"');               // tibia (behind)
+    o+=boneP(TALUS_S)+boneP(CALC_S);
+    o+=boneP(`M294 488 L340 498 L338 548 L292 548 Z`);                                                    // cuboid
+    o+=boneP(`M338 500 C350 488 368 496 372 508 L424 562 C432 574 424 588 410 584 L356 548 C340 544 334 528 338 500 Z`); // 5th metatarsal
+    o+=boneP(`M128 0 L164 0 L168 330 C186 360 192 404 178 432 C164 458 132 456 126 424 C120 392 128 360 132 330 Z`); // fibula + lateral malleolus
+  } else {
+    o+=boneP(`M128 0 L164 0 L166 330 L140 330 Z`,'opacity=".55"');                                        // fibula (behind)
+    o+=boneP(TALUS_S)+boneP(CALC_S);
+    o+=boneP(`M266 430 C288 418 318 426 322 448 C324 470 300 480 280 474 C264 468 256 442 266 430 Z`);     // navicular
+    o+=boneP(`M322 450 C330 446 340 450 346 456 L420 540 C430 554 418 568 404 562 L330 488 C320 478 316 458 322 450 Z`); // cuneiform + 1st metatarsal
+    o+=boneP(`M150 0 L240 0 L240 340 C240 372 228 392 214 410 C202 426 180 426 174 406 C168 384 160 360 152 330 Z`); // tibia + medial malleolus
+  }
+  return o;
+}
+// spot positions in local coords (lateral: malleolus tip, 5th MT base; medial (pre-mirror): malleolus tip, navicular)
+const PANEL={lat:{ox:75,oy:740},med:{ox:565,oy:740}};
+function spotAbs(kind,x,y){const p=PANEL[kind]; return kind==='lat'?[p.ox+x,p.oy+y]:[p.ox+440-x,p.oy+y];}
+function spot(x,y,a,t,col=CORAL){ if(a<=0)return ''; const pul=(t*1.4)%1;
+  return `<g opacity="${clamp(a)}"><circle cx="${x}" cy="${y}" r="${22+40*pul}" fill="none" stroke="${col}" stroke-width="5" opacity="${1-pul}"/>
+   <circle cx="${x}" cy="${y}" r="${lerp(4,20,eout(a))}" fill="${col}" stroke="${WHITE}" stroke-width="5"/></g>`;}
+function edgeZone(pts,a,col=CORAL){ if(a<=0)return ''; const d='M'+pts.map(p=>p.join(' ')).join(' L ');
+  return `<path d="${d}" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round" stroke-dasharray="4 18" opacity="${a}"/>`;}
+function scenePanels(t){ // spots: segments 8..10
+  let o=bg(); const s=ST;
+  const a=P(t,s[8]-0.3,s[8]+0.5);
+  for(const k of ['lat','med']){const p=PANEL[k];
+    o+=`<g opacity="${a}"><rect x="${p.ox-15}" y="${p.oy-110}" width="470" height="790" rx="40" fill="${WHITE}" opacity=".85"/>
+      <g transform="translate(${p.ox},${p.oy})${k==='med'?' translate(440,0) scale(-1,1)':''}">${sideFoot(k,t)}</g></g>`;
+    o+=pill(p.ox+220,p.oy-60,k==='lat'?'OUTER SIDE':'INNER SIDE',a,{bg:k==='lat'?NAVY:SKYD,size:30,w:800});
+  }
+  // four bony spots
+  const A1=P(t,s[9]+0.2,s[9]+0.7), A2=P(t,s[9]+1.4,s[9]+1.9), A3=P(t,s[10]+1.9,s[10]+2.4), A4=P(t,s[10]+2.8,s[10]+3.3);
+  const lt=spotAbs('lat',150,446), mt=spotAbs('med',192,418), b5=spotAbs('lat',344,512), nv=spotAbs('med',290,466);
+  o+=edgeZone([spotAbs('lat',128,330),spotAbs('lat',126,400),spotAbs('lat',150,450)],A1);
+  o+=edgeZone([spotAbs('med',154,330),spotAbs('med',172,400),spotAbs('med',192,424)],A2);
+  o+=spot(lt[0],lt[1],A1,t)+spot(mt[0],mt[1],A2,t)+spot(b5[0],b5[1],A3,t)+spot(nv[0],nv[1],A4,t);
+  // lines first, then all pills on top (so no line crosses a label)
+  const L4=[[lt,290,1470,'1 · Outer ankle bone',A1],[mt,790,1470,'2 · Inner ankle bone',A2],[b5,300,1560,'3 · Base of 5th metatarsal',A3],[nv,790,1560,'4 · Navicular',A4]];
+  L4.forEach(([q,lx,ly,txt,ap])=>{o+=callout(q[0],q[1],lx,ly,'',ap,{bg:CORAL,size:26,w:800}).replace(/<g opacity="[^"]*" transform="translate[\s\S]*$/,'');});
+  L4.forEach(([q,lx,ly,txt,ap])=>{o+=pill(lx,ly,txt,clamp((ap-0.25)*1.6),{bg:CORAL,size:26,w:800});});
+  // finger pressing
+  const fp=P(t,s[8]+1.6,s[8]+2.2)*(1-P(t,s[9]-0.2,s[9]+0.2));
+  if(fp>0){const press=Math.abs(Math.sin(t*3))*14;
+    o+=`<g opacity="${fp}" transform="translate(${lt[0]+30},${lt[1]-10+press}) rotate(-25)"><rect x="-24" y="-150" width="48" height="150" rx="24" fill="${FINGER}" stroke="${NAVY}" stroke-width="5"/>
+     <path d="M-12 -40 Q0 -30 12 -40" stroke="${NAVY}" stroke-width="4" fill="none"/></g>`;
+    o+=pill(540,1500,'Doctor presses on the bone',fp,{bg:NAVY,size:32,w:800});}
+  o+=pill(540,1660,'4 BONY SPOTS',P(t,s[8]+0.8,s[8]+1.3),{bg:NAVY,size:34,w:800});
+  o+=refText('Stiell et al., JAMA 1993 · Tiemstra, Am Fam Physician 2012',a);
+  return o;
+}
+function footprint(x,y,flip,a,col){ if(a<=0)return '';
+  return `<g opacity="${clamp(a)}" transform="translate(${x},${y}) scale(${flip?-1:1},1) scale(${lerp(.6,1,eout(a))})">
+   <path d="M0 -70 C34 -70 44 -30 40 10 C36 50 30 80 6 84 C-20 88 -30 60 -32 20 C-34 -20 -30 -70 0 -70 Z" fill="${col}"/>
+   <circle cx="-22" cy="-96" r="12" fill="${col}"/><circle cx="2" cy="-104" r="11" fill="${col}"/><circle cx="24" cy="-98" r="10" fill="${col}"/><circle cx="40" cy="-84" r="8" fill="${col}"/></g>`;}
+function sceneWalk(t){
+  let o=bg(); const s=ST, a=P(t,s[11]-0.3,s[11]+0.4);
+  o+=pill(540,690,'CAN YOU WALK 4 STEPS?',a,{bg:NAVY,size:40,w:800});
+  let n=0;
+  for(let i=0;i<4;i++){const ap=P(t,s[11]+1.0+i*0.55,s[11]+1.3+i*0.55); if(ap>0)n=i+1;
+    o+=footprint(i%2?620:460,1430-i*170,i%2===0,ap,i%2?SKYD:NAVY);}
+  o+=`<text x="830" y="1180" text-anchor="middle" font-family="Mont" font-weight="900" font-size="200" fill="${NAVY}" opacity="${n>0?1:0}">${n}</text>`;
+  o+=pill(540,1620,'right after the injury AND at the doctor',P(t,s[11]+2.6,s[11]+3.1),{bg:WHITE,fg:NAVY,size:28,w:700});
+  o+=refText('Stiell et al., JAMA 1993',a);
+  return o;
+}
+function xfilm(x,y,s,a,cross=0,nobone=0){ if(a<=0)return '';
+  return `<g opacity="${clamp(a)}" transform="translate(${x},${y}) scale(${s*lerp(.8,1,eout(a))})"><rect x="-110" y="-140" width="220" height="280" rx="22" fill="#24384F" stroke="${NAVY}" stroke-width="6"/>
+   <path opacity="${nobone?0:1}" d="M-34 -120 L-30 20 C-50 50 -40 90 -10 92 L40 92 C60 88 66 60 40 50 L18 40 L22 -120" fill="none" stroke="#DCE9F4" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" opacity=".9"/>
+   ${cross>0?`<path d="M-120 -150 L120 150" stroke="${CORAL}" stroke-width="16" stroke-linecap="round" opacity="${cross}"/>`:''}</g>`;}
+function cardRow(y,txt,ap,icon,col){ if(ap<=0)return ''; const s=lerp(.9,1,eout(ap));
+  const ic=icon==='x'?`<path d="M-20 -20 L20 20 M20 -20 L-20 20" stroke="${WHITE}" stroke-width="12" stroke-linecap="round"/>`:
+          icon==='ok'?`<path d="M-26 0 L-8 20 L26 -18" stroke="${WHITE}" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`:
+          icon==='dot'?`<circle r="18" fill="${WHITE}"/>`:`<path d="M-8 -26 H8 V-8 H26 V8 H8 V26 H-8 V8 H-26 V-8 H-8 Z" fill="${WHITE}"/>`;
+  return `<g opacity="${clamp(ap)}" transform="translate(540,${y}) scale(${s}) translate(-540,${-y})"><rect x="90" y="${y-95}" width="900" height="190" rx="36" fill="${WHITE}"/>
+   <g transform="translate(200,${y})"><circle r="56" fill="${col}"/>${ic}</g>
+   <text x="290" y="${y+15}" font-family="Mont" font-weight="800" font-size="44" fill="${NAVY}">${txt}</text></g>`;}
+function sceneXray(t){
+  let o=bg(); const s=ST, a=P(t,s[12]-0.3,s[12]+0.3);
+  o+=cardRow(760,'Pain at any of the 4 spots',P(t,s[12]+0.2,s[12]+0.7),'dot',CORAL);
+  o+=pill(540,905,'OR',P(t,s[12]+2.0,s[12]+2.4),{bg:NAVY,size:36,w:900});
+  o+=cardRow(1050,'Cannot walk 4 steps',P(t,s[12]+2.2,s[12]+2.7),'x',CORAL);
+  const ar=P(t,s[12]+3.4,s[12]+3.8);
+  o+=`<path d="M540 1165 L540 1235 M512 1210 L540 1240 L568 1210" stroke="${NAVY}" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${ar}"/>`;
+  o+=xfilm(540,1420,0.9,P(t,s[12]+3.6,s[12]+4.1));
+  o+=pill(540,1610,'X-RAY NEEDED',P(t,s[12]+3.8,s[12]+4.3),{bg:CORAL,size:38,w:900});
+  o+=refText('Stiell et al., JAMA 1993',a);
+  return o;
+}
+function sceneNo(t){
+  let o=bg(); const s=ST, a=P(t,s[13]-0.3,s[13]+0.3);
+  o+=cardRow(760,'No pain at the 4 spots',P(t,s[13]+0.2,s[13]+0.7),'ok',GREEN);
+  o+=cardRow(1000,'Walks 4 steps',P(t,s[13]+0.8,s[13]+1.3),'ok',GREEN);
+  o+=`<path d="M540 1110 L540 1180 M512 1155 L540 1185 L568 1155" stroke="${NAVY}" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${P(t,s[13]+2.0,s[13]+2.3)}"/>`;
+  const b=P(t,s[13]+2.3,s[13]+2.9);
+  o+=`<g opacity="${b}"><text x="540" y="1390" text-anchor="middle" font-family="Mont" font-weight="900" font-size="170" fill="${GREEN}">&lt; 1.4%</text>
+    <text x="540" y="1470" text-anchor="middle" font-family="Mont" font-weight="700" font-size="42" fill="${NAVY}">chance of a fracture</text></g>`;
+  o+=refText('Bachmann et al., BMJ 2003 · 27 studies, 15,581 patients',a);
+  return o;
+}
+function sceneEvidence(t){
+  let o=bg(); const s=ST, a=P(t,s[14]-0.3,s[14]+0.3);
+  const n=Math.round(lerp(0,98.5,P(t,s[14]+0.6,s[14]+2.2))*10)/10;
+  o+=`<g opacity="${a}"><text x="540" y="960" text-anchor="middle" font-family="Mont" font-weight="900" font-size="210" fill="${NAVY}">${n>=98.5?'98–100':Math.round(n)}<tspan font-size="130" fill="${SKYD}">%</tspan></text>
+    <text x="540" y="1060" text-anchor="middle" font-family="Mont" font-weight="700" font-size="46" fill="${NAVY}">of fractures detected</text></g>`;
+  o+=pill(330,1250,'Adults',P(t,s[14]+2.6,s[14]+3.1),{bg:NAVY,size:40,w:800});
+  o+=pill(740,1250,'Children over 5',P(t,s[14]+3.2,s[14]+3.7),{bg:SKYD,size:40,w:800});
+  o+=refText('Bachmann, BMJ 2003 · Dowling, Acad Emerg Med 2009',a);
+  return o;
+}
+function sceneThird(t){
+  let o=bg(); const s=ST, a=P(t,s[15]-0.3,s[15]+0.3);
+  for(let i=0;i<3;i++){const ap=P(t,s[15]+0.1+i*0.25,s[15]+0.5+i*0.25);
+    const cr=i===2?P(t,s[15]+2.5,s[15]+3.0):0;
+    o+=`<g opacity="${i===2?1-0.5*cr:1}">`+xfilm(250+i*290,1050,0.85,ap,cr)+'</g>';}
+  o+=`<g opacity="${P(t,s[15]+1.0,s[15]+1.5)}"><text x="540" y="780" text-anchor="middle" font-family="Mont" font-weight="900" font-size="120" fill="${NAVY}">≈ 1/3</text></g>`;
+  o+=pill(540,1330,'fewer unnecessary X-rays',P(t,s[15]+2.5,s[15]+3.0),{bg:GREEN,size:40,w:800});
+  o+=refText('Stiell, JAMA 1993 · Bachmann, BMJ 2003 (30–40%)',a);
+  return o;
+}
+function sceneLesson(t){
+  let o=bg(); const s=ST, a=P(t,s[16]-0.3,s[16]+0.3);
+  o+=pill(540,690,'THE RULE IS FOR YOUR DOCTOR',a,{bg:NAVY,size:38,w:800});
+  o+=cardRow(900,'Cannot walk on it',P(t,s[16]+2.4,s[16]+2.9),'x',CORAL);
+  o+=cardRow(1130,'Pain not improving',P(t,s[16]+4.1,s[16]+4.6),'x',CORAL);
+  o+=cardRow(1420,'See a doctor',P(t,s[16]+5.8,s[16]+6.3),'plus',GREEN);
+  o+=`<path d="M540 1240 L540 1300 M514 1278 L540 1305 L566 1278" stroke="${NAVY}" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${P(t,s[16]+5.6,s[16]+6)}"/>`;
+  return o;
+}
+function sceneStat(t){
+  let o=bg(); const s=ST, a=P(t,s[6]-0.3,s[6]+0.3);
+  o+=pill(540,690,'MOST ANKLE INJURIES',a,{bg:NAVY,size:40,w:800});
+  o+=`<text x="540" y="800" text-anchor="middle" font-family="Mont" font-weight="900" font-size="64" fill="${GREEN}" opacity="${P(t,s[6]+1.7,s[6]+2.2)}">are NOT fractures</text>`;
+  for(let i=0;i<20;i++){const r=Math.floor(i/5),c=i%5; const ap=P(t,s[6]+0.3+i*0.05,s[6]+0.7+i*0.05); if(ap<=0)continue;
+    const on=(i===6||i===13||i===17)&&t>s[6]+2.6;
+    o+=`<g opacity="${ap}">`+smallBone2(220+c*160,1000+r*175,on?CORAL:BONE)+`</g>`;}
+  o+=pill(540,1720-60,'≈ 15% are fractures',P(t,s[6]+2.7,s[6]+3.2),{bg:CORAL,size:34,w:800});
+  o+=refText('Stiell, JAMA 1993 · Bachmann, BMJ 2003',a);
+  return o;
+}
+function smallBone2(x,y,col){return `<g transform="translate(${x},${y}) scale(.8)"><rect x="-13" y="-62" width="26" height="124" rx="8" fill="${col}" stroke="${NAVY}" stroke-width="5"/>
+ <circle cx="-13" cy="-66" r="17" fill="${col}" stroke="${NAVY}" stroke-width="5"/><circle cx="13" cy="-66" r="17" fill="${col}" stroke="${NAVY}" stroke-width="5"/>
+ <circle cx="-13" cy="66" r="17" fill="${col}" stroke="${NAVY}" stroke-width="5"/><circle cx="13" cy="66" r="17" fill="${col}" stroke="${NAVY}" stroke-width="5"/>
+ <rect x="-12" y="-62" width="24" height="124" fill="${col}"/></g>`;}
+function sceneRule(t){
+  let o=bg(); const s=ST, a=P(t,s[7]-0.3,s[7]+0.4);
+  // clipboard
+  o+=`<g opacity="${a}" transform="translate(540,1080) scale(${lerp(.85,1,eout(a))})"><rect x="-300" y="-300" width="600" height="600" rx="36" fill="${WHITE}" stroke="${NAVY}" stroke-width="8"/>
+     <rect x="-90" y="-330" width="180" height="70" rx="20" fill="${SKYD}" stroke="${NAVY}" stroke-width="6"/>`;
+  const items=['Bone tenderness?','Walk 4 steps?'];
+  for(let i=0;i<2;i++){const ap=P(t,s[7]+1.0+i*0.8,s[7]+1.4+i*0.8);
+    o+=`<g opacity="${ap}"><rect x="-240" y="${-170+i*170}" width="70" height="70" rx="14" fill="none" stroke="${NAVY}" stroke-width="6"/>
+     <path d="M-228 ${-136+i*170} L-210 ${-118+i*170} L-178 ${-158+i*170}" stroke="${NAVY}" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
+     <text x="-145" y="${-122+i*170}" font-family="Mont" font-weight="800" font-size="40" fill="${NAVY}">${items[i]}</text></g>`;}
+  o+=`<path d="M-240 220 H240" stroke="${SKYL}" stroke-width="14" stroke-linecap="round"/></g>`;
+  o+=pill(540,690,'OTTAWA ANKLE RULES',P(t,s[7]+3.3,s[7]+3.8),{bg:NAVY,size:42,w:900});
+  o+=pill(540,1520,'a quick check by the doctor',P(t,s[7]+3.6,s[7]+4.1),{bg:WHITE,fg:NAVY,size:32,w:700});
+  o+=refText('Stiell et al., Ann Emerg Med 1992 · JAMA 1993',a);
+  return o;
+}
+function sceneHook(t){
+  let o=bg();
+  o+=pill(540,250,'SPRAIN OR FRACTURE?',1,{bg:NAVY,size:40,w:800});
+  const bob=Math.sin(t*1.6)*6;
+  const sw=P(t,0.6,1.6), pulse=0.6+0.4*Math.sin(t*5);
+  o+=`<g transform="translate(250,${640+bob}) scale(1.3)">`;
+  o+=sideFoot('lat',t);
+  o+=`<ellipse cx="170" cy="420" rx="${lerp(60,95,sw)}" ry="${lerp(50,80,sw)}" fill="${CORAL}" opacity="${0.45*sw*pulse}"/>`;
+  o+=`<path d="M120 380 C110 420 130 470 175 475 C220 478 250 440 240 400" fill="none" stroke="${NAVY}" stroke-width="4" opacity="${0.5*sw}" stroke-dasharray="8 8"/>`;
+  o+=`</g>`;
+  // motion lines (twist)
+  o+=`<g opacity="${P(t,0.4,0.9)*(1-P(t,2.0,2.5))}" stroke="${NAVY}" stroke-width="8" stroke-linecap="round" fill="none"><path d="M180 1290 C140 1240 140 1180 180 1140"/><path d="M140 1320 C90 1250 90 1160 140 1110"/></g>`;
+  o+=pill(330,1580,'SPRAIN?',P(t,2.2,2.7),{bg:SKYD,size:44,w:900});
+  o+=pill(760,1580,'FRACTURE?',P(t,2.9,3.4),{bg:CORAL,size:44,w:900});
+  o+=xfilm(860,1050,0.75,P(t,4.3,4.8),0,1);
+  o+=`<text x="860" y="1100" text-anchor="middle" font-family="Mont" font-weight="900" font-size="150" fill="${WHITE}" opacity="${P(t,4.6,5.0)}">?</text>`;
+  return o;
+}
+
+function heart(c){return `<path d="M0 30 C-60 -10 -45 -60 -12 -50 C-4 -47 0 -40 0 -36 C0 -40 4 -47 12 -50 C45 -60 60 -10 0 30 Z" fill="${c}" transform="translate(0,6) scale(1.15)"/>`;}
+function person(c){return `<circle cx="-8" cy="-22" r="20" fill="${c}"/><path d="M-44 34 C-44 4 -26 -4 -8 -4 C10 -4 28 4 28 34 Z" fill="${c}"/><path d="M38 -16 V16 M22 0 H54" stroke="${c}" stroke-width="10" stroke-linecap="round"/>`;}
+function share(c){return `<path d="M-40 34 C-40 -6 -6 -18 18 -18 L18 -42 L56 -4 L18 34 L18 10 C-6 10 -26 16 -40 34 Z" fill="${c}" transform="translate(-6,4)"/>`;}
+function sceneCTA(t){
+  const s0=ST[17], cl=TL.segs[17].clauses.map(c=>c.start);
+  let o=bg();
+  const a=P(t,s0-0.2,s0+0.4);
+  o+=`<g opacity="${a}"><text x="540" y="760" text-anchor="middle" font-family="Mont" font-weight="800" font-size="110" letter-spacing="2"><tspan fill="${NAVY}">ortho</tspan><tspan fill="${SKYD}">jets</tspan></text>
+     <text x="540" y="830" text-anchor="middle" font-family="Mont" font-weight="600" font-size="38" fill="${NAVY}" opacity=".8">Ortho pearls at jet speed</text></g>`;
+  const items=[[heart,'LIKE',CORAL,cl[1]],[person,'FOLLOW',SKYD,cl[2]],[share,'SHARE',NAVY,cl[3]]];
+  items.forEach(([f,lab,col,ts],i)=>{const p=P(t,ts,ts+0.45); if(p<=0)return; const x=220+i*320,y=1150;
+    const bump=1+0.12*Math.sin(clamp((t-ts)/0.6)*Math.PI);
+    o+=`<g opacity="${p}" transform="translate(${x},${y}) scale(${lerp(.6,1,eout(p))*bump})"><circle r="110" fill="${WHITE}"/><circle r="110" fill="none" stroke="${col}" stroke-width="8"/>${f(col)}</g>`;
+    o+=pill(x,y+175,lab,p,{bg:col,size:34,w:800});});
+  return o;
+}
+// ---------- captions ----------
+let WORDS=null;
+function buildWords(){
+  WORDS=[];
+  for(const s of TL.segs) for(const c of s.clauses){
+    const clean=c.text.replace(/[ً-ْٰـ]/g,'').replace(/[؟?.!:،,]/g,'').trim();
+    const ws=clean.split(/\s+/).filter(Boolean).reduce((r,w)=>{if(r.length&&r[r.length-1]==='لا')r[r.length-1]+=' '+w;else r.push(w);return r;},[]);
+    const wt=ws.map(w=>w.length+1.6), tot=wt.reduce((a,b)=>a+b,0);
+    let t0=c.start+0.05; const dur=c.end-c.start-0.05;
+    ws.forEach((w,i)=>{const d=dur*wt[i]/tot; WORDS.push({w,a:t0,b:t0+d}); t0+=d;});
+  }
+}
+function caption(t){
+  if(!WORDS)buildWords();
+  let cur=null; for(const w of WORDS){ if(t>=w.a && t<w.b+0.25){cur=w;} }
+  if(!cur) return '';
+  const p=eout((t-cur.a)/0.12), s=lerp(0.8,1,p);
+  return `<g transform="translate(540,445) scale(${s})" opacity="${clamp(p*1.5)}"><text x="0" y="0" text-anchor="middle" direction="rtl" font-family="Cairo" font-weight="900" font-size="104"
+     fill="${WHITE}" stroke="${NAVY}" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${cur.w}</text></g>`;
+}
+
+// ---------- master ----------
+// scenes are written against the real segment starts ST (OB = timeline boundaries, so warp() is the identity here)
+let SC=[], OB=[];
+function buildSC(){
+  ST=TL.segs.map(s=>s.start);
+  OB=ST.concat([TL.segs[TL.segs.length-1].end,TL.total]);
+  SC=[[0,ST[1],sceneHook],[ST[1],ST[6],sceneAnkle],[ST[6],ST[7],sceneStat],[ST[7],ST[8],sceneRule],[ST[8],ST[11],scenePanels],
+      [ST[11],ST[12],sceneWalk],[ST[12],ST[13],sceneXray],[ST[13],ST[14],sceneNo],[ST[14],ST[15],sceneEvidence],[ST[15],ST[16],sceneThird],
+      [ST[16],ST[17],sceneLesson],[ST[17],999,sceneCTA]];
+}
+function render(tr){
+  const t=warp(tr);
+  const F=0.35;
+  let idx=0; for(let i=0;i<SC.length;i++){ if(t>=SC[i][0]-F) idx=i; }
+  const cur=SC[idx], prev=idx>0?SC[idx-1]:null;
+  let out='';
+  const fa=clamp((t-(cur[0]-F))/(2*F));
+  if(prev && fa<1){ out+=prev[2](t)+`<g opacity="${fa}">${cur[2](t)}</g>`; } else out+=cur[2](t);
+  out+=watermark()+caption(tr);
+  document.getElementById('v').innerHTML=out;
+}
+function warp(t){ if(!TL)return t; const NB=TL.segs.map(s=>s.start).concat([TL.segs[TL.segs.length-1].end,TL.total]);
+  if(t<=NB[0]) return t*OB[0]/NB[0];
+  for(let i=0;i<NB.length-1;i++){ if(t<NB[i+1]) return OB[i]+(t-NB[i])*(OB[i+1]-OB[i])/(NB[i+1]-NB[i]); }
+  return OB[OB.length-1]+(t-NB[NB.length-1]); }
+window.render=render;
+window.setTL=x=>{TL=x;WORDS=null;buildSC();};
+</script></body></html>

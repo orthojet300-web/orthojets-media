@@ -20,14 +20,30 @@
       "pmids_extra": [
         "8209558"
       ],
-      "music_note": "music remixed 6 dB quieter (-36 LUFS) on owner request 2026-10-25"
+      "music_note": "music remixed 6 dB quieter (-36 LUFS) on owner request 2026-10-25",
+      "manual": true,
+      "publish_note": "Metricool post failed 2026-10-31 (account limit); final MP4 + cover + caption re-delivered 2026-11-06 for manual posting"
     },
     {
       "n": 2,
       "slug": "ar02_sprain_or_fracture",
       "title_ar": "التواء أم كسر؟ متى تحتاج الأشعة بعد التواء الكاحل",
-      "status": "todo",
-      "source_hint": "Ottawa ankle rules, Stiell JAMA 1993; Bachmann BMJ 2003 (lay version: 4 bony spots + cannot walk 4 steps)"
+      "status": "published",
+      "source_hint": "Ottawa ankle rules, Stiell JAMA 1993; Bachmann BMJ 2003 (lay version: 4 bony spots + cannot walk 4 steps)",
+      "manual": true,
+      "publish": "manual post by owner 2026-11-07 10:00 Africa/Tripoli (TikTok + Instagram Reel)",
+      "series_name": "عظامك ببساطة",
+      "dois": [
+        "10.1136/bmj.326.7386.417",
+        "10.1001/jama.269.9.1127",
+        "10.1016/s0196-0644(05)82656-3",
+        "10.1111/j.1553-2712.2008.00333.x"
+      ],
+      "pmids_extra": [
+        "22962897",
+        "8114236"
+      ],
+      "review": "design review PASS + PubMed fact-check PASS 2026-11-06"
     },
     {
       "n": 3,
