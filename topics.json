@@ -692,9 +692,56 @@
       "n": 17,
       "slug": "ep17_garden",
       "title": "Garden classification of femoral neck fractures: fix or replace",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Garden RS JBJS Br 1961; Parker MJ / Kazley JM reviews (displaced vs undisplaced)",
-      "series": "classified"
+      "series": "classified",
+      "part": 4,
+      "source": "Lu-Yao GL et al. J Bone Joint Surg Am 1994;76(1):15-25; Bjorgul K, Reikeras O. Acta Orthop Scand 2002;73(3):307-10; Palm H et al. Acta Orthop 2009;80(3):303-7; Dolatowski FC et al. J Bone Joint Surg Am 2019;101(2):136-44; Slullitel PA et al. J Arthroplasty 2024;39(1):111-7; Riaz O et al. Ann R Coll Surg Engl 2016;98(6):376-9; Fu X et al. Medicine 2015;94(39):e1393; Pietrzak JRT et al. Orthop Rev 2026;18:158940; Kazley JM et al. Clin Orthop Relat Res 2018;476(2):441-5; Garden RS. J Bone Joint Surg Br 1961;43-B:647-63",
+      "published": "scheduled 2026-11-09 10:00 Africa/Tripoli (Monday; TikTok + Instagram; 2026-11-08 taken by EP18, Fri/Sat off)",
+      "release": "media branch: ep17_garden.mp4",
+      "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
+      "metricool": {
+        "id": 420118620,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6716037400839277553"
+      },
+      "pmids": [
+        "8288658",
+        "12143978",
+        "19634021",
+        "30653043",
+        "37380144",
+        "27055409",
+        "26426607",
+        "41868737",
+        "29389800"
+      ],
+      "dois": [
+        "10.2106/00004623-199401000-00003",
+        "10.1080/000164702320155301",
+        "10.3109/17453670902967281",
+        "10.2106/JBJS.18.00316",
+        "10.1016/j.arth.2023.06.035",
+        "10.1308/rcsann.2016.0124",
+        "10.1097/MD.0000000000001393",
+        "10.52965/001c.158940",
+        "10.1007/s11999.0000000000000066"
+      ],
+      "cover_ms": 2400,
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "checks": "design review: round 1 6 FAIL (head position III/IV, colours, margins, refs) fixed; round 2 2 FAIL (text past card edge) fixed and verified; independent fact check 9/10 PASS, summary rule FAIL fixed before render (I-II 'usually fix', 'fix unless posterior tilt 20 deg or more'; 'fixation' instead of 'screws' for Lu-Yao)",
+      "carousel": {
+        "headline": "GARDEN",
+        "sub": "Displaced? Replace. Undisplaced? Tilt?",
+        "points": [
+          "Displaced + fixation: nonunion 33%, AVN 16% (106 reports)",
+          "Kappa 0.4 for 4 stages, 0.6 for undisplaced vs displaced",
+          "Posterior tilt 20 deg or more: 56% reoperated vs 14%"
+        ],
+        "ref": "Lu-Yao et al., J Bone Joint Surg Am 1994"
+      }
     },
     {
       "n": 19,
