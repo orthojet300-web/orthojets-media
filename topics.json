@@ -856,6 +856,25 @@
       "media": "media branch: carousel_20261101/slide01-07.jpg",
       "metricool_post_id": 412398421,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=490881107550031169"
+    },
+    {
+      "date": "2026-11-08 18:00 Africa/Tripoli",
+      "week": "Nov 2 - 8",
+      "episodes": [
+        "ep10_mess",
+        "ep12_fat_embolism",
+        "ep13_achilles",
+        "ep16_canadian_cspine",
+        "ep18_lisfranc"
+      ],
+      "slides": 7,
+      "networks": [
+        "instagram",
+        "tiktok"
+      ],
+      "media": "media branch: carousel_20261108/slide01-07.jpg",
+      "manual": true,
+      "note": "Delivered to the owner 2026-11-07 for manual posting (no Metricool post)"
     }
   ]
 }
