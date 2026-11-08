@@ -747,9 +747,49 @@
       "n": 19,
       "slug": "ep19_mirels",
       "title": "Mirels score 9: impending pathological fracture",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Mirels H. Clin Orthop 1989 (score 8 or more fracture risk, 9 or more prophylactic fixation); Damron validation 2003",
-      "series": "numbers"
+      "series": "numbers",
+      "part": 5,
+      "source": "Mirels H. Clin Orthop Relat Res 1989;(249):256-64; Damron TA et al. Clin Orthop Relat Res 2003;(415 Suppl):S201-7; Benca E et al. Bone Rep 2016;5:51-6; Hoban KA et al. JSES Int 2022;6(4):675-81; Crenn V et al. Orthop Traumatol Surg Res 2020;106(6):1005-11",
+      "published": "scheduled 2026-11-10 10:00 Africa/Tripoli (Tuesday; TikTok + Instagram; 2026-11-09 taken by EP17)",
+      "release": "media branch: ep19_mirels.mp4",
+      "music": "user_track2_calm_tiktok.mp3 (from music/vault; private repo not reachable)",
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "cover_ms": 2400,
+      "metricool": {
+        "id": 420924418,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=7998557432092118775"
+      },
+      "pmids": [
+        "2684463",
+        "14600587",
+        "14600611",
+        "28326347",
+        "35813136",
+        "32782175"
+      ],
+      "dois": [
+        "10.1097/01.blo.0000093045.56370.dd",
+        "10.1097/01.blo.0000093842.72468.73",
+        "10.1016/j.bonr.2016.02.003",
+        "10.1016/j.jseint.2022.03.006",
+        "10.1016/j.otsr.2020.03.034"
+      ],
+      "checks": "design review: round 1 FAIL (cover 9 vs worked score 11, title overflow, refs card margin, size row timing) fixed; round 2 PASS. Independent fact check 15/15 PASS (7/8/9 scheme cited to Benca 2016, not the 1989 abstract which says 8 or more = fix)",
+      "carousel": {
+        "headline": "MIRELS 9",
+        "sub": "Score 4-12: 9 or more, fix first",
+        "points": [
+          "Site, pain, lesion type, size: 1-3 points each",
+          "Sensitivity 91%, specificity 35% (53 raters)",
+          "Upper limb: 9 or more caught 14%, 7 or more 63%"
+        ],
+        "ref": "Mirels, Clin Orthop Relat Res 1989"
+      }
     },
     {
       "n": 20,
