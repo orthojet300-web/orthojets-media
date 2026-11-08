@@ -792,12 +792,28 @@
       }
     },
     {
+      "n": 22,
+      "slug": "ep22_kanavel",
+      "title": "Kanavel signs: pyogenic flexor tenosynovitis",
+      "status": "todo",
+      "source_hint": "Kanavel AB 1912; Kennedy CD et al. J Hand Surg Am 2017 (sensitivity of each sign)",
+      "series": "dontmiss"
+    },
+    {
       "n": 20,
       "slug": "ep20_ottawa_knee",
       "title": "Ottawa knee rule: does this knee need an X-ray?",
       "status": "todo",
       "source_hint": "Stiell IG et al. JAMA 1996/1997; Bachmann LM et al. Ann Intern Med 2004 meta-analysis",
       "series": "rules"
+    },
+    {
+      "n": 21,
+      "slug": "ep21_weber",
+      "title": "Danis-Weber ankle fractures and the syndesmosis",
+      "status": "todo",
+      "source_hint": "Weber BG 1972; medial clear space / stress view studies (e.g. Michelson 2004)",
+      "series": "classified"
     },
     {
       "n": 11,
@@ -816,28 +832,12 @@
       "series": "classified"
     },
     {
-      "n": 22,
-      "slug": "ep22_kanavel",
-      "title": "Kanavel signs: pyogenic flexor tenosynovitis",
-      "status": "todo",
-      "source_hint": "Kanavel AB 1912; Kennedy CD et al. J Hand Surg Am 2017 (sensitivity of each sign)",
-      "series": "dontmiss"
-    },
-    {
       "n": 23,
       "slug": "ep23_cobb",
       "title": "Cobb angle thresholds in adolescent idiopathic scoliosis: brace vs surgery",
       "status": "todo",
       "source_hint": "Weinstein SL et al. NEJM 2013 (BrAIST, bracing 20-40 degrees, 18 h/day)",
       "series": "numbers"
-    },
-    {
-      "n": 21,
-      "slug": "ep21_weber",
-      "title": "Danis-Weber ankle fractures and the syndesmosis",
-      "status": "todo",
-      "source_hint": "Weber BG 1972; medial clear space / stress view studies (e.g. Michelson 2004)",
-      "series": "classified"
     },
     {
       "n": 25,
