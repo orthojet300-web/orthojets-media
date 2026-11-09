@@ -794,10 +794,51 @@
     {
       "n": 22,
       "slug": "ep22_kanavel",
-      "title": "Kanavel signs: pyogenic flexor tenosynovitis",
-      "status": "todo",
+      "title": "Pyogenic flexor tenosynovitis: Kanavel's 4 signs, their accuracy and why tonight",
+      "status": "published",
       "source_hint": "Kanavel AB 1912; Kennedy CD et al. J Hand Surg Am 2017 (sensitivity of each sign)",
-      "series": "dontmiss"
+      "series": "dontmiss",
+      "part": 5,
+      "source": "Kennedy CD et al. Hand (N Y) 2017;12(6):585-90; Pang HN et al. J Bone Joint Surg Am 2007;89(8):1742-8; Idarrha F et al. Injury 2026;57(10):113631; Frenkel Rutenberg T et al. J Plast Surg Hand Surg 2020;54(1):14-8; Siska RC et al. Plast Reconstr Surg Glob Open 2022;10(3):e4165; Yi A et al. J Hand Surg Am 2019;44(5):394-9",
+      "published": "scheduled 2026-11-11 10:00 Africa/Tripoli (Wednesday; TikTok + Instagram; 2026-11-10 taken by EP19)",
+      "release": "media branch: ep22_kanavel.mp4",
+      "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "cover_ms": 2400,
+      "metricool": {
+        "id": 422154432,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-8433615054936914187"
+      },
+      "pmids": [
+        "28720000",
+        "17671013",
+        "42721565",
+        "31453741",
+        "35261842",
+        "30797654"
+      ],
+      "dois": [
+        "10.1177/1558944717692089",
+        "10.2106/JBJS.F.01356",
+        "10.1016/j.injury.2026.113631",
+        "10.1080/2000656X.2019.1657434",
+        "10.1097/GOX.0000000000004165",
+        "10.1016/j.jhsa.2019.01.013"
+      ],
+      "checks": "design review: round 1 2 FAIL (hook headline past x 960, sheath label left of x 60) fixed; round 2 ALL PASS. Independent fact check 11/12 PASS, 1 FAIL (IV antibiotics \"early cases only\" -> \"uncomplicated, inpatient, under a hand surgeon\") fixed before render",
+      "carousel": {
+        "headline": "KANAVEL x4",
+        "sub": "Finger infection: wash out tonight?",
+        "points": [
+          "4 signs: flexed posture, fusiform swelling, sheath tenderness, pain on extension",
+          "Each sign: sensitivity 91-97%, specificity only 51-69%",
+          "Amputation 0% vs 8% vs 59% as pus and ischaemia appear"
+        ],
+        "ref": "Kennedy et al, Hand 2017; Pang et al, JBJS Am 2007"
+      }
     },
     {
       "n": 20,
