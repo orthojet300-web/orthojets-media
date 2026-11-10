@@ -844,9 +844,48 @@
       "n": 20,
       "slug": "ep20_ottawa_knee",
       "title": "Ottawa knee rule: does this knee need an X-ray?",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Stiell IG et al. JAMA 1996/1997; Bachmann LM et al. Ann Intern Med 2004 meta-analysis",
-      "series": "rules"
+      "series": "rules",
+      "part": "5",
+      "source": "Stiell IG et al. Ann Emerg Med 1995;26(4):405-13; Stiell IG et al. JAMA 1996;275(8):611-5; Stiell IG et al. JAMA 1997;278(23):2075-9; Bachmann LM et al. Ann Intern Med 2004;140(2):121-4; Bulloch B et al. Ann Emerg Med 2003;42(1):48-55; Seaberg DC et al. Ann Emerg Med 1998;32(1):8-13",
+      "published": "scheduled 2026-11-12 10:00 Africa/Tripoli (Thursday; TikTok + Instagram; 2026-11-11 taken by EP22)",
+      "release": "media branch: ep20_ottawa_knee.mp4",
+      "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "cover_ms": "2400",
+      "metricool": {
+        "id": 423455762,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-2322964789473554532"
+      },
+      "pmids": [
+        "7574120",
+        "8594242",
+        "9403421",
+        "14734335",
+        "12827123",
+        "9656942"
+      ],
+      "dois": [
+        "10.1016/s0196-0644(95)70106-0",
+        "10.7326/0003-4819-140-5-200403020-00013",
+        "10.1067/mem.2003.196",
+        "10.1016/s0196-0644(98)70092-7"
+      ],
+      "checks": "design review: round 1 4 FAIL (tibia leader off-bone, fibular head label/leader overlap, AP label on femur, 60 deg label 1 px past x 960) fixed; round 2 ALL PASS after re-rendering stills; independent fact check 8/8 PASS",
+      "carousel": {
+        "headline": "OTTAWA KNEE",
+        "sub": "X-ray if ANY 1 of 5 criteria",
+        "points": [
+          "55+, fibular head, isolated patella, cannot flex to 90, cannot take 4 steps",
+          "Sensitivity 100% in derivation and validation; meta-analysis 98.5%",
+          "Knee X-rays fell from 77.6% to 57.1% with no missed fractures"
+        ],
+        "ref": "Stiell et al., JAMA 1996"
+      }
     },
     {
       "n": 21,
