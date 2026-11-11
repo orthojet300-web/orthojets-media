@@ -890,10 +890,50 @@
     {
       "n": 21,
       "slug": "ep21_weber",
-      "title": "Danis-Weber ankle fractures and the syndesmosis",
-      "status": "todo",
+      "title": "Danis-Weber ankle fractures: fix or cast? (Weber B and the syndesmosis)",
+      "status": "published",
       "source_hint": "Weber BG 1972; medial clear space / stress view studies (e.g. Michelson 2004)",
-      "series": "classified"
+      "series": "classified",
+      "part": "5",
+      "source": "Kortekangas T et al. BMJ 2026;392:e085295 (SUPER-FIN); Kortekangas T et al. BMJ 2019;364:k5432; Kellam PJ et al. J Orthop Trauma 2021;35(9):473-8; Harper MC, Keller TS. Foot Ankle 1989;10(3):156-60; Tornetta P et al. J Orthop Trauma 2012;26(11):659-61; Weber BG 1972 (definition)",
+      "published": "scheduled 2026-11-15 10:00 Africa/Tripoli (Sunday; TikTok + Instagram; Nov 12 taken by EP20, Fri/Sat off)",
+      "release": "media branch: ep21_weber.mp4",
+      "music": "track01_the-mountain-study-music.mp3 (from music/vault; private repo not reachable)",
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "cover_ms": "2400",
+      "metricool": {
+        "id": 424716531,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-1547757818936473724"
+      },
+      "pmids": [
+        "41534905",
+        "30674451",
+        "33395177",
+        "2613128",
+        "23100079",
+        "35047809"
+      ],
+      "dois": [
+        "10.1136/bmj-2025-085295",
+        "10.1136/bmj.k5432",
+        "10.1097/BOT.0000000000002052",
+        "10.1177/107110078901000308",
+        "10.1097/BOT.0b013e31825cf39c"
+      ],
+      "checks": "design review: round 1 4 FAIL (arrow over label, 3 right-edge overflows, ref box) fixed; round 2 1 FAIL (medial malleolus label on talus outline) fixed; round 3 ALL PASS; independent fact check 10/10 PASS",
+      "carousel": {
+        "headline": "WEBER B",
+        "sub": "Congruent mortise: cast, not plate",
+        "points": [
+          "Syndesmotic injury 17% / 42% / 74% by the zone where the line starts",
+          "Stable: 3 weeks cast or orthosis = 6 weeks cast (247 patients)",
+          "Stress-unstable, congruent: cast = plate at 2 y, OMAS 89 vs 87"
+        ],
+        "ref": "Kortekangas et al., BMJ 2026"
+      }
     },
     {
       "n": 11,
