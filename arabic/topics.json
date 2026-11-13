@@ -49,8 +49,23 @@
       "n": 3,
       "slug": "ar03_osteoporosis",
       "title_ar": "هشاشة العظام: العدو الصامت",
-      "status": "todo",
-      "source_hint": "osteoporosis definition (T-score), fragility fracture epidemiology, risk factors, prevention (calcium/vitamin D/weight-bearing exercise) - recent reviews"
+      "status": "published",
+      "source_hint": "osteoporosis definition (T-score), fragility fracture epidemiology, risk factors, prevention (calcium/vitamin D/weight-bearing exercise) - recent reviews",
+      "manual": true,
+      "publish": "manual post by owner 2026-11-14 10:00 Africa/Tripoli (TikTok + Instagram Reel)",
+      "series_name": "عظامك ببساطة",
+      "dois": [
+        "10.1007/s001980070064",
+        "10.1016/S0140-6736(18)32112-3",
+        "10.1016/j.jisako.2026.101133",
+        "10.1007/s00198-015-3440-3",
+        "10.1016/j.jocd.2020.06.006",
+        "10.1016/S0140-6736(02)08761-5",
+        "10.3389/fendo.2026.1950298",
+        "10.1016/S0140-6736(21)02646-5",
+        "10.1136/bmj-2024-081250"
+      ],
+      "review": "design review PASS (2nd round) + PubMed fact-check PASS 2026-11-13"
     },
     {
       "n": 4,
