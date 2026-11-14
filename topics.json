@@ -1074,6 +1074,25 @@
       "media": "media branch: carousel_20261108/slide01-07.jpg",
       "manual": true,
       "note": "Delivered to the owner 2026-11-07 for manual posting (no Metricool post)"
+    },
+    {
+      "date": "2026-11-15 18:00 Africa/Tripoli",
+      "week": "Nov 9 - 15",
+      "episodes": [
+        "ep17_garden",
+        "ep19_mirels",
+        "ep22_kanavel",
+        "ep20_ottawa_knee",
+        "ep21_weber"
+      ],
+      "slides": 7,
+      "networks": [
+        "instagram",
+        "tiktok"
+      ],
+      "media": "media branch: carousel_20261115/slide01-07.jpg",
+      "manual": true,
+      "note": "Delivered to the owner 2026-11-14 for manual posting (no Metricool post)"
     }
   ]
 }
