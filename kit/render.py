@@ -58,7 +58,7 @@ def put(dst, layer, cx, cy, alpha=1.0, scale=1.0, blur=0.0):
     if alpha <= 0.003: return
     l = layer
     if abs(scale - 1) > 0.002:
-        l = l.resize((max(1, int(l.width * scale)), max(1, int(l.height * scale))), Image.BILINEAR)
+        l = l.resize((max(1, int(l.width * scale)), max(1, int(l.height * scale))), Image.BICUBIC)
     if blur > 0.3:
         l = pad(l, int(blur * 2)).filter(ImageFilter.GaussianBlur(blur))
     if alpha < 0.999:

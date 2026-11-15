@@ -79,7 +79,7 @@ def main():
     dur_full = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', full],
                                     capture_output=True, text=True, check=True).stdout)
     kbps = int(min(10000, (90e6 * 8 / dur_full) / 1000 - 200))
-    run(['ffmpeg', '-y', '-loglevel', 'error', '-i', full, '-vf', 'hqdn3d=0.8:0.6:1.2:1.2', '-c:v', 'libx264',
+    run(['ffmpeg', '-y', '-loglevel', 'error', '-i', full, '-c:v', 'libx264', '-x264-params', 'aq-mode=3:aq-strength=0.9',
          '-preset', 'slow', '-tune', 'animation', '-profile:v', 'high', '-level', '4.2',
          '-b:v', f'{kbps}k', '-maxrate', f'{int(kbps * 1.2)}k', '-bufsize', f'{kbps * 2}k',
          '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', final])

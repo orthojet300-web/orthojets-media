@@ -77,6 +77,19 @@ computed at build time. Series let viewers binge and follow "for the next part".
   - the measurement is drawn
   - good vs bad is compared side by side
 - Text cards support the diagram; they don't replace it.
+- **Graphics quality (owner request 2026-11-16: better images and drawings, with accuracy kept first).**
+  - Edges are anti-aliased automatically: in an episode, `ImageDraw.Draw(main)` returns `AADraw` (kit/ep_common.py), which
+    supersamples every line, circle, arc and polygon. Scripts need nothing extra. Masks and private layers you draw yourself
+    (`Image.new(...)`) are not covered: build them at 2x (`SS = 2`) and downscale with LANCZOS, as `ep22_kanavel` does.
+  - The camera move now applies to the background only; the content layer is never resampled, so text and line art stay
+    pixel-sharp. Grain is light and on the background only. Do not add whole-frame zooms, blurs or resizes in a script.
+  - **No flat clip-art for the centrepiece.** Draw each structure as a greyscale mask, then give it depth:
+    - bones: `bone_xray(mask, col, alpha)` (bright cortex, darker medulla with trabecular texture), like a radiograph
+    - soft tissue, organs, implants, limbs: `volume(mask, col, alpha, r=...)` (rounded, lit from the top-left)
+    - the finished diagram layer: `drop_shadow(layer)` so it sits above the background
+    - keep good/bad colours (GOOD green, WARN coral) and the series accent for highlights
+  - Draw to real proportions and landmarks first; style comes after correctness. Never sacrifice anatomical accuracy
+    for looks.
 - Draw the anatomy from known proportions and landmarks, check it on stills, and fix anything wrong before rendering. Simplified schematics are fine if they are labelled and correct.
 - **Design review gate (mandatory, before the full render).**
   - Render one still per scene, plus the cover frame. Give them to a separate reviewer agent that has not seen your code.
@@ -89,6 +102,8 @@ computed at build time. Series let viewers binge and follow "for the next part".
     - a centrepiece diagram is present
     - brand colours used
     - the cover frame works as a thumbnail
+    - edges are smooth (no jagged lines), the centrepiece has depth (shading/shadow, not flat single-colour shapes)
+    - every number, label and claim on the still matches the verified figures in the docstring (PubMed)
   - Fix every FAIL and re-check until all pass.
 - **Sharpest file.** `tools/build_episode.py` encodes the upload copy with x264 `-preset slow -tune animation` at about **10 Mbps**: roughly 2x the old quality, at 1080x1920, 30 fps, AAC 192k.
   - The bitrate is capped automatically so the file stays under ~90 MB, because GitHub's per-file limit is 100 MB.
@@ -108,6 +123,7 @@ computed at build time. Series let viewers binge and follow "for the next part".
      - Never repeat a slug or title already in the file.
 2. **Research.**
    - Use the PubMed connector to find the primary source(s) named in `source_hint`. Read the abstract and metadata.
+   - **PubMed is the only verification source** (owner decision 2026-11-16). Do not rely on other search tools or memory for a figure.
    - Collect only figures that appear in the source. Record PMID and DOI.
    - If PubMed is unavailable or the key claim can't be confirmed, set status `blocked` with a reason, push the change, notify the owner, and stop. Never publish unverified medical content.
 3. **Write the episode.**
@@ -120,7 +136,7 @@ computed at build time. Series let viewers binge and follow "for the next part".
      - Everything centred between y 400 and 1300, fully on screen by about 1.5 s.
    - Put the sources and verified figures in the module docstring.
 4. **Check stills before the full render** (then run the design review gate described under Quality bar).
-   - Run `python3 script.py still <t> ...` at one real time per scene, using `TL.real(script_t)`.
+   - Run `python3 script.py still <t> ...` (writes lossless `still_<t>.png`) at one real time per scene, using `TL.real(script_t)`.
    - Look at every still. Fix any overlapping or cut-off text, unreadable small text, wrong anatomy, or missing glyph boxes.
 5. **Render.**
    - Run `python3 tools/build_episode.py episodes/epNN_slug/script.py epNN_slug` in the background with a long timeout. It takes about 15–20 min.

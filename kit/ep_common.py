@@ -47,6 +47,66 @@ GOOD = (120, 210, 170)
 SUB = (190, 212, 235)
 put, tl, prog, eo, ei, eio, win, clamp = R.put, R.text_layer, R.prog, R.eo, R.ei, R.eio, R.win, R.clamp
 
+# ---------------------------------------------------------------- anti-aliased drawing (quality upgrade 2026-11-16)
+# Pillow's ImageDraw does not anti-alias lines, circles, arcs or polygons, so diagrams had jagged ("stair-step") edges.
+# Every ImageDraw.Draw(main) in an episode script now returns AADraw: each shape is drawn supersampled (2-4x) in its own
+# small box, downsampled and composited in order. Scripts need no change. Text calls go straight to Pillow (already AA).
+import inspect as _insp
+from PIL import ImageDraw as _ID
+_RawDraw = getattr(_ID, '_orthojets_raw_draw', _ID.Draw)
+_ID._orthojets_raw_draw = _RawDraw
+_AA_OPS = ('line', 'ellipse', 'polygon', 'arc', 'chord', 'pieslice', 'rectangle', 'rounded_rectangle')
+_SIGS = {}
+
+class AADraw:
+    def __init__(self, im):
+        self.im = im; self._raw = _RawDraw(im)
+    def __getattr__(self, name):
+        raw = getattr(self._raw, name)
+        if name not in _AA_OPS: return raw
+        if name not in _SIGS: _SIGS[name] = _insp.signature(getattr(_RawDraw(Image.new('L', (1, 1))), name))
+        sig = _SIGS[name]
+        def op(*a, **k):
+            b = sig.bind(*a, **k); args = b.arguments
+            try:
+                pts = np.asarray(list(args['xy']) if not isinstance(args['xy'], np.ndarray) else args['xy'], np.float64).reshape(-1, 2)
+            except Exception:
+                return raw(*a, **k)
+            if not len(pts): return
+            wdt = float(args.get('width') or (1 if name == 'line' else 0))
+            padd = wdt + 4
+            x0 = int(max(0, math.floor(pts[:, 0].min() - padd))); y0 = int(max(0, math.floor(pts[:, 1].min() - padd)))
+            x1 = int(min(self.im.width, math.ceil(pts[:, 0].max() + padd))); y1 = int(min(self.im.height, math.ceil(pts[:, 1].max() + padd)))
+            if x1 <= x0 or y1 <= y0: return
+            area = (x1 - x0) * (y1 - y0)
+            S = 4 if area < 90_000 else (3 if area < 500_000 else 2)
+            q = (pts - (x0, y0)) * S
+            if name in ('line', 'polygon'): args['xy'] = [tuple(p) for p in q]
+            else: args['xy'] = [float(q[0, 0]), float(q[0, 1]), float(q[-1, 0]), float(q[-1, 1])]
+            if 'width' in args and args['width']: args['width'] = max(1, int(round(args['width'] * S)))
+            if 'radius' in args and args['radius']: args['radius'] = args['radius'] * S
+            tmp = Image.new('RGBA', ((x1 - x0) * S, (y1 - y0) * S))
+            getattr(_RawDraw(tmp), name)(**args)
+            t = np.asarray(tmp.reduce(S), np.float32)
+            reg = self.im.crop((x0, y0, x1, y1)); m = np.asarray(reg, np.float32)
+            ta, ma = t[..., 3:4] / 255, m[..., 3:4] / 255
+            # colour: normal "over"; alpha: max (like Pillow's own replace mode), so semi-transparent strokes drawn as
+            # many overlapping pieces do not build up darker joints
+            oa = ta + ma * (1 - ta)
+            rgb = (t[..., :3] * ta + m[..., :3] * ma * (1 - ta)) / np.maximum(oa, 1e-6)
+            out = np.dstack([rgb, np.maximum(ta, ma) * 255])
+            self.im.paste(Image.fromarray(np.clip(out + 0.5, 0, 255).astype(np.uint8), 'RGBA'), (x0, y0))
+        return op
+
+def _draw(im, mode=None):
+    if mode is None and getattr(im, '_aa', False): return AADraw(im)
+    return _RawDraw(im, mode)
+_ID.Draw = _draw
+
+def aa_image(w, h):
+    """new transparent RGBA layer whose ImageDraw.Draw is anti-aliased"""
+    im = Image.new('RGBA', (w, h)); im._aa = True; return im
+
 def label(main, txt, x, y, a, col=ICE, size=28, font='MontXB', track=1):
     put(main, tl(txt, font, size, col, track=track), x, y, a)
 
@@ -104,22 +164,17 @@ class Timeline:
 
 def make_frame(fi, tlm, scenes):
     t = fi / FPS; st = tlm.script(t)
-    main = Image.new('RGBA', (W, H)); glow = Image.new('RGBA', (W, H))
+    main = aa_image(W, H); glow = Image.new('RGBA', (W, H)); bgl = aa_image(W, H)
     fx = {'flash': 0.0}
-    d = ImageDraw.Draw(main)
-    draw_background(d, glow, t)
+    draw_background(ImageDraw.Draw(bgl), glow, t)
     for s in scenes: s(st, main, glow, fx)
     g = glow.resize((W // 4, H // 4), Image.BILINEAR)
-    g1 = np.asarray(g.filter(ImageFilter.GaussianBlur(5)).resize((W, H), Image.BILINEAR), np.float32)
-    g2 = np.asarray(g.filter(ImageFilter.GaussianBlur(18)).resize((W, H), Image.BILINEAR), np.float32)
-    m = np.asarray(main, np.float32); ma = m[..., 3:4] / 255
-    out = BG * (1 - ma) + m[..., :3] * ma
-    out += (g1[..., :3] * (g1[..., 3:4] / 255)) * 1.0 + (g2[..., :3] * (g2[..., 3:4] / 255)) * 1.2
-    out = out * R.vign + R.grain[fi % 6] * 0.8
-    out += fx['flash'] * 255 * np.array([0.75, 0.92, 1.0], np.float32)
-    fade = min(prog(t, 0, 0.3), 1 - prog(t, tlm.dur - 0.5, tlm.dur))
-    img = Image.fromarray(np.clip(out * fade, 0, 255).astype(np.uint8))
-    # camera move changes with the weekly style: slow push-in / slow drift up / gentle breathing / slow push-in
+    g1 = np.asarray(g.filter(ImageFilter.GaussianBlur(5)).resize((W, H), Image.BICUBIC), np.float32)
+    g2 = np.asarray(g.filter(ImageFilter.GaussianBlur(18)).resize((W, H), Image.BICUBIC), np.float32)
+    # background (gradient + weekly pattern) gets the slow camera move; the content layer is never resampled, so text
+    # and line art stay pixel-sharp (before 2026-11-16 the whole frame was re-zoomed every frame, which softened it).
+    b = np.asarray(bgl, np.float32); ba = b[..., 3:4] / 255
+    bgimg = Image.fromarray(np.clip(BG * (1 - ba) + b[..., :3] * ba, 0, 255).astype(np.uint8))
     if THEME_BG == 1:
         z = 1.03; dy = 18 * math.sin(t * 0.35)
     elif THEME_BG == 2:
@@ -127,7 +182,14 @@ def make_frame(fi, tlm, scenes):
     else:
         z = 1.0 + 0.025 * ((t % 8.5) / 8.5); dy = 0
     cw, ch = W / z, H / z
-    return img.transform((W, H), Image.EXTENT, ((W - cw) / 2, (H - ch) / 2 + dy, (W + cw) / 2, (H + ch) / 2 + dy), Image.BILINEAR)
+    bgimg = bgimg.transform((W, H), Image.EXTENT, ((W - cw) / 2, (H - ch) / 2 + dy, (W + cw) / 2, (H + ch) / 2 + dy), Image.BICUBIC)
+    m = np.asarray(main, np.float32); ma = m[..., 3:4] / 255
+    out = np.asarray(bgimg, np.float32) * (1 - ma) + m[..., :3] * ma
+    out += (g1[..., :3] * (g1[..., 3:4] / 255)) * 1.0 + (g2[..., :3] * (g2[..., 3:4] / 255)) * 1.2
+    out = out * R.vign + R.grain[fi % 6] * 0.45 * (1 - ma)      # light grain on the background only (no banding, clean text)
+    out += fx['flash'] * 255 * np.array([0.75, 0.92, 1.0], np.float32)
+    fade = min(prog(t, 0, 0.3), 1 - prog(t, tlm.dur - 0.5, tlm.dur))
+    return Image.fromarray(np.clip(out * fade, 0, 255).astype(np.uint8))
 
 def draw_background(d, glow, t):
     """weekly background style, always subtle and behind the content"""
@@ -167,7 +229,7 @@ def main_cli(tlm, scenes, hook_end=None, resume=None):
     inserted there (add_brand.py --hook-first). resume = SCRIPT time where the next scene starts (after the hook has
     faded out) so the hook does not reappear after the logo. 'script.py hookend' prints both in real seconds."""
     if sys.argv[1] == 'still':
-        for tt in sys.argv[2:]: make_frame(int(float(tt) * FPS), tlm, scenes).save(f'still_{tt}.jpg', quality=85)
+        for tt in sys.argv[2:]: make_frame(int(float(tt) * FPS), tlm, scenes).save(f'still_{tt}.png')
     elif sys.argv[1] == 'dur':
         print(tlm.dur)
     elif sys.argv[1] == 'hookend':
@@ -177,6 +239,54 @@ def main_cli(tlm, scenes, hook_end=None, resume=None):
     else:
         a, b, outp = int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
         p = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS),
-                              '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', outp], stdin=subprocess.PIPE)
+                              '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '10', '-pix_fmt', 'yuv420p', outp], stdin=subprocess.PIPE)
         for i in range(a, b): p.stdin.write(make_frame(i, tlm, scenes).tobytes())
         p.stdin.close(); p.wait()
+
+# ---------------------------------------------------------------- depth & material helpers (quality upgrade 2026-11-16)
+# Flat one-colour silhouettes look like clip-art. Build the shape as a greyscale MASK (any size, supersampled is fine),
+# then turn it into a lit, rounded object with one of these. Light comes from the top-left in every episode.
+LIGHT = (-0.55, -0.83)
+
+def _blur_arr(m, r):
+    return np.asarray(Image.fromarray((np.clip(m, 0, 1) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(r)), np.float32) / 255
+
+def volume(mask, col, alpha=1.0, r=None, relief=0.55, light=LIGHT):
+    """mask (PIL 'L') -> RGBA layer of colour col shaded like a rounded 3-D body (soft tissue, organs, cards, implants)."""
+    m = np.asarray(mask, np.float32) / 255
+    r = r or max(3.0, min(m.shape) / 30)
+    e = _blur_arr((m > 0.06).astype(np.float32), r)        # shade from the silhouette, not from alpha fades
+    gy, gx = np.gradient(e)
+    lit = np.clip(-(gx * light[0] + gy * light[1]) * r * 2.2, -1, 1)          # + on edges facing the light
+    core = np.clip(e * 1.6, 0, 1)                                              # 0 at the rim, 1 inside
+    f = (0.80 + 0.20 * core) * (1 + relief * 0.45 * lit)
+    rgb = np.array(col, np.float32)[None, None, :] * f[..., None]
+    rgb += (255 - rgb) * (np.clip(lit, 0, 1) ** 2 * (1 - core) * relief * 0.6)[..., None]  # soft specular rim
+    out = np.dstack([np.clip(rgb, 0, 255), m * 255 * alpha]).astype(np.uint8)
+    return Image.fromarray(out, 'RGBA')
+
+def bone_xray(mask, col=ICE, alpha=1.0, cortex=None, seed=3, light=LIGHT):
+    """mask (PIL 'L') -> RGBA radiograph-style bone: bright cortical rim, darker medulla with a fine trabecular texture."""
+    m = np.asarray(mask, np.float32) / 255
+    h, w = m.shape; cortex = cortex or max(2.0, min(h, w) / 60)
+    sil = (m > 0.06).astype(np.float32)
+    e = _blur_arr(sil, cortex)
+    rim = np.clip((1 - e) * 2.4, 0, 1) * sil                                   # cortex = outer band
+    rng = np.random.default_rng(seed)
+    n = rng.random((max(1, h // 4), max(1, w // 4))).astype(np.float32)
+    tex = np.asarray(Image.fromarray((n * 255).astype(np.uint8)).resize((w, h), Image.BICUBIC).filter(ImageFilter.GaussianBlur(1.2)), np.float32) / 255
+    med = 0.84 + 0.08 * tex                                                    # medulla brightness with trabeculae
+    gy, gx = np.gradient(_blur_arr(sil, cortex * 3))
+    lit = np.clip(-(gx * light[0] + gy * light[1]) * cortex * 6, -1, 1)
+    b = np.clip(med * (1 - rim) + 1.0 * rim + 0.08 * lit, 0, 1.0)
+    rgb = np.array(col, np.float32)[None, None, :] * b[..., None]
+    rgb += (255 - rgb) * (rim * 0.45 + np.clip(lit, 0, 1) * 0.25)[..., None]     # cortex glows whiter
+    a = m * alpha
+    return Image.fromarray(np.dstack([np.clip(rgb, 0, 255), a * 255]).astype(np.uint8), 'RGBA')
+
+def drop_shadow(layer, dx=10, dy=18, blur=16, opacity=0.5):
+    """returns layer with a soft shadow underneath (same size; keep 30+ px transparent margin around the art)"""
+    a = layer.getchannel('A').filter(ImageFilter.GaussianBlur(blur)).point(lambda v: int(v * opacity))
+    sh = Image.new('RGBA', layer.size, (2, 6, 14, 0)); sh.putalpha(a)
+    out = Image.new('RGBA', layer.size); out.alpha_composite(sh, (dx, dy)); out.alpha_composite(layer)
+    return out

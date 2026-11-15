@@ -43,7 +43,7 @@ def aprep(i, has_a, d, label):
 
 def encode(cmd, fil, vout, aout, dst):
     cmd += ['-filter_complex', ';'.join(fil), '-map', f'[{vout}]', '-map', f'[{aout}]',
-            '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-pix_fmt', 'yuv420p',
+            '-c:v', 'libx264', '-preset', 'medium', '-crf', '11', '-pix_fmt', 'yuv420p',
             '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', dst]
     subprocess.run(cmd, check=True)
 
