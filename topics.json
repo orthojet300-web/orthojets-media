@@ -985,10 +985,54 @@
     {
       "n": 15,
       "slug": "ep15_schatzker",
-      "title": "Schatzker classification of tibial plateau fractures",
-      "status": "todo",
+      "title": "Schatzker classification of tibial plateau fractures: fix now or span first?",
+      "status": "published",
       "source_hint": "Schatzker J et al. Clin Orthop 1979",
-      "series": "classified"
+      "series": "classified",
+      "part": "6",
+      "source": "Schatzker J et al. Clin Orthop Relat Res 1979;(138):94-104; Gardner MJ et al. J Orthop Trauma 2005;19(2):79-84; Gardner MJ et al. J Trauma 2006;60(2):319-23; Deng X et al. J Orthop Surg Res 2021;16(1):502; Gamulin A et al. BMC Musculoskelet Disord 2017;18(1):307; Egol KA et al. J Orthop Trauma 2005;19(7):448-55; Ringus VM et al. Orthopedics 2010;33(2):80-4; Yacoubian SV et al. J Orthop Trauma 2002;16(9):632-7",
+      "published": "scheduled 2026-11-17 10:00 Africa/Tripoli (Tuesday; TikTok + Instagram; Nov 16 taken by EP11)",
+      "release": "media branch: ep15_schatzker.mp4",
+      "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "cover_ms": "2400",
+      "metricool": {
+        "id": 429086691,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-3640153260401408492"
+      },
+      "pmids": [
+        "445923",
+        "15677922",
+        "16508489",
+        "34399816",
+        "28720096",
+        "16056075",
+        "20192139",
+        "12368643"
+      ],
+      "dois": [
+        "10.1097/00005131-200502000-00002",
+        "10.1097/01.ta.0000203548.50829.92",
+        "10.1186/s13018-021-02660-7",
+        "10.1186/s12891-017-1680-4",
+        "10.1097/01.bot.0000171881.11205.80",
+        "10.3928/01477447-20100104-05",
+        "10.1097/00005131-200210000-00004"
+      ],
+      "checks": "design review: 12/13 PASS, 1 FAIL (METAPHYSIS pointer on the diaphysis) fixed, plus advisories applied (thicker hook fracture lines, legible dimmed legend, bicortical ex-fix pins, overflowing stat line); independent fact check 11/11 PASS, wording tightened (Type III 'operative patients', Gamulin IV-VI 'age/sex-adjusted') before render",
+      "carousel": {
+        "headline": "SCHATZKER",
+        "sub": "Plateau fracture: fix or span?",
+        "points": [
+          "IV-VI high energy: ACS 3.1% of 1119, Schatzker VI OR 5.78",
+          "Swollen? Span first: deep infection 5% in 57 staged fractures",
+          "MRI: lateral meniscus pathology 91%, soft tissue intact in only 1%"
+        ],
+        "ref": "Gardner et al., J Orthop Trauma 2005"
+      }
     },
     {
       "n": 23,
@@ -1013,6 +1057,86 @@
       "status": "todo",
       "source_hint": "Neer CS JBJS Am 1970; Rangan A et al. JAMA 2015 (PROFHER trial)",
       "series": "classified"
+    },
+    {
+      "n": 26,
+      "slug": "ep26_nexus",
+      "title": "NEXUS low-risk criteria: clearing the C-spine without imaging",
+      "status": "todo",
+      "source_hint": "Hoffman JR et al. NEJM 2000 (NEXUS, 34,069 patients)",
+      "series": "rules"
+    },
+    {
+      "n": 27,
+      "slug": "ep27_knee_dislocation_abi",
+      "title": "Knee dislocation: ABI under 0.9 and the popliteal artery",
+      "status": "todo",
+      "source_hint": "Mills WJ et al. J Trauma 2004 (ABI in knee dislocation)",
+      "series": "numbers"
+    },
+    {
+      "n": 28,
+      "slug": "ep28_posterior_shoulder",
+      "title": "Posterior shoulder dislocation: the light bulb sign and why it is missed",
+      "status": "todo",
+      "source_hint": "Hawkins RJ et al. JBJS Am 1987; Robinson CM et al. JBJS Am 2011",
+      "series": "dontmiss"
+    },
+    {
+      "n": 29,
+      "slug": "ep29_tlics",
+      "title": "TLICS: thoracolumbar injury classification and severity score, brace or fix",
+      "status": "todo",
+      "source_hint": "Vaccaro AR et al. Spine 2005 (TLICS)",
+      "series": "classified"
+    },
+    {
+      "n": 30,
+      "slug": "ep30_amsterdam_wrist",
+      "title": "Amsterdam wrist rules: who needs a wrist X-ray",
+      "status": "todo",
+      "source_hint": "Walenkamp MM et al. Emerg Med J 2015; Bentohami A et al. 2014",
+      "series": "rules"
+    },
+    {
+      "n": 31,
+      "slug": "ep31_septic_knee_wbc",
+      "title": "Hot swollen knee: synovial WBC 50,000 and the likelihood of septic arthritis",
+      "status": "todo",
+      "source_hint": "Margaretten ME et al. JAMA 2007",
+      "series": "numbers"
+    },
+    {
+      "n": 32,
+      "slug": "ep32_nec_fasc",
+      "title": "Necrotising fasciitis: LRINEC score and the finger test",
+      "status": "todo",
+      "source_hint": "Wong CH et al. Crit Care Med 2004 (LRINEC); Fernando SM et al. Ann Surg 2019",
+      "series": "dontmiss"
+    },
+    {
+      "n": 33,
+      "slug": "ep33_vancouver",
+      "title": "Vancouver classification of periprosthetic femoral fractures: fix or revise",
+      "status": "todo",
+      "source_hint": "Duncan CP, Masri BA. Instr Course Lect 1995; Brady OH et al. JBJS Br 2000 (validation)",
+      "series": "classified"
+    },
+    {
+      "n": 34,
+      "slug": "ep34_sins",
+      "title": "SINS: spinal instability neoplastic score, when to call the spine surgeon",
+      "status": "todo",
+      "source_hint": "Fisher CG et al. Spine 2010; Fourney DR et al. J Clin Oncol 2011",
+      "series": "rules"
+    },
+    {
+      "n": 35,
+      "slug": "ep35_hip_fracture_48h",
+      "title": "Hip fracture surgery within 48 hours: the mortality number",
+      "status": "todo",
+      "source_hint": "Klestil T et al. Sci Rep 2018; HIP ATTACK Lancet 2020",
+      "series": "numbers"
     }
   ],
   "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner).",
