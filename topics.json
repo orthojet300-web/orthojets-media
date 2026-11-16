@@ -1038,9 +1038,48 @@
       "n": 30,
       "slug": "ep30_amsterdam_wrist",
       "title": "Amsterdam wrist rules: who needs a wrist X-ray",
-      "status": "todo",
+      "status": "published",
       "source_hint": "Walenkamp MM et al. Emerg Med J 2015; Bentohami A et al. 2014",
-      "series": "rules"
+      "series": "rules",
+      "part": "6",
+      "source": "Walenkamp MMJ et al. BMC Musculoskelet Disord 2015;16:389; Walenkamp MMJ et al. Eur J Trauma Emerg Surg 2016;42(2):185-90; Mulders MAM et al. Eur J Trauma Emerg Surg 2020;46(3):573-582; Slaar A et al. Pediatr Radiol 2016;46(1):50-60; Mallee WH et al. Arch Orthop Trauma Surg 2020;140(4):575-581",
+      "published": "scheduled 2026-11-18 10:00 Africa/Tripoli (Wednesday; TikTok + Instagram; Nov 17 taken by EP15)",
+      "release": "media branch: ep30_amsterdam_wrist.mp4",
+      "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
+      "networks": [
+        "tiktok",
+        "instagram"
+      ],
+      "cover_ms": "2400",
+      "metricool": {
+        "id": 430420142,
+        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-1538817268976171303"
+      },
+      "pmids": [
+        "26682537",
+        "26038045",
+        "31541258",
+        "26298555",
+        "32125528"
+      ],
+      "dois": [
+        "10.1186/s12891-015-0829-2",
+        "10.1007/s00068-015-0527-7",
+        "10.1007/s00068-019-01194-2",
+        "10.1007/s00247-015-3436-3",
+        "10.1007/s00402-020-03383-w"
+      ],
+      "checks": "design review: 3 FAIL (reference lines overflowing the card, cover title 12 px past x 960, RADIUS/ULNA leaders crossing) fixed and re-checked PASS, advisories applied; independent fact check 14/14 PASS, wording tightened before render (39% vs 99.6% labelled as separate cohorts, paediatric 4.1% missed, scaphoid rule internal validation, 'absolute' kept)",
+      "carousel": {
+        "headline": "AMSTERDAM",
+        "sub": "Wrist injury: X-ray or not?",
+        "points": [
+          "8 predictors: sensitivity 98%, specificity 21%, NPV 90%",
+          "In practice: wrist X-rays down 15% (absolute), 1 irrelevant miss",
+          "Only 39% of wrist trauma patients have a fracture"
+        ],
+        "ref": "Walenkamp et al., BMC Musculoskelet Disord 2015"
+      }
     },
     {
       "n": 28,
