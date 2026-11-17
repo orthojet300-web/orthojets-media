@@ -1,1261 +1,1303 @@
 {
-  "_note": "Episode queue for the Orthojets automation. The scheduled run takes the first item with status 'todo', builds it, and sets status to 'published' with date, release tag and Metricool post id. Add or reorder topics freely. Every number must be verified against the primary source (PubMed) before publishing; if a topic cannot be verified, set status 'blocked' with a reason and move on to the next.",
-  "series": {
-    "numbers": {
-      "name": "Ortho Numbers",
-      "tag": "ORTHO NUMBERS",
-      "about": "one number every orthopod must know (thresholds, cut-offs, time limits)"
-    },
-    "classified": {
-      "name": "Classified",
-      "tag": "CLASSIFIED",
-      "about": "a classification drawn type by type, with what changes management"
-    },
-    "rules": {
-      "name": "Clinical Rules",
-      "tag": "CLINICAL RULES",
-      "about": "a validated clinical decision rule or criteria set"
-    },
-    "dontmiss": {
-      "name": "Don't Miss",
-      "tag": "DON'T MISS",
-      "about": "a can't-miss diagnosis: the signs, the test, the pitfall"
-    }
+ "_note": "Episode queue for the Orthojets automation. The scheduled run takes the first item with status 'todo', builds it, and sets status to 'published' with date, release tag and Metricool post id. Add or reorder topics freely. Every number must be verified against the primary source (PubMed) before publishing; if a topic cannot be verified, set status 'blocked' with a reason and move on to the next.",
+ "series": {
+  "numbers": {
+   "name": "Ortho Numbers",
+   "tag": "ORTHO NUMBERS",
+   "about": "one number every orthopod must know (thresholds, cut-offs, time limits)"
   },
-  "episodes": [
-    {
-      "n": 1,
-      "slug": "ep01_tad",
-      "title": "Tip-Apex Distance < 25 mm",
-      "status": "published",
-      "source": "Baumgaertner MR et al. JBJS Am 1995;77(7):1058-64",
-      "published": "2026-10 (posted manually)",
-      "crosspost": {
-        "networks": [
-          "instagram",
-          "youtube"
-        ],
-        "scheduled": "2026-10-19 18:00 Africa/Tripoli",
-        "metricool_post_id": 400156580,
-        "cover_ms": 5500,
-        "pmids": [
-          "7608228"
-        ],
-        "music": "track01_the-mountain-study-music",
-        "youtube_post_id": 400213761,
-        "note": "YouTube failed at 18:00 (title contained <); rescheduled YouTube alone 18:20",
-        "youtube_musicfree_post_id": 401159336,
-        "youtube_music": "yt1_morning_rounds (original)"
-      },
-      "series": "numbers",
-      "part": 1,
-      "carousel": {
-        "headline": "TAD < 25 mm",
-        "sub": "The number that saves your lag screw",
-        "points": [
-          "TAD = tip-to-apex distance on AP + lateral X-rays, corrected for magnification",
-          "None of 120 screws with TAD of 25 mm or less cut out",
-          "Mean TAD: 24 mm in healed fractures vs 38 mm in cut-outs"
-        ],
-        "ref": "Baumgaertner et al., JBJS Am 1995;77(7):1058-64"
-      }
-    },
-    {
-      "n": 2,
-      "slug": "ep02_acs",
-      "title": "Acute compartment syndrome: Delta P < 30 mmHg",
-      "status": "published",
-      "source": "McQueen & Court-Brown JBJS Br 1996;78(1):99-104; Kakar et al. JOT 2007;21(2):99-103",
-      "published": "scheduled 2026-10-20 10:00 Africa/Tripoli",
-      "metricool_post_id": 400213844,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=3226306365346365565",
-      "pmids": [
-        "8898137",
-        "17304064"
-      ],
-      "music": "track02 (Content ID claim on YouTube: blocked worldwide); YouTube re-uploaded 2026-10-20 11:00 with track01",
-      "cover_ms": 5000,
-      "series": "numbers",
-      "part": 2,
-      "carousel": {
-        "headline": "ΔP < 30 mmHg",
-        "sub": "The number that decides a fasciotomy",
-        "points": [
-          "ΔP = diastolic BP minus intracompartmental pressure",
-          "Don't rely on absolute compartment pressure alone",
-          "Palpable pulses do NOT exclude compartment syndrome"
-        ],
-        "ref": "McQueen & Court-Brown, JBJS Br 1996 · Kakar et al., JOT 2007"
-      },
-      "youtube_reupload_post_id": 400855167,
-      "youtube_musicfree_post_id": 401159458,
-      "youtube_music": "yt2_soft_horizon (original)"
-    },
-    {
-      "n": 3,
-      "slug": "ep03_kocher",
-      "title": "Kocher criteria: septic arthritis vs transient synovitis of the hip in children",
-      "status": "published",
-      "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006",
-      "series": "rules",
-      "source": "Kocher MS et al. JBJS Am 1999;81(12):1662-70; Kocher MS et al. JBJS Am 2004;86(8):1629-35; Caird MS et al. JBJS Am 2006;88(6):1251-7",
-      "published": "scheduled 2026-10-21 10:00 Africa/Tripoli (2026-10-20 already taken by EP02)",
-      "release": "media branch: ep03_kocher.mp4",
-      "metricool_post_id": 401088290,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-403471730596298456",
-      "networks": [
-        "tiktok",
-        "instagram",
-        "youtube"
-      ],
-      "pmids": [
-        "10608376",
-        "15292409",
-        "16757758"
-      ],
-      "dois": [
-        "10.2106/00004623-199912000-00002",
-        "10.2106/00004623-200408000-00005",
-        "10.2106/JBJS.E.00216"
-      ],
-      "music": "track01_the-mountain-study-music (replaced track03 before publishing: Content ID risk)",
-      "cover_ms": 2400,
-      "part": 1,
-      "carousel": {
-        "headline": "KOCHER 4",
-        "sub": "Septic hip or transient synovitis?",
-        "points": [
-          "Fever history, non-weight-bearing, ESR at least 40, WBC over 12,000",
-          "3 of 4 predictors = 93.1% septic; none = under 0.2%",
-          "Add CRP over 2.0 mg/dL (Caird 2006)"
-        ],
-        "ref": "Kocher et al., JBJS Am 1999 · Caird et al., JBJS Am 2006"
-      },
-      "youtube_post_id": 401609991,
-      "youtube_music": "piano_3_momentum (own)"
-    },
-    {
-      "n": 4,
-      "slug": "ep04_ottawa_ankle",
-      "title": "Ottawa ankle rules",
-      "status": "published",
-      "source_hint": "Stiell IG et al. Ann Emerg Med 1992 / JAMA 1993; sensitivity meta-analysis Bachmann BMJ 2003",
-      "series": "rules",
-      "source": "Stiell IG et al. Ann Emerg Med 1992;21(4):384-90; Stiell IG et al. JAMA 1993;269(9):1127-32; Bachmann LM et al. BMJ 2003;326(7386):417",
-      "published": "scheduled 2026-10-22 10:00 Africa/Tripoli (2026-10-21 already taken by EP03)",
-      "release": "media branch: ep04_ottawa_ankle.mp4 (+ ep04_ottawa_ankle_yt.mp4 for YouTube)",
-      "metricool_post_id": 401623283,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1643734156627166207",
-      "networks": [
-        "tiktok",
-        "instagram",
-        "youtube"
-      ],
-      "youtube_post_id": 401623309,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=5376614028762892933",
-      "pmids": [
-        "1554175",
-        "8433468",
-        "12595378",
-        "22962897",
-        "40041750"
-      ],
-      "dois": [
-        "10.1016/s0196-0644(05)82656-3",
-        "10.1001/jama.269.9.1127",
-        "10.1136/bmj.326.7386.417",
-        "10.1055/s-0044-1800938"
-      ],
-      "music": "piano_1_rise (own) - re-rendered 2026-10-21 01:45 after the autopilot run had no music",
-      "youtube_music": "piano_1_rise (own)",
-      "cover_ms": 2400,
-      "part": 2,
-      "carousel": {
-        "headline": "OTTAWA 4+4",
-        "sub": "Ankle X-ray or not?",
-        "points": [
-          "Tender posterior edge/tip of either malleolus (distal 6 cm), 5th MT base or navicular",
-          "Or can't bear weight for 4 steps, right after injury and in the ED",
-          "Negative LR 0.08: fracture under 1.4% when the rule is negative"
-        ],
-        "ref": "Stiell et al., JAMA 1993 · Bachmann et al., BMJ 2003"
-      }
-    },
-    {
-      "n": 5,
-      "slug": "ep05_gustilo",
-      "title": "Gustilo-Anderson open fracture classification and antibiotic timing",
-      "status": "published",
-      "source_hint": "Gustilo & Anderson JBJS Am 1976; Gustilo 1984 (IIIA/B/C); antibiotic timing Lack et al. JOT 2015 (>66 min increased infection)",
-      "series": "classified",
-      "source": "Gustilo RB, Anderson JT. J Bone Joint Surg Am 1976;58(4):453-8; Gustilo RB et al. J Trauma 1984;24(8):742-6; Lack WD et al. J Orthop Trauma 2015;29(1):1-6; Elniel AR, Giannoudis PV. EFORT Open Rev 2018; Brumback RJ, Jones AL. JBJS Am 1994;76(8):1162-6; Indian J Orthop 2018 (PMC6142800)",
-      "published": "scheduled 2026-10-25 10:00 Africa/Tripoli (2026-10-22 taken by EP04; Fri/Sat off)",
-      "release": "media branch: ep05_gustilo.mp4 (+ ep05_gustilo_yt.mp4 for YouTube)",
-      "metricool_post_id": 403700952,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=4738264099020359525",
-      "networks": [
-        "tiktok",
-        "instagram",
-        "youtube"
-      ],
-      "youtube_post_id": 404151435,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=8278181456638328967",
-      "pmids": [
-        "773941",
-        "6471139",
-        "25526095",
-        "29951271",
-        "8056796",
-        "30237604"
-      ],
-      "dois": [
-        "10.1097/00005373-198408000-00009",
-        "10.1097/BOT.0000000000000262",
-        "10.1302/2058-5241.3.170072",
-        "10.2106/00004623-199408000-00006",
-        "10.4103/ortho.IJOrtho_319_17"
-      ],
-      "music": "user_track_calm95_loop (re-rendered 2026-10-23 in the violet Classified theme)",
-      "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library), violet render",
-      "cover_ms": 2400,
-      "part": 1,
-      "carousel": {
-        "headline": "GUSTILO I-III",
-        "sub": "Grade open fractures right",
-        "points": [
-          "Type I under 1 cm, clean; Type II over 1 cm, no flaps; III high energy",
-          "Wound sepsis IIIA 4%, IIIB 52%, IIIC 42% (Gustilo 1984)",
-          "Antibiotics after 66 min: OR 3.78 for deep infection (Lack 2015)"
-        ],
-        "ref": "Gustilo et al., J Trauma 1984 · Lack et al., JOT 2015"
-      }
-    },
-    {
-      "n": 6,
-      "slug": "ep06_hip_dislocation",
-      "title": "Traumatic hip dislocation: reduce within 6 hours",
-      "status": "published",
-      "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)",
-      "series": "numbers",
-      "source": "Hougaard K, Thomsen PB. Arch Orthop Trauma Surg 1986;106(1):32-5; Hougaard K, Thomsen PB. J Bone Joint Surg Am 1987;69(5):679-83; Kellam P, Ostrum RF. J Orthop Trauma 2016;30(1):10-6; Gautier E et al. JBJS Br 2000;82(5):679-83; Cornwall R, Radomisli TE. Clin Orthop 2000;(377):84-91; Mandell JC et al. Arthroscopy 2018;34(3):917-27",
-      "published": "scheduled 2026-10-26 10:00 Africa/Tripoli (2026-10-25 taken by EP05)",
-      "release": "media branch: ep06_hip_dislocation.mp4 (+ ep06_hip_dislocation_yt.mp4 for YouTube)",
-      "metricool_post_id": 405751710,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-9187677107243825675",
-      "networks": [
-        "tiktok",
-        "instagram",
-        "youtube"
-      ],
-      "youtube_post_id": 405751774,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4989504511631406938",
-      "pmids": [
-        "3566493",
-        "3597467",
-        "26849386",
-        "10963165",
-        "10943188",
-        "29146169"
-      ],
-      "dois": [
-        "10.1007/BF00435649",
-        "10.1097/BOT.0000000000000419",
-        "10.1302/0301-620x.82b5.10426",
-        "10.1097/00003086-200008000-00012",
-        "10.1016/j.arthro.2017.08.295"
-      ],
-      "music": "track01_the-mountain-study-music (vault)",
-      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library)",
-      "cover_ms": 2400,
-      "part": 3,
-      "carousel": {
-        "headline": "6 HOURS",
-        "sub": "to reduce a dislocated hip",
-        "points": [
-          "AVN 4.8% if reduced within 6 h vs 52.9% after 6 h",
-          "Excellent/good hip at 14 years: 88% vs 42%",
-          "Reduced after 12 h: AVN odds ratio 5.6 (meta-analysis)"
-        ],
-        "ref": "Hougaard & Thomsen, Arch Orthop Trauma Surg 1986"
-      },
-      "music_note": "re-rendered 2026-10-25 with music 6 dB quieter (-32 LUFS) on owner request"
-    },
-    {
-      "n": 7,
-      "slug": "ep07_scaphoid",
-      "title": "Suspected scaphoid fracture: clinical signs and imaging pathway",
-      "status": "published",
-      "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture",
-      "series": "dontmiss",
-      "part": 1,
-      "source": "Parvizi J et al. J Hand Surg Br 1998;23(3):324-7; Yin ZG et al. JBJS Br 2012;94(8):1077-85; Backer HC et al. J Wrist Surg 2020;9(1):81-89; Mallee WH et al. Cochrane 2015;CD010023",
-      "published": "scheduled 2026-10-27 10:00 Africa/Tripoli (2026-10-26 taken by EP06)",
-      "release": "media branch: ep07_scaphoid.mp4 / ep07_scaphoid_yt.mp4",
-      "pmids": [
-        "9665518",
-        "22844049",
-        "32025360",
-        "26045406"
-      ],
-      "dois": [
-        "10.1016/s0266-7681(98)80050-8",
-        "10.1302/0301-620X.94B8.28998",
-        "10.1055/s-0039-1693147",
-        "10.1002/14651858.CD010023.pub2"
-      ],
-      "metricool_post_id": 405840140,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6929511505856055779",
-      "youtube_post_id": 405840494,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=334637362156424493",
-      "networks": [
-        "tiktok",
-        "instagram",
-        "youtube"
-      ],
-      "cover_ms": 2400,
-      "music": "track04_sigmamusicart-emotional-piano (TikTok/Instagram, from music/vault)",
-      "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
-      "checks": "design review ALL PASS (2nd round); independent fact check 14/14 PASS",
-      "carousel": {
-        "headline": "3 SIGNS",
-        "sub": "Suspected scaphoid fracture",
-        "points": [
-          "Snuffbox, tubercle, thumb compression: each 100% sensitive",
-          "All 3 combined within 24 h: specificity 74% (alone 9-48%)",
-          "Normal X-ray? MRI most accurate: sens 97.7%, spec 99.8%"
-        ],
-        "ref": "Parvizi et al., J Hand Surg Br 1998"
-      }
-    },
-    {
-      "n": 8,
-      "slug": "ep08_salter_harris",
-      "title": "Salter-Harris classification: the 5 types and which ones change management",
-      "status": "published",
-      "source_hint": "Salter & Harris JBJS Am 1963",
-      "series": "classified",
-      "part": 2,
-      "source": "Peterson HA et al. J Pediatr Orthop 1994;14(4):423-30; Basener CJ et al. J Orthop Trauma 2009;23(9):663-7; Sepulveda M et al. EFORT Open Rev 2022;7(4):264-73; Mann DC, Rajmaira S. J Pediatr Orthop 1990;10(6):713-6; Venkatadass K et al. Indian J Orthop 2020;55(1):35-46; Brown JH, DeLuca SA. Am Fam Physician 1992;46(4):1180-4 (type definitions)",
-      "published": "scheduled 2026-10-28 10:00 Africa/Tripoli (2026-10-27 taken by EP07)",
-      "release": "media branch: ep08_salter_harris.mp4 / ep08_salter_harris_yt.mp4",
-      "pmids": [
-        "8077422",
-        "19897989",
-        "37931413",
-        "2250054",
-        "33569097",
-        "1414883"
-      ],
-      "dois": [
-        "10.1097/01241398-199407000-00002",
-        "10.1097/BOT.0b013e3181a4f25b",
-        "10.1530/EOR-21-0110",
-        "10.1097/01241398-199011000-00002",
-        "10.1007/s43465-020-00270-9"
-      ],
-      "metricool_post_id": 406939588,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-693920178162939760",
-      "youtube_post_id": 406940195,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6030625501119988913",
-      "networks": [
-        "tiktok",
-        "instagram",
-        "youtube"
-      ],
-      "cover_ms": 2400,
-      "music": "track05_leberch-inspirational-calm-piano (TikTok/Instagram, from music/vault; private repo not reachable)",
-      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
-      "checks": "design review ALL PASS (3rd round); independent fact check 13/13 PASS",
-      "carousel": {
-        "headline": "SALTER-HARRIS",
-        "sub": "III & IV = into the joint",
-        "points": [
-          "Type II most common: 54% of 951 physeal fractures",
-          "III & IV break the joint surface: anatomic reduction + fixation",
-          "Distal femur: growth disturbance 52%, 58% even in type II"
-        ],
-        "ref": "Basener et al., J Orthop Trauma 2009"
-      }
-    },
-    {
-      "n": 14,
-      "slug": "ep14_cauda_equina",
-      "title": "Cauda equina syndrome: red flags, the bladder scan and the 48 h window",
-      "status": "published",
-      "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
-      "series": "dontmiss",
-      "part": 2,
-      "source": "Ahn UM et al. Spine 2000;25(12):1515-22; Dionne N et al. Musculoskelet Sci Pract 2019;42:125-33; Katzouraki G et al. Bone Joint J 2020;102-B(6):677-82; Boktor J et al. Bone Joint J 2023;105-B(5):487-95; Srikandarajah N et al. Spine 2015;40(8):580-3; Najjar E et al. Bone Joint J 2026;108-B(3):416-24",
-      "published": "scheduled 2026-10-29 10:00 Africa/Tripoli (2026-10-28 taken by EP08)",
-      "release": "media branch: ep14_cauda_equina.mp4 / ep14_cauda_equina_yt.mp4",
-      "pmids": [
-        "10851100",
-        "31132655",
-        "32475252",
-        "37121596",
-        "25646751",
-        "41763246"
-      ],
-      "dois": [
-        "10.1097/00007632-200006150-00010",
-        "10.1016/j.msksp.2019.05.004",
-        "10.1302/0301-620X.102B6.BJJ-2020-0195.R1",
-        "10.1302/0301-620X.105B5.BJJ-2022-0739.R2",
-        "10.1097/BRS.0000000000000813",
-        "10.1302/0301-620X.108B3.BJJ-2025-0986.R2"
-      ],
-      "metricool_post_id": 408104549,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5474759125632138451",
-      "youtube_post_id": 408107170,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=74820618145448991",
-      "networks": [
-        "tiktok",
-        "instagram",
-        "youtube"
-      ],
-      "cover_ms": 2400,
-      "music": "user_track2_calm_tiktok (TikTok/Instagram, from music/vault; private repo not reachable)",
-      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
-      "checks": "design review ALL PASS (3rd round); independent fact check 13/13 PASS after 2 wording fixes",
-      "carousel": {
-        "headline": "48 HOURS",
-        "sub": "Cauda equina: decompress early",
-        "points": [
-          "Red flags: sensitivity only 19-43%, specificity 62-88%",
-          "Bladder scan PVR 200 ml or more: sensitivity 94.1%, NPV 98.7%",
-          "CES-I bladder dysfunction: 15.6% within 48 h vs 56% after"
-        ],
-        "ref": "Ahn et al., Spine 2000"
-      }
-    },
-    {
-      "n": 9,
-      "slug": "ep09_gartland",
-      "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns",
-      "status": "published",
-      "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)",
-      "series": "classified",
-      "part": 3,
-      "source": "Gartland JJ. Surg Gynecol Obstet 1959;109(2):145-54; Wang JH et al. J Pediatr Orthop 2019;39(8):e578-85; Babal JC et al. J Pediatr Orthop 2010;30(3):253-63; Vuillermin C et al. JBJS Essent Surg Tech 2018;8(2):e10; Jose Jerome JT et al. J Pediatr Soc North Am 2026;16:100377; Joist A et al. J Neurosurg 1999;90(6):1053-6",
-      "published": "scheduled 2026-11-01 10:00 Africa/Tripoli (Sunday; Fri/Sat off)",
-      "release": "media branch: ep09_gartland.mp4 / ep09_gartland_yt.mp4",
-      "pmids": [
-        "13675986",
-        "31393293",
-        "20357592",
-        "30233982",
-        "42306145",
-        "10350251"
-      ],
-      "dois": [
-        "10.1097/BPO.0000000000001096",
-        "10.1097/BPO.0b013e3181d213a6",
-        "10.2106/JBJS.ST.16.00011",
-        "10.1016/j.jposna.2026.100377",
-        "10.3171/jns.1999.90.6.1053"
-      ],
-      "metricool_post_id": 410636085,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=8828246009656066519",
-      "youtube_post_id": 410636636,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6059050753164201982",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": 2400,
-      "music": "user_track2_calm_tiktok (TikTok/Instagram, from music/vault; private repo not reachable)",
-      "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
-      "checks": "design review ALL PASS (2nd round); independent fact check 15/15 PASS (2 optional wording fixes applied)",
-      "carousel": {
-        "headline": "GARTLAND",
-        "sub": "Supracondylar: cast or pins?",
-        "points": [
-          "Operated: type I 0%, type II 57%, type III 100%",
-          "AHL misses the capitellum: odds of surgery x200",
-          "Nerve palsy in 11.3%: AIN in extension, ulnar in flexion"
-        ],
-        "ref": "Wang et al., J Pediatr Orthop 2019"
-      },
-      "youtube": "manual (Metricool YouTube post deleted 2026-11-01 by the owner: Free plan 20 posts/month); file re-rendered and sent to the owner"
-    },
-    {
-      "n": 10,
-      "slug": "ep10_mess",
-      "title": "MESS 7: the Mangled Extremity Severity Score, and why 7+ is not an amputation order",
-      "status": "published",
-      "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)",
-      "series": "numbers",
-      "part": 4,
-      "source": "Johansen K et al. J Trauma 1990;30(5):568-72; Helfet DL et al. Clin Orthop Relat Res 1990;(256):80-6; Bosse MJ et al. J Bone Joint Surg Am 2001;83(1):3-14; Ly TV et al. J Bone Joint Surg Am 2008;90(8):1738-43; Schiro GR et al. BMC Musculoskelet Disord 2015;16:372; Yoneda H et al. Injury 2024;55(4):111447",
-      "published": "scheduled 2026-11-02 10:00 Africa/Tripoli (Monday; 2026-11-01 taken by EP09)",
-      "release": "media branch: ep10_mess.mp4 / ep10_mess_yt.mp4",
-      "pmids": [
-        "2342140",
-        "2194732",
-        "11205855",
-        "18676906",
-        "26796522",
-        "38417237"
-      ],
-      "dois": [
-        "10.1097/00005373-199005000-00007",
-        "10.2106/00004623-200101000-00002",
-        "10.2106/JBJS.G.00136",
-        "10.1186/s12891-015-0832-7",
-        "10.1016/j.injury.2024.111447"
-      ],
-      "metricool_post_id": 412329324,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1060630743980068745",
-      "youtube_post_id": 412331355,
-      "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=7520398745699633259",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": 2400,
-      "music": "user_track_calm95_loop (TikTok/Instagram, from music/vault; private repo not reachable)",
-      "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
-      "checks": "design review ALL PASS (2nd round); independent fact check 12/13 PASS, 1 FAIL fixed before render (upper limb 'even weaker' -> 'no better'), Schiro 2015 added to on-screen references",
-      "carousel": {
-        "headline": "MESS 7",
-        "sub": "Mangled leg: amputate?",
-        "points": [
-          "1990: MESS 7+ predicted amputation with 100% accuracy",
-          "LEAP (556 limbs): high scores are not valid amputation predictors",
-          "Not a verdict: never the sole reason to amputate"
-        ],
-        "ref": "Bosse et al., JBJS Am 2001"
-      },
-      "youtube": "manual (Metricool YouTube post deleted 2026-11-01 by the owner: Free plan 20 posts/month); file re-rendered and sent to the owner"
-    },
-    {
-      "n": 12,
-      "slug": "ep12_fat_embolism",
-      "title": "Fat embolism syndrome: Gurd criteria (1 major + 4 minor)",
-      "status": "published",
-      "source_hint": "Gurd AR, Wilson RI. JBJS Br 1974",
-      "series": "rules",
-      "part": 3,
-      "published": "scheduled 2026-11-03 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-02 taken by EP10)",
-      "release": "media branch: ep12_fat_embolism.mp4",
-      "music": "track04_sigmamusicart-emotional-piano.mp3",
-      "metricool": {
-        "id": 413108692,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6957122017517322408"
-      },
-      "pmids": [
-        "4547466",
-        "10721407",
-        "42375760"
-      ],
-      "dois": [
-        "10.1016/s0020-1383(97)00154-x",
-        "10.1136/tsaco-2025-001913"
-      ],
-      "carousel": {
-        "headline": "1 MAJOR + 4 MINOR",
-        "sub": "Gurd criteria for fat embolism",
-        "points": [
-          "Classic triad: respiratory distress, CNS dysfunction, petechial rash",
-          "Onset 1-3 days after injury; rash in under half of cases",
-          "Femur nailed within 10 h: 0 of 60 FES vs 11 of 109 after 10 h"
-        ],
-        "ref": "Gurd & Wilson, JBJS Br 1974; Pinney et al., Injury 1998"
-      }
-    },
-    {
-      "n": 13,
-      "slug": "ep13_achilles",
-      "title": "Acute Achilles rupture: calf squeeze (Simmonds-Thompson) and Matles tests, the X-ray clue",
-      "status": "published",
-      "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)",
-      "series": "dontmiss",
-      "part": 3,
-      "published": "scheduled 2026-11-04 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-03 taken by EP12)",
-      "release": "media branch: ep13_achilles.mp4",
-      "music": "track05_leberch-inspirational-calm-piano.mp3",
-      "metricool": {
-        "id": 414359586,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4643102293434547665"
-      },
-      "pmids": [
-        "9548122",
-        "20580519",
-        "34974982"
-      ],
-      "dois": [
-        "10.1177/03635465980260021801",
-        "10.1016/j.jemermed.2010.05.015",
-        "10.1053/j.jfas.2021.12.003"
-      ],
-      "carousel": {
-        "headline": "96% TEST",
-        "sub": "Calf squeeze for Achilles rupture",
-        "points": [
-          "Prone calf squeeze: no plantar flexion = rupture (sens 96%, spec 93%)",
-          "Palpable gap sensitivity only 73%: no gap does not rule it out",
-          "Lateral film ankle in neutral (100 deg or less): test the Achilles"
-        ],
-        "ref": "Maffulli, Am J Sports Med 1998; Kiely et al., J Emerg Med 2010"
-      }
-    },
-    {
-      "n": 16,
-      "slug": "ep16_canadian_cspine",
-      "title": "Canadian C-spine rule: who needs neck imaging after trauma",
-      "status": "published",
-      "source_hint": "Stiell IG et al. JAMA 2001 (derivation); Stiell NEJM 2003 (CCR vs NEXUS)",
-      "series": "rules",
-      "part": 4,
-      "published": "scheduled 2026-11-05 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-04 taken by EP13)",
-      "release": "media branch: ep16_canadian_cspine.mp4",
-      "music": "track01_the-mountain-study-music.mp3",
-      "metricool": {
-        "id": 415579085,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1054082236253162794"
-      },
-      "pmids": [
-        "11597285",
-        "14695411"
-      ],
-      "dois": [
-        "10.1001/jama.286.15.1841",
-        "10.1056/NEJMoa031375"
-      ],
-      "carousel": {
-        "headline": "3 QUESTIONS",
-        "sub": "Canadian C-spine rule: image or not?",
-        "points": [
-          "High-risk factor (age 65+, dangerous mechanism, paresthesias): image",
-          "Low-risk factor present + rotates 45 deg left and right: no imaging",
-          "Vs NEXUS: sensitivity 99.4% vs 90.7%, missed 1 vs 16 injuries"
-        ],
-        "ref": "Stiell et al., JAMA 2001; Stiell et al., NEJM 2003"
-      }
-    },
-    {
-      "n": 18,
-      "slug": "ep18_lisfranc",
-      "title": "Lisfranc injury: fleck sign and the weight-bearing X-ray",
-      "status": "published",
-      "source_hint": "Myerson MS 1986; Sherief TI et al. 2007 (missed Lisfranc); weight-bearing radiograph studies",
-      "series": "dontmiss",
-      "part": 4,
-      "source": "Lau S et al. Emerg Med J 2017;34(1):52-6; Ponkilainen VT et al. Arch Orthop Trauma Surg 2020;140(10):1423-9; Chen C et al. J Foot Ankle Res 2023;16(1):9; Rikken QGH et al. Injury 2022;53(6):2326-32; Kennelly H et al. Emerg Med Australas 2019;31(5):741-4; Ross G et al. J Orthop Trauma 1996;10(2):119-22; Pourmorteza M, Vosoughi AR. Eur J Trauma Emerg Surg 2022;48(1):471-9; Pearsall C et al. Foot Ankle Spec 2024;17(6):632-8; Lattermann C et al. Clin J Sport Med 2007;17(4):311-5 (caption)",
-      "published": "scheduled 2026-11-08 10:00 Africa/Tripoli (Sunday; TikTok + Instagram; 2026-11-05 taken by EP16, Fri/Sat off)",
-      "release": "media branch: ep18_lisfranc.mp4",
-      "music": "track05_leberch-inspirational-calm-piano.mp3 (from music/vault; private repo not reachable)",
-      "metricool": {
-        "id": 416817095,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6558702588296512913"
-      },
-      "pmids": [
-        "27013521",
-        "32140830",
-        "36855126",
-        "35279293",
-        "30780193",
-        "8932671",
-        "32561962",
-        "37278226",
-        "17620787"
-      ],
-      "dois": [
-        "10.1136/emermed-2015-205317",
-        "10.1007/s00402-020-03391-w",
-        "10.1186/s13047-023-00608-0",
-        "10.1016/j.injury.2022.02.044",
-        "10.1111/1742-6723.13237",
-        "10.1097/00005131-199602000-00008",
-        "10.1007/s00068-020-01415-z",
-        "10.1177/19386400231175376",
-        "10.1097/JSM.0b013e31811ed0ba"
-      ],
-      "cover_ms": 2400,
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "checks": "design review ALL PASS (3rd round); independent fact check 11/12 PASS, 1 wording FAIL fixed before render (Lau: \"can follow minor trauma\") + 3 optional wording fixes applied",
-      "carousel": {
-        "headline": "LISFRANC?",
-        "sub": "1 in 5 is missed: load both feet",
-        "points": [
-          "Medial MT2 base must line up with medial C2 on the AP film",
-          "Non-weight-bearing films miss 24% of Lisfranc injuries",
-          "Bilateral WB: C1-MT2 2.1 mm wider than the other side = specific"
-        ],
-        "ref": "Ponkilainen et al., Arch Orthop Trauma Surg 2020"
-      }
-    },
-    {
-      "n": 17,
-      "slug": "ep17_garden",
-      "title": "Garden classification of femoral neck fractures: fix or replace",
-      "status": "published",
-      "source_hint": "Garden RS JBJS Br 1961; Parker MJ / Kazley JM reviews (displaced vs undisplaced)",
-      "series": "classified",
-      "part": 4,
-      "source": "Lu-Yao GL et al. J Bone Joint Surg Am 1994;76(1):15-25; Bjorgul K, Reikeras O. Acta Orthop Scand 2002;73(3):307-10; Palm H et al. Acta Orthop 2009;80(3):303-7; Dolatowski FC et al. J Bone Joint Surg Am 2019;101(2):136-44; Slullitel PA et al. J Arthroplasty 2024;39(1):111-7; Riaz O et al. Ann R Coll Surg Engl 2016;98(6):376-9; Fu X et al. Medicine 2015;94(39):e1393; Pietrzak JRT et al. Orthop Rev 2026;18:158940; Kazley JM et al. Clin Orthop Relat Res 2018;476(2):441-5; Garden RS. J Bone Joint Surg Br 1961;43-B:647-63",
-      "published": "scheduled 2026-11-09 10:00 Africa/Tripoli (Monday; TikTok + Instagram; 2026-11-08 taken by EP18, Fri/Sat off)",
-      "release": "media branch: ep17_garden.mp4",
-      "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
-      "metricool": {
-        "id": 420118620,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6716037400839277553"
-      },
-      "pmids": [
-        "8288658",
-        "12143978",
-        "19634021",
-        "30653043",
-        "37380144",
-        "27055409",
-        "26426607",
-        "41868737",
-        "29389800"
-      ],
-      "dois": [
-        "10.2106/00004623-199401000-00003",
-        "10.1080/000164702320155301",
-        "10.3109/17453670902967281",
-        "10.2106/JBJS.18.00316",
-        "10.1016/j.arth.2023.06.035",
-        "10.1308/rcsann.2016.0124",
-        "10.1097/MD.0000000000001393",
-        "10.52965/001c.158940",
-        "10.1007/s11999.0000000000000066"
-      ],
-      "cover_ms": 2400,
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "checks": "design review: round 1 6 FAIL (head position III/IV, colours, margins, refs) fixed; round 2 2 FAIL (text past card edge) fixed and verified; independent fact check 9/10 PASS, summary rule FAIL fixed before render (I-II 'usually fix', 'fix unless posterior tilt 20 deg or more'; 'fixation' instead of 'screws' for Lu-Yao)",
-      "carousel": {
-        "headline": "GARDEN",
-        "sub": "Displaced? Replace. Undisplaced? Tilt?",
-        "points": [
-          "Displaced + fixation: nonunion 33%, AVN 16% (106 reports)",
-          "Kappa 0.4 for 4 stages, 0.6 for undisplaced vs displaced",
-          "Posterior tilt 20 deg or more: 56% reoperated vs 14%"
-        ],
-        "ref": "Lu-Yao et al., J Bone Joint Surg Am 1994"
-      }
-    },
-    {
-      "n": 19,
-      "slug": "ep19_mirels",
-      "title": "Mirels score 9: impending pathological fracture",
-      "status": "published",
-      "source_hint": "Mirels H. Clin Orthop 1989 (score 8 or more fracture risk, 9 or more prophylactic fixation); Damron validation 2003",
-      "series": "numbers",
-      "part": 5,
-      "source": "Mirels H. Clin Orthop Relat Res 1989;(249):256-64; Damron TA et al. Clin Orthop Relat Res 2003;(415 Suppl):S201-7; Benca E et al. Bone Rep 2016;5:51-6; Hoban KA et al. JSES Int 2022;6(4):675-81; Crenn V et al. Orthop Traumatol Surg Res 2020;106(6):1005-11",
-      "published": "scheduled 2026-11-10 10:00 Africa/Tripoli (Tuesday; TikTok + Instagram; 2026-11-09 taken by EP17)",
-      "release": "media branch: ep19_mirels.mp4",
-      "music": "user_track2_calm_tiktok.mp3 (from music/vault; private repo not reachable)",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": 2400,
-      "metricool": {
-        "id": 420924418,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=7998557432092118775"
-      },
-      "pmids": [
-        "2684463",
-        "14600587",
-        "14600611",
-        "28326347",
-        "35813136",
-        "32782175"
-      ],
-      "dois": [
-        "10.1097/01.blo.0000093045.56370.dd",
-        "10.1097/01.blo.0000093842.72468.73",
-        "10.1016/j.bonr.2016.02.003",
-        "10.1016/j.jseint.2022.03.006",
-        "10.1016/j.otsr.2020.03.034"
-      ],
-      "checks": "design review: round 1 FAIL (cover 9 vs worked score 11, title overflow, refs card margin, size row timing) fixed; round 2 PASS. Independent fact check 15/15 PASS (7/8/9 scheme cited to Benca 2016, not the 1989 abstract which says 8 or more = fix)",
-      "carousel": {
-        "headline": "MIRELS 9",
-        "sub": "Score 4-12: 9 or more, fix first",
-        "points": [
-          "Site, pain, lesion type, size: 1-3 points each",
-          "Sensitivity 91%, specificity 35% (53 raters)",
-          "Upper limb: 9 or more caught 14%, 7 or more 63%"
-        ],
-        "ref": "Mirels, Clin Orthop Relat Res 1989"
-      }
-    },
-    {
-      "n": 22,
-      "slug": "ep22_kanavel",
-      "title": "Pyogenic flexor tenosynovitis: Kanavel's 4 signs, their accuracy and why tonight",
-      "status": "published",
-      "source_hint": "Kanavel AB 1912; Kennedy CD et al. J Hand Surg Am 2017 (sensitivity of each sign)",
-      "series": "dontmiss",
-      "part": 5,
-      "source": "Kennedy CD et al. Hand (N Y) 2017;12(6):585-90; Pang HN et al. J Bone Joint Surg Am 2007;89(8):1742-8; Idarrha F et al. Injury 2026;57(10):113631; Frenkel Rutenberg T et al. J Plast Surg Hand Surg 2020;54(1):14-8; Siska RC et al. Plast Reconstr Surg Glob Open 2022;10(3):e4165; Yi A et al. J Hand Surg Am 2019;44(5):394-9",
-      "published": "scheduled 2026-11-11 10:00 Africa/Tripoli (Wednesday; TikTok + Instagram; 2026-11-10 taken by EP19)",
-      "release": "media branch: ep22_kanavel.mp4",
-      "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": 2400,
-      "metricool": {
-        "id": 422154432,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-8433615054936914187"
-      },
-      "pmids": [
-        "28720000",
-        "17671013",
-        "42721565",
-        "31453741",
-        "35261842",
-        "30797654"
-      ],
-      "dois": [
-        "10.1177/1558944717692089",
-        "10.2106/JBJS.F.01356",
-        "10.1016/j.injury.2026.113631",
-        "10.1080/2000656X.2019.1657434",
-        "10.1097/GOX.0000000000004165",
-        "10.1016/j.jhsa.2019.01.013"
-      ],
-      "checks": "design review: round 1 2 FAIL (hook headline past x 960, sheath label left of x 60) fixed; round 2 ALL PASS. Independent fact check 11/12 PASS, 1 FAIL (IV antibiotics \"early cases only\" -> \"uncomplicated, inpatient, under a hand surgeon\") fixed before render",
-      "carousel": {
-        "headline": "KANAVEL x4",
-        "sub": "Finger infection: wash out tonight?",
-        "points": [
-          "4 signs: flexed posture, fusiform swelling, sheath tenderness, pain on extension",
-          "Each sign: sensitivity 91-97%, specificity only 51-69%",
-          "Amputation 0% vs 8% vs 59% as pus and ischaemia appear"
-        ],
-        "ref": "Kennedy et al, Hand 2017; Pang et al, JBJS Am 2007"
-      }
-    },
-    {
-      "n": 20,
-      "slug": "ep20_ottawa_knee",
-      "title": "Ottawa knee rule: does this knee need an X-ray?",
-      "status": "published",
-      "source_hint": "Stiell IG et al. JAMA 1996/1997; Bachmann LM et al. Ann Intern Med 2004 meta-analysis",
-      "series": "rules",
-      "part": "5",
-      "source": "Stiell IG et al. Ann Emerg Med 1995;26(4):405-13; Stiell IG et al. JAMA 1996;275(8):611-5; Stiell IG et al. JAMA 1997;278(23):2075-9; Bachmann LM et al. Ann Intern Med 2004;140(2):121-4; Bulloch B et al. Ann Emerg Med 2003;42(1):48-55; Seaberg DC et al. Ann Emerg Med 1998;32(1):8-13",
-      "published": "scheduled 2026-11-12 10:00 Africa/Tripoli (Thursday; TikTok + Instagram; 2026-11-11 taken by EP22)",
-      "release": "media branch: ep20_ottawa_knee.mp4",
-      "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": "2400",
-      "metricool": {
-        "id": 423455762,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-2322964789473554532"
-      },
-      "pmids": [
-        "7574120",
-        "8594242",
-        "9403421",
-        "14734335",
-        "12827123",
-        "9656942"
-      ],
-      "dois": [
-        "10.1016/s0196-0644(95)70106-0",
-        "10.7326/0003-4819-140-5-200403020-00013",
-        "10.1067/mem.2003.196",
-        "10.1016/s0196-0644(98)70092-7"
-      ],
-      "checks": "design review: round 1 4 FAIL (tibia leader off-bone, fibular head label/leader overlap, AP label on femur, 60 deg label 1 px past x 960) fixed; round 2 ALL PASS after re-rendering stills; independent fact check 8/8 PASS",
-      "carousel": {
-        "headline": "OTTAWA KNEE",
-        "sub": "X-ray if ANY 1 of 5 criteria",
-        "points": [
-          "55+, fibular head, isolated patella, cannot flex to 90, cannot take 4 steps",
-          "Sensitivity 100% in derivation and validation; meta-analysis 98.5%",
-          "Knee X-rays fell from 77.6% to 57.1% with no missed fractures"
-        ],
-        "ref": "Stiell et al., JAMA 1996"
-      }
-    },
-    {
-      "n": 21,
-      "slug": "ep21_weber",
-      "title": "Danis-Weber ankle fractures: fix or cast? (Weber B and the syndesmosis)",
-      "status": "published",
-      "source_hint": "Weber BG 1972; medial clear space / stress view studies (e.g. Michelson 2004)",
-      "series": "classified",
-      "part": "5",
-      "source": "Kortekangas T et al. BMJ 2026;392:e085295 (SUPER-FIN); Kortekangas T et al. BMJ 2019;364:k5432; Kellam PJ et al. J Orthop Trauma 2021;35(9):473-8; Harper MC, Keller TS. Foot Ankle 1989;10(3):156-60; Tornetta P et al. J Orthop Trauma 2012;26(11):659-61; Weber BG 1972 (definition)",
-      "published": "scheduled 2026-11-15 10:00 Africa/Tripoli (Sunday; TikTok + Instagram; Nov 12 taken by EP20, Fri/Sat off)",
-      "release": "media branch: ep21_weber.mp4",
-      "music": "track01_the-mountain-study-music.mp3 (from music/vault; private repo not reachable)",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": "2400",
-      "metricool": {
-        "id": 424716531,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-1547757818936473724"
-      },
-      "pmids": [
-        "41534905",
-        "30674451",
-        "33395177",
-        "2613128",
-        "23100079",
-        "35047809"
-      ],
-      "dois": [
-        "10.1136/bmj-2025-085295",
-        "10.1136/bmj.k5432",
-        "10.1097/BOT.0000000000002052",
-        "10.1177/107110078901000308",
-        "10.1097/BOT.0b013e31825cf39c"
-      ],
-      "checks": "design review: round 1 4 FAIL (arrow over label, 3 right-edge overflows, ref box) fixed; round 2 1 FAIL (medial malleolus label on talus outline) fixed; round 3 ALL PASS; independent fact check 10/10 PASS",
-      "carousel": {
-        "headline": "WEBER B",
-        "sub": "Congruent mortise: cast, not plate",
-        "points": [
-          "Syndesmotic injury 17% / 42% / 74% by the zone where the line starts",
-          "Stable: 3 weeks cast or orthosis = 6 weeks cast (247 patients)",
-          "Stress-unstable, congruent: cast = plate at 2 y, OMAS 89 vs 87"
-        ],
-        "ref": "Kortekangas et al., BMJ 2026"
-      }
-    },
-    {
-      "n": 11,
-      "slug": "ep11_klein_line",
-      "title": "SCFE: Klein's line and Trethowan sign",
-      "status": "published",
-      "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
-      "series": "dontmiss",
-      "part": "6",
-      "source": "Green DW et al. J Pediatr Orthop 2009;29(5):449-53; Rebich EJ et al. J Emerg Med 2018;54(6):835-43; Loder RT et al. J Bone Joint Surg Am 1993;75(8):1134-40; Ortegren J et al. J Pediatr Orthop B 2021;30(2):105-10; Shnaekel AW et al. Orthopedics 2020;43(2):e114-8",
-      "published": "scheduled 2026-11-16 10:00 Africa/Tripoli (Monday; TikTok + Instagram; Nov 15 taken by EP21, Fri/Sat off)",
-      "release": "media branch: ep11_klein_line.mp4",
-      "music": "track01_the-mountain-study-music.mp3 (from music/vault; private repo not reachable)",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": "2400",
-      "metricool": {
-        "id": 428196569,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=4769442488740630352"
-      },
-      "pmids": [
-        "19568015",
-        "29550284",
-        "8354671",
-        "32371650",
-        "31930409"
-      ],
-      "dois": [
-        "10.1097/BPO.0b013e3181aa20cd",
-        "10.1016/j.jemermed.2018.01.023",
-        "10.2106/00004623-199308000-00002",
-        "10.1097/BPB.0000000000000738",
-        "10.3928/01477447-20200107-04"
-      ],
-      "checks": "design review: round 1 FAIL (Klein's line crossed the neck flare, cover text past x 960, titles at y 197) fixed; round 2 ALL PASS; independent fact check 9/10 PASS, 1 wording FAIL (contralateral 8.9% denominator) fixed to '8.9% of patients (5/56)' before render",
-      "carousel": {
-        "headline": "KLEIN'S LINE",
-        "sub": "Knee pain in a teen: image the hip",
-        "points": [
-          "Classic Klein's line caught only 40.3% of slips; modified (2 mm) 79%",
-          "Add the frog-leg lateral: Klein + S-sign sensitivity 96.5%",
-          "Unstable (no weight-bearing even on crutches): AVN 47% vs 0%"
-        ],
-        "ref": "Green et al., J Pediatr Orthop 2009"
-      }
-    },
-    {
-      "n": 15,
-      "slug": "ep15_schatzker",
-      "title": "Schatzker classification of tibial plateau fractures: fix now or span first?",
-      "status": "published",
-      "source_hint": "Schatzker J et al. Clin Orthop 1979",
-      "series": "classified",
-      "part": "6",
-      "source": "Schatzker J et al. Clin Orthop Relat Res 1979;(138):94-104; Gardner MJ et al. J Orthop Trauma 2005;19(2):79-84; Gardner MJ et al. J Trauma 2006;60(2):319-23; Deng X et al. J Orthop Surg Res 2021;16(1):502; Gamulin A et al. BMC Musculoskelet Disord 2017;18(1):307; Egol KA et al. J Orthop Trauma 2005;19(7):448-55; Ringus VM et al. Orthopedics 2010;33(2):80-4; Yacoubian SV et al. J Orthop Trauma 2002;16(9):632-7",
-      "published": "scheduled 2026-11-17 10:00 Africa/Tripoli (Tuesday; TikTok + Instagram; Nov 16 taken by EP11)",
-      "release": "media branch: ep15_schatzker.mp4",
-      "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": "2400",
-      "metricool": {
-        "id": 429086691,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-3640153260401408492"
-      },
-      "pmids": [
-        "445923",
-        "15677922",
-        "16508489",
-        "34399816",
-        "28720096",
-        "16056075",
-        "20192139",
-        "12368643"
-      ],
-      "dois": [
-        "10.1097/00005131-200502000-00002",
-        "10.1097/01.ta.0000203548.50829.92",
-        "10.1186/s13018-021-02660-7",
-        "10.1186/s12891-017-1680-4",
-        "10.1097/01.bot.0000171881.11205.80",
-        "10.3928/01477447-20100104-05",
-        "10.1097/00005131-200210000-00004"
-      ],
-      "checks": "design review: 12/13 PASS, 1 FAIL (METAPHYSIS pointer on the diaphysis) fixed, plus advisories applied (thicker hook fracture lines, legible dimmed legend, bicortical ex-fix pins, overflowing stat line); independent fact check 11/11 PASS, wording tightened (Type III 'operative patients', Gamulin IV-VI 'age/sex-adjusted') before render",
-      "carousel": {
-        "headline": "SCHATZKER",
-        "sub": "Plateau fracture: fix or span?",
-        "points": [
-          "IV-VI high energy: ACS 3.1% of 1119, Schatzker VI OR 5.78",
-          "Swollen? Span first: deep infection 5% in 57 staged fractures",
-          "MRI: lateral meniscus pathology 91%, soft tissue intact in only 1%"
-        ],
-        "ref": "Gardner et al., J Orthop Trauma 2005"
-      }
-    },
-    {
-      "n": 30,
-      "slug": "ep30_amsterdam_wrist",
-      "title": "Amsterdam wrist rules: who needs a wrist X-ray",
-      "status": "published",
-      "source_hint": "Walenkamp MM et al. Emerg Med J 2015; Bentohami A et al. 2014",
-      "series": "rules",
-      "part": "6",
-      "source": "Walenkamp MMJ et al. BMC Musculoskelet Disord 2015;16:389; Walenkamp MMJ et al. Eur J Trauma Emerg Surg 2016;42(2):185-90; Mulders MAM et al. Eur J Trauma Emerg Surg 2020;46(3):573-582; Slaar A et al. Pediatr Radiol 2016;46(1):50-60; Mallee WH et al. Arch Orthop Trauma Surg 2020;140(4):575-581",
-      "published": "scheduled 2026-11-18 10:00 Africa/Tripoli (Wednesday; TikTok + Instagram; Nov 17 taken by EP15)",
-      "release": "media branch: ep30_amsterdam_wrist.mp4",
-      "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
-      "networks": [
-        "tiktok",
-        "instagram"
-      ],
-      "cover_ms": "2400",
-      "metricool": {
-        "id": 430420142,
-        "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-1538817268976171303"
-      },
-      "pmids": [
-        "26682537",
-        "26038045",
-        "31541258",
-        "26298555",
-        "32125528"
-      ],
-      "dois": [
-        "10.1186/s12891-015-0829-2",
-        "10.1007/s00068-015-0527-7",
-        "10.1007/s00068-019-01194-2",
-        "10.1007/s00247-015-3436-3",
-        "10.1007/s00402-020-03383-w"
-      ],
-      "checks": "design review: 3 FAIL (reference lines overflowing the card, cover title 12 px past x 960, RADIUS/ULNA leaders crossing) fixed and re-checked PASS, advisories applied; independent fact check 14/14 PASS, wording tightened before render (39% vs 99.6% labelled as separate cohorts, paediatric 4.1% missed, scaphoid rule internal validation, 'absolute' kept)",
-      "carousel": {
-        "headline": "AMSTERDAM",
-        "sub": "Wrist injury: X-ray or not?",
-        "points": [
-          "8 predictors: sensitivity 98%, specificity 21%, NPV 90%",
-          "In practice: wrist X-rays down 15% (absolute), 1 irrelevant miss",
-          "Only 39% of wrist trauma patients have a fracture"
-        ],
-        "ref": "Walenkamp et al., BMC Musculoskelet Disord 2015"
-      }
-    },
-    {
-      "n": 28,
-      "slug": "ep28_posterior_shoulder",
-      "title": "Posterior shoulder dislocation: the light bulb sign and why it is missed",
-      "status": "todo",
-      "source_hint": "Hawkins RJ et al. JBJS Am 1987; Robinson CM et al. JBJS Am 2011",
-      "series": "dontmiss"
-    },
-    {
-      "n": 24,
-      "slug": "ep24_neer",
-      "title": "Neer classification of proximal humerus fractures and when surgery helps",
-      "status": "todo",
-      "source_hint": "Neer CS JBJS Am 1970; Rangan A et al. JAMA 2015 (PROFHER trial)",
-      "series": "classified"
-    },
-    {
-      "n": 27,
-      "slug": "ep27_knee_dislocation_abi",
-      "title": "Knee dislocation: ABI under 0.9 and the popliteal artery",
-      "status": "todo",
-      "source_hint": "Mills WJ et al. J Trauma 2004 (ABI in knee dislocation)",
-      "series": "numbers"
-    },
-    {
-      "n": 32,
-      "slug": "ep32_nec_fasc",
-      "title": "Necrotising fasciitis: LRINEC score and the finger test",
-      "status": "todo",
-      "source_hint": "Wong CH et al. Crit Care Med 2004 (LRINEC); Fernando SM et al. Ann Surg 2019",
-      "series": "dontmiss"
-    },
-    {
-      "n": 26,
-      "slug": "ep26_nexus",
-      "title": "NEXUS low-risk criteria: clearing the C-spine without imaging",
-      "status": "todo",
-      "source_hint": "Hoffman JR et al. NEJM 2000 (NEXUS, 34,069 patients)",
-      "series": "rules"
-    },
-    {
-      "n": 33,
-      "slug": "ep33_vancouver",
-      "title": "Vancouver classification of periprosthetic femoral fractures: fix or revise",
-      "status": "todo",
-      "source_hint": "Duncan CP, Masri BA. Instr Course Lect 1995; Brady OH et al. JBJS Br 2000 (validation)",
-      "series": "classified"
-    },
-    {
-      "n": 31,
-      "slug": "ep31_septic_knee_wbc",
-      "title": "Hot swollen knee: synovial WBC 50,000 and the likelihood of septic arthritis",
-      "status": "todo",
-      "source_hint": "Margaretten ME et al. JAMA 2007",
-      "series": "numbers"
-    },
-    {
-      "n": 25,
-      "slug": "ep25_ddh",
-      "title": "DDH: Ortolani, Barlow and the Graf alpha angle",
-      "status": "todo",
-      "source_hint": "Graf R. Arch Orthop Trauma Surg 1980; Ortolani / Barlow screening reviews",
-      "series": "dontmiss"
-    },
-    {
-      "n": 29,
-      "slug": "ep29_tlics",
-      "title": "TLICS: thoracolumbar injury classification and severity score, brace or fix",
-      "status": "todo",
-      "source_hint": "Vaccaro AR et al. Spine 2005 (TLICS)",
-      "series": "classified"
-    },
-    {
-      "n": 35,
-      "slug": "ep35_hip_fracture_48h",
-      "title": "Hip fracture surgery within 48 hours: the mortality number",
-      "status": "todo",
-      "source_hint": "Klestil T et al. Sci Rep 2018; HIP ATTACK Lancet 2020",
-      "series": "numbers"
-    },
-    {
-      "n": 34,
-      "slug": "ep34_sins",
-      "title": "SINS: spinal instability neoplastic score, when to call the spine surgeon",
-      "status": "todo",
-      "source_hint": "Fisher CG et al. Spine 2010; Fourney DR et al. J Clin Oncol 2011",
-      "series": "rules"
-    },
-    {
-      "n": 23,
-      "slug": "ep23_cobb",
-      "title": "Cobb angle thresholds in adolescent idiopathic scoliosis: brace vs surgery",
-      "status": "todo",
-      "source_hint": "Weinstein SL et al. NEJM 2013 (BrAIST, bracing 20-40 degrees, 18 h/day)",
-      "series": "numbers"
-    }
-  ],
-  "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner).",
-  "carousels": [
-    {
-      "date": "2026-10-25 18:00 Africa/Tripoli",
-      "week": "Oct 19 - 25",
-      "episodes": [
-        "ep01_tad",
-        "ep02_acs",
-        "ep03_kocher",
-        "ep04_ottawa_ankle",
-        "ep05_gustilo"
-      ],
-      "slides": 7,
-      "networks": [
-        "instagram",
-        "tiktok"
-      ],
-      "media": "media branch: carousel_20261025/slide01-07.jpg",
-      "metricool_post_id": 405208614,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5415755961258390488",
-      "note": "EP01 included: its Instagram/YouTube cross-post went live 2026-10-19 and it had never been in a carousel"
-    },
-    {
-      "date": "2026-11-01 18:00 Africa/Tripoli",
-      "week": "Oct 26 - Nov 1",
-      "episodes": [
-        "ep06_hip_dislocation",
-        "ep07_scaphoid",
-        "ep08_salter_harris",
-        "ep14_cauda_equina",
-        "ep09_gartland"
-      ],
-      "slides": 7,
-      "networks": [
-        "instagram",
-        "tiktok"
-      ],
-      "media": "media branch: carousel_20261101/slide01-07.jpg",
-      "metricool_post_id": 412398421,
-      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=490881107550031169"
-    },
-    {
-      "date": "2026-11-08 18:00 Africa/Tripoli",
-      "week": "Nov 2 - 8",
-      "episodes": [
-        "ep10_mess",
-        "ep12_fat_embolism",
-        "ep13_achilles",
-        "ep16_canadian_cspine",
-        "ep18_lisfranc"
-      ],
-      "slides": 7,
-      "networks": [
-        "instagram",
-        "tiktok"
-      ],
-      "media": "media branch: carousel_20261108/slide01-07.jpg",
-      "manual": true,
-      "note": "Delivered to the owner 2026-11-07 for manual posting (no Metricool post)"
-    },
-    {
-      "date": "2026-11-15 18:00 Africa/Tripoli",
-      "week": "Nov 9 - 15",
-      "episodes": [
-        "ep17_garden",
-        "ep19_mirels",
-        "ep22_kanavel",
-        "ep20_ottawa_knee",
-        "ep21_weber"
-      ],
-      "slides": 7,
-      "networks": [
-        "instagram",
-        "tiktok"
-      ],
-      "media": "media branch: carousel_20261115/slide01-07.jpg",
-      "manual": true,
-      "note": "Delivered to the owner 2026-11-14 for manual posting (no Metricool post)"
-    }
-  ]
+  "classified": {
+   "name": "Classified",
+   "tag": "CLASSIFIED",
+   "about": "a classification drawn type by type, with what changes management"
+  },
+  "rules": {
+   "name": "Clinical Rules",
+   "tag": "CLINICAL RULES",
+   "about": "a validated clinical decision rule or criteria set"
+  },
+  "dontmiss": {
+   "name": "Don't Miss",
+   "tag": "DON'T MISS",
+   "about": "a can't-miss diagnosis: the signs, the test, the pitfall"
+  }
+ },
+ "episodes": [
+  {
+   "n": 1,
+   "slug": "ep01_tad",
+   "title": "Tip-Apex Distance < 25 mm",
+   "status": "published",
+   "source": "Baumgaertner MR et al. JBJS Am 1995;77(7):1058-64",
+   "published": "2026-10 (posted manually)",
+   "crosspost": {
+    "networks": [
+     "instagram",
+     "youtube"
+    ],
+    "scheduled": "2026-10-19 18:00 Africa/Tripoli",
+    "metricool_post_id": 400156580,
+    "cover_ms": 5500,
+    "pmids": [
+     "7608228"
+    ],
+    "music": "track01_the-mountain-study-music",
+    "youtube_post_id": 400213761,
+    "note": "YouTube failed at 18:00 (title contained <); rescheduled YouTube alone 18:20",
+    "youtube_musicfree_post_id": 401159336,
+    "youtube_music": "yt1_morning_rounds (original)"
+   },
+   "series": "numbers",
+   "part": 1,
+   "carousel": {
+    "headline": "TAD < 25 mm",
+    "sub": "The number that saves your lag screw",
+    "points": [
+     "TAD = tip-to-apex distance on AP + lateral X-rays, corrected for magnification",
+     "None of 120 screws with TAD of 25 mm or less cut out",
+     "Mean TAD: 24 mm in healed fractures vs 38 mm in cut-outs"
+    ],
+    "ref": "Baumgaertner et al., JBJS Am 1995;77(7):1058-64"
+   }
+  },
+  {
+   "n": 2,
+   "slug": "ep02_acs",
+   "title": "Acute compartment syndrome: Delta P < 30 mmHg",
+   "status": "published",
+   "source": "McQueen & Court-Brown JBJS Br 1996;78(1):99-104; Kakar et al. JOT 2007;21(2):99-103",
+   "published": "scheduled 2026-10-20 10:00 Africa/Tripoli",
+   "metricool_post_id": 400213844,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=3226306365346365565",
+   "pmids": [
+    "8898137",
+    "17304064"
+   ],
+   "music": "track02 (Content ID claim on YouTube: blocked worldwide); YouTube re-uploaded 2026-10-20 11:00 with track01",
+   "cover_ms": 5000,
+   "series": "numbers",
+   "part": 2,
+   "carousel": {
+    "headline": "ΔP < 30 mmHg",
+    "sub": "The number that decides a fasciotomy",
+    "points": [
+     "ΔP = diastolic BP minus intracompartmental pressure",
+     "Don't rely on absolute compartment pressure alone",
+     "Palpable pulses do NOT exclude compartment syndrome"
+    ],
+    "ref": "McQueen & Court-Brown, JBJS Br 1996 · Kakar et al., JOT 2007"
+   },
+   "youtube_reupload_post_id": 400855167,
+   "youtube_musicfree_post_id": 401159458,
+   "youtube_music": "yt2_soft_horizon (original)"
+  },
+  {
+   "n": 3,
+   "slug": "ep03_kocher",
+   "title": "Kocher criteria: septic arthritis vs transient synovitis of the hip in children",
+   "status": "published",
+   "source_hint": "Kocher MS et al. JBJS Am 1999 (4 predictors: non-weight-bearing, fever >38.5 C, ESR >40, WBC >12,000; probability by number of predictors); validation Kocher 2004; CRP >2.0 mg/dL added by Caird 2006",
+   "series": "rules",
+   "source": "Kocher MS et al. JBJS Am 1999;81(12):1662-70; Kocher MS et al. JBJS Am 2004;86(8):1629-35; Caird MS et al. JBJS Am 2006;88(6):1251-7",
+   "published": "scheduled 2026-10-21 10:00 Africa/Tripoli (2026-10-20 already taken by EP02)",
+   "release": "media branch: ep03_kocher.mp4",
+   "metricool_post_id": 401088290,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-403471730596298456",
+   "networks": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "pmids": [
+    "10608376",
+    "15292409",
+    "16757758"
+   ],
+   "dois": [
+    "10.2106/00004623-199912000-00002",
+    "10.2106/00004623-200408000-00005",
+    "10.2106/JBJS.E.00216"
+   ],
+   "music": "track01_the-mountain-study-music (replaced track03 before publishing: Content ID risk)",
+   "cover_ms": 2400,
+   "part": 1,
+   "carousel": {
+    "headline": "KOCHER 4",
+    "sub": "Septic hip or transient synovitis?",
+    "points": [
+     "Fever history, non-weight-bearing, ESR at least 40, WBC over 12,000",
+     "3 of 4 predictors = 93.1% septic; none = under 0.2%",
+     "Add CRP over 2.0 mg/dL (Caird 2006)"
+    ],
+    "ref": "Kocher et al., JBJS Am 1999 · Caird et al., JBJS Am 2006"
+   },
+   "youtube_post_id": 401609991,
+   "youtube_music": "piano_3_momentum (own)"
+  },
+  {
+   "n": 4,
+   "slug": "ep04_ottawa_ankle",
+   "title": "Ottawa ankle rules",
+   "status": "published",
+   "source_hint": "Stiell IG et al. Ann Emerg Med 1992 / JAMA 1993; sensitivity meta-analysis Bachmann BMJ 2003",
+   "series": "rules",
+   "source": "Stiell IG et al. Ann Emerg Med 1992;21(4):384-90; Stiell IG et al. JAMA 1993;269(9):1127-32; Bachmann LM et al. BMJ 2003;326(7386):417",
+   "published": "scheduled 2026-10-22 10:00 Africa/Tripoli (2026-10-21 already taken by EP03)",
+   "release": "media branch: ep04_ottawa_ankle.mp4 (+ ep04_ottawa_ankle_yt.mp4 for YouTube)",
+   "metricool_post_id": 401623283,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1643734156627166207",
+   "networks": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "youtube_post_id": 401623309,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=5376614028762892933",
+   "pmids": [
+    "1554175",
+    "8433468",
+    "12595378",
+    "22962897",
+    "40041750"
+   ],
+   "dois": [
+    "10.1016/s0196-0644(05)82656-3",
+    "10.1001/jama.269.9.1127",
+    "10.1136/bmj.326.7386.417",
+    "10.1055/s-0044-1800938"
+   ],
+   "music": "piano_1_rise (own) - re-rendered 2026-10-21 01:45 after the autopilot run had no music",
+   "youtube_music": "piano_1_rise (own)",
+   "cover_ms": 2400,
+   "part": 2,
+   "carousel": {
+    "headline": "OTTAWA 4+4",
+    "sub": "Ankle X-ray or not?",
+    "points": [
+     "Tender posterior edge/tip of either malleolus (distal 6 cm), 5th MT base or navicular",
+     "Or can't bear weight for 4 steps, right after injury and in the ED",
+     "Negative LR 0.08: fracture under 1.4% when the rule is negative"
+    ],
+    "ref": "Stiell et al., JAMA 1993 · Bachmann et al., BMJ 2003"
+   }
+  },
+  {
+   "n": 5,
+   "slug": "ep05_gustilo",
+   "title": "Gustilo-Anderson open fracture classification and antibiotic timing",
+   "status": "published",
+   "source_hint": "Gustilo & Anderson JBJS Am 1976; Gustilo 1984 (IIIA/B/C); antibiotic timing Lack et al. JOT 2015 (>66 min increased infection)",
+   "series": "classified",
+   "source": "Gustilo RB, Anderson JT. J Bone Joint Surg Am 1976;58(4):453-8; Gustilo RB et al. J Trauma 1984;24(8):742-6; Lack WD et al. J Orthop Trauma 2015;29(1):1-6; Elniel AR, Giannoudis PV. EFORT Open Rev 2018; Brumback RJ, Jones AL. JBJS Am 1994;76(8):1162-6; Indian J Orthop 2018 (PMC6142800)",
+   "published": "scheduled 2026-10-25 10:00 Africa/Tripoli (2026-10-22 taken by EP04; Fri/Sat off)",
+   "release": "media branch: ep05_gustilo.mp4 (+ ep05_gustilo_yt.mp4 for YouTube)",
+   "metricool_post_id": 403700952,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=4738264099020359525",
+   "networks": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "youtube_post_id": 404151435,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=8278181456638328967",
+   "pmids": [
+    "773941",
+    "6471139",
+    "25526095",
+    "29951271",
+    "8056796",
+    "30237604"
+   ],
+   "dois": [
+    "10.1097/00005373-198408000-00009",
+    "10.1097/BOT.0000000000000262",
+    "10.1302/2058-5241.3.170072",
+    "10.2106/00004623-199408000-00006",
+    "10.4103/ortho.IJOrtho_319_17"
+   ],
+   "music": "user_track_calm95_loop (re-rendered 2026-10-23 in the violet Classified theme)",
+   "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library), violet render",
+   "cover_ms": 2400,
+   "part": 1,
+   "carousel": {
+    "headline": "GUSTILO I-III",
+    "sub": "Grade open fractures right",
+    "points": [
+     "Type I under 1 cm, clean; Type II over 1 cm, no flaps; III high energy",
+     "Wound sepsis IIIA 4%, IIIB 52%, IIIC 42% (Gustilo 1984)",
+     "Antibiotics after 66 min: OR 3.78 for deep infection (Lack 2015)"
+    ],
+    "ref": "Gustilo et al., J Trauma 1984 · Lack et al., JOT 2015"
+   }
+  },
+  {
+   "n": 6,
+   "slug": "ep06_hip_dislocation",
+   "title": "Traumatic hip dislocation: reduce within 6 hours",
+   "status": "published",
+   "source_hint": "Hougaard & Thomsen 1987 (AVN 4.8% vs 52.9% reduced <6 h vs >6 h)",
+   "series": "numbers",
+   "source": "Hougaard K, Thomsen PB. Arch Orthop Trauma Surg 1986;106(1):32-5; Hougaard K, Thomsen PB. J Bone Joint Surg Am 1987;69(5):679-83; Kellam P, Ostrum RF. J Orthop Trauma 2016;30(1):10-6; Gautier E et al. JBJS Br 2000;82(5):679-83; Cornwall R, Radomisli TE. Clin Orthop 2000;(377):84-91; Mandell JC et al. Arthroscopy 2018;34(3):917-27",
+   "published": "scheduled 2026-10-26 10:00 Africa/Tripoli (2026-10-25 taken by EP05)",
+   "release": "media branch: ep06_hip_dislocation.mp4 (+ ep06_hip_dislocation_yt.mp4 for YouTube)",
+   "metricool_post_id": 405751710,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-9187677107243825675",
+   "networks": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "youtube_post_id": 405751774,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4989504511631406938",
+   "pmids": [
+    "3566493",
+    "3597467",
+    "26849386",
+    "10963165",
+    "10943188",
+    "29146169"
+   ],
+   "dois": [
+    "10.1007/BF00435649",
+    "10.1097/BOT.0000000000000419",
+    "10.1302/0301-620x.82b5.10426",
+    "10.1097/00003086-200008000-00012",
+    "10.1016/j.arthro.2017.08.295"
+   ],
+   "music": "track01_the-mountain-study-music (vault)",
+   "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library)",
+   "cover_ms": 2400,
+   "part": 3,
+   "carousel": {
+    "headline": "6 HOURS",
+    "sub": "to reduce a dislocated hip",
+    "points": [
+     "AVN 4.8% if reduced within 6 h vs 52.9% after 6 h",
+     "Excellent/good hip at 14 years: 88% vs 42%",
+     "Reduced after 12 h: AVN odds ratio 5.6 (meta-analysis)"
+    ],
+    "ref": "Hougaard & Thomsen, Arch Orthop Trauma Surg 1986"
+   },
+   "music_note": "re-rendered 2026-10-25 with music 6 dB quieter (-32 LUFS) on owner request"
+  },
+  {
+   "n": 7,
+   "slug": "ep07_scaphoid",
+   "title": "Suspected scaphoid fracture: clinical signs and imaging pathway",
+   "status": "published",
+   "source_hint": "Parvizi 1998 (clinical signs); NICE / meta-analyses of MRI for occult scaphoid fracture",
+   "series": "dontmiss",
+   "part": 1,
+   "source": "Parvizi J et al. J Hand Surg Br 1998;23(3):324-7; Yin ZG et al. JBJS Br 2012;94(8):1077-85; Backer HC et al. J Wrist Surg 2020;9(1):81-89; Mallee WH et al. Cochrane 2015;CD010023",
+   "published": "scheduled 2026-10-27 10:00 Africa/Tripoli (2026-10-26 taken by EP06)",
+   "release": "media branch: ep07_scaphoid.mp4 / ep07_scaphoid_yt.mp4",
+   "pmids": [
+    "9665518",
+    "22844049",
+    "32025360",
+    "26045406"
+   ],
+   "dois": [
+    "10.1016/s0266-7681(98)80050-8",
+    "10.1302/0301-620X.94B8.28998",
+    "10.1055/s-0039-1693147",
+    "10.1002/14651858.CD010023.pub2"
+   ],
+   "metricool_post_id": 405840140,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6929511505856055779",
+   "youtube_post_id": 405840494,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=334637362156424493",
+   "networks": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "cover_ms": 2400,
+   "music": "track04_sigmamusicart-emotional-piano (TikTok/Instagram, from music/vault)",
+   "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
+   "checks": "design review ALL PASS (2nd round); independent fact check 14/14 PASS",
+   "carousel": {
+    "headline": "3 SIGNS",
+    "sub": "Suspected scaphoid fracture",
+    "points": [
+     "Snuffbox, tubercle, thumb compression: each 100% sensitive",
+     "All 3 combined within 24 h: specificity 74% (alone 9-48%)",
+     "Normal X-ray? MRI most accurate: sens 97.7%, spec 99.8%"
+    ],
+    "ref": "Parvizi et al., J Hand Surg Br 1998"
+   }
+  },
+  {
+   "n": 8,
+   "slug": "ep08_salter_harris",
+   "title": "Salter-Harris classification: the 5 types and which ones change management",
+   "status": "published",
+   "source_hint": "Salter & Harris JBJS Am 1963",
+   "series": "classified",
+   "part": 2,
+   "source": "Peterson HA et al. J Pediatr Orthop 1994;14(4):423-30; Basener CJ et al. J Orthop Trauma 2009;23(9):663-7; Sepulveda M et al. EFORT Open Rev 2022;7(4):264-73; Mann DC, Rajmaira S. J Pediatr Orthop 1990;10(6):713-6; Venkatadass K et al. Indian J Orthop 2020;55(1):35-46; Brown JH, DeLuca SA. Am Fam Physician 1992;46(4):1180-4 (type definitions)",
+   "published": "scheduled 2026-10-28 10:00 Africa/Tripoli (2026-10-27 taken by EP07)",
+   "release": "media branch: ep08_salter_harris.mp4 / ep08_salter_harris_yt.mp4",
+   "pmids": [
+    "8077422",
+    "19897989",
+    "37931413",
+    "2250054",
+    "33569097",
+    "1414883"
+   ],
+   "dois": [
+    "10.1097/01241398-199407000-00002",
+    "10.1097/BOT.0b013e3181a4f25b",
+    "10.1530/EOR-21-0110",
+    "10.1097/01241398-199011000-00002",
+    "10.1007/s43465-020-00270-9"
+   ],
+   "metricool_post_id": 406939588,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-693920178162939760",
+   "youtube_post_id": 406940195,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6030625501119988913",
+   "networks": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "cover_ms": 2400,
+   "music": "track05_leberch-inspirational-calm-piano (TikTok/Instagram, from music/vault; private repo not reachable)",
+   "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
+   "checks": "design review ALL PASS (3rd round); independent fact check 13/13 PASS",
+   "carousel": {
+    "headline": "SALTER-HARRIS",
+    "sub": "III & IV = into the joint",
+    "points": [
+     "Type II most common: 54% of 951 physeal fractures",
+     "III & IV break the joint surface: anatomic reduction + fixation",
+     "Distal femur: growth disturbance 52%, 58% even in type II"
+    ],
+    "ref": "Basener et al., J Orthop Trauma 2009"
+   }
+  },
+  {
+   "n": 14,
+   "slug": "ep14_cauda_equina",
+   "title": "Cauda equina syndrome: red flags, the bladder scan and the 48 h window",
+   "status": "published",
+   "source_hint": "Ahn UM et al. Spine 2000 (decompression within 48 h); later meta-analyses",
+   "series": "dontmiss",
+   "part": 2,
+   "source": "Ahn UM et al. Spine 2000;25(12):1515-22; Dionne N et al. Musculoskelet Sci Pract 2019;42:125-33; Katzouraki G et al. Bone Joint J 2020;102-B(6):677-82; Boktor J et al. Bone Joint J 2023;105-B(5):487-95; Srikandarajah N et al. Spine 2015;40(8):580-3; Najjar E et al. Bone Joint J 2026;108-B(3):416-24",
+   "published": "scheduled 2026-10-29 10:00 Africa/Tripoli (2026-10-28 taken by EP08)",
+   "release": "media branch: ep14_cauda_equina.mp4 / ep14_cauda_equina_yt.mp4",
+   "pmids": [
+    "10851100",
+    "31132655",
+    "32475252",
+    "37121596",
+    "25646751",
+    "41763246"
+   ],
+   "dois": [
+    "10.1097/00007632-200006150-00010",
+    "10.1016/j.msksp.2019.05.004",
+    "10.1302/0301-620X.102B6.BJJ-2020-0195.R1",
+    "10.1302/0301-620X.105B5.BJJ-2022-0739.R2",
+    "10.1097/BRS.0000000000000813",
+    "10.1302/0301-620X.108B3.BJJ-2025-0986.R2"
+   ],
+   "metricool_post_id": 408104549,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5474759125632138451",
+   "youtube_post_id": 408107170,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=74820618145448991",
+   "networks": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "cover_ms": 2400,
+   "music": "user_track2_calm_tiktok (TikTok/Instagram, from music/vault; private repo not reachable)",
+   "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
+   "checks": "design review ALL PASS (3rd round); independent fact check 13/13 PASS after 2 wording fixes",
+   "carousel": {
+    "headline": "48 HOURS",
+    "sub": "Cauda equina: decompress early",
+    "points": [
+     "Red flags: sensitivity only 19-43%, specificity 62-88%",
+     "Bladder scan PVR 200 ml or more: sensitivity 94.1%, NPV 98.7%",
+     "CES-I bladder dysfunction: 15.6% within 48 h vs 56% after"
+    ],
+    "ref": "Ahn et al., Spine 2000"
+   }
+  },
+  {
+   "n": 9,
+   "slug": "ep09_gartland",
+   "title": "Supracondylar humerus fractures: Gartland types and nerve injury patterns",
+   "status": "published",
+   "source_hint": "Gartland 1959; Wilkins modification; AIN most common in extension type (Babal et al. JPO 2010 systematic review)",
+   "series": "classified",
+   "part": 3,
+   "source": "Gartland JJ. Surg Gynecol Obstet 1959;109(2):145-54; Wang JH et al. J Pediatr Orthop 2019;39(8):e578-85; Babal JC et al. J Pediatr Orthop 2010;30(3):253-63; Vuillermin C et al. JBJS Essent Surg Tech 2018;8(2):e10; Jose Jerome JT et al. J Pediatr Soc North Am 2026;16:100377; Joist A et al. J Neurosurg 1999;90(6):1053-6",
+   "published": "scheduled 2026-11-01 10:00 Africa/Tripoli (Sunday; Fri/Sat off)",
+   "release": "media branch: ep09_gartland.mp4 / ep09_gartland_yt.mp4",
+   "pmids": [
+    "13675986",
+    "31393293",
+    "20357592",
+    "30233982",
+    "42306145",
+    "10350251"
+   ],
+   "dois": [
+    "10.1097/BPO.0000000000001096",
+    "10.1097/BPO.0b013e3181d213a6",
+    "10.2106/JBJS.ST.16.00011",
+    "10.1016/j.jposna.2026.100377",
+    "10.3171/jns.1999.90.6.1053"
+   ],
+   "metricool_post_id": 410636085,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=8828246009656066519",
+   "youtube_post_id": 410636636,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6059050753164201982",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": 2400,
+   "music": "user_track2_calm_tiktok (TikTok/Instagram, from music/vault; private repo not reachable)",
+   "youtube_music": "yal_turn_in_the_sun_simon_herody (YouTube Audio Library, from music/vault)",
+   "checks": "design review ALL PASS (2nd round); independent fact check 15/15 PASS (2 optional wording fixes applied)",
+   "carousel": {
+    "headline": "GARTLAND",
+    "sub": "Supracondylar: cast or pins?",
+    "points": [
+     "Operated: type I 0%, type II 57%, type III 100%",
+     "AHL misses the capitellum: odds of surgery x200",
+     "Nerve palsy in 11.3%: AIN in extension, ulnar in flexion"
+    ],
+    "ref": "Wang et al., J Pediatr Orthop 2019"
+   },
+   "youtube": "manual (Metricool YouTube post deleted 2026-11-01 by the owner: Free plan 20 posts/month); file re-rendered and sent to the owner"
+  },
+  {
+   "n": 10,
+   "slug": "ep10_mess",
+   "title": "MESS 7: the Mangled Extremity Severity Score, and why 7+ is not an amputation order",
+   "status": "published",
+   "source_hint": "Johansen K et al. J Trauma 1990; LEAP study Bosse JBJS Am 2001 (limits of scores)",
+   "series": "numbers",
+   "part": 4,
+   "source": "Johansen K et al. J Trauma 1990;30(5):568-72; Helfet DL et al. Clin Orthop Relat Res 1990;(256):80-6; Bosse MJ et al. J Bone Joint Surg Am 2001;83(1):3-14; Ly TV et al. J Bone Joint Surg Am 2008;90(8):1738-43; Schiro GR et al. BMC Musculoskelet Disord 2015;16:372; Yoneda H et al. Injury 2024;55(4):111447",
+   "published": "scheduled 2026-11-02 10:00 Africa/Tripoli (Monday; 2026-11-01 taken by EP09)",
+   "release": "media branch: ep10_mess.mp4 / ep10_mess_yt.mp4",
+   "pmids": [
+    "2342140",
+    "2194732",
+    "11205855",
+    "18676906",
+    "26796522",
+    "38417237"
+   ],
+   "dois": [
+    "10.1097/00005373-199005000-00007",
+    "10.2106/00004623-200101000-00002",
+    "10.2106/JBJS.G.00136",
+    "10.1186/s12891-015-0832-7",
+    "10.1016/j.injury.2024.111447"
+   ],
+   "metricool_post_id": 412329324,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1060630743980068745",
+   "youtube_post_id": 412331355,
+   "youtube_planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=7520398745699633259",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": 2400,
+   "music": "user_track_calm95_loop (TikTok/Instagram, from music/vault; private repo not reachable)",
+   "youtube_music": "yal_yacoby_schwartzy (YouTube Audio Library, from music/vault)",
+   "checks": "design review ALL PASS (2nd round); independent fact check 12/13 PASS, 1 FAIL fixed before render (upper limb 'even weaker' -> 'no better'), Schiro 2015 added to on-screen references",
+   "carousel": {
+    "headline": "MESS 7",
+    "sub": "Mangled leg: amputate?",
+    "points": [
+     "1990: MESS 7+ predicted amputation with 100% accuracy",
+     "LEAP (556 limbs): high scores are not valid amputation predictors",
+     "Not a verdict: never the sole reason to amputate"
+    ],
+    "ref": "Bosse et al., JBJS Am 2001"
+   },
+   "youtube": "manual (Metricool YouTube post deleted 2026-11-01 by the owner: Free plan 20 posts/month); file re-rendered and sent to the owner"
+  },
+  {
+   "n": 12,
+   "slug": "ep12_fat_embolism",
+   "title": "Fat embolism syndrome: Gurd criteria (1 major + 4 minor)",
+   "status": "published",
+   "source_hint": "Gurd AR, Wilson RI. JBJS Br 1974",
+   "series": "rules",
+   "part": 3,
+   "published": "scheduled 2026-11-03 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-02 taken by EP10)",
+   "release": "media branch: ep12_fat_embolism.mp4",
+   "music": "track04_sigmamusicart-emotional-piano.mp3",
+   "metricool": {
+    "id": 413108692,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6957122017517322408"
+   },
+   "pmids": [
+    "4547466",
+    "10721407",
+    "42375760"
+   ],
+   "dois": [
+    "10.1016/s0020-1383(97)00154-x",
+    "10.1136/tsaco-2025-001913"
+   ],
+   "carousel": {
+    "headline": "1 MAJOR + 4 MINOR",
+    "sub": "Gurd criteria for fat embolism",
+    "points": [
+     "Classic triad: respiratory distress, CNS dysfunction, petechial rash",
+     "Onset 1-3 days after injury; rash in under half of cases",
+     "Femur nailed within 10 h: 0 of 60 FES vs 11 of 109 after 10 h"
+    ],
+    "ref": "Gurd & Wilson, JBJS Br 1974; Pinney et al., Injury 1998"
+   }
+  },
+  {
+   "n": 13,
+   "slug": "ep13_achilles",
+   "title": "Acute Achilles rupture: calf squeeze (Simmonds-Thompson) and Matles tests, the X-ray clue",
+   "status": "published",
+   "source_hint": "Maffulli N. Am J Sports Med 1998 (clinical tests sensitivity)",
+   "series": "dontmiss",
+   "part": 3,
+   "published": "scheduled 2026-11-04 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-03 taken by EP12)",
+   "release": "media branch: ep13_achilles.mp4",
+   "music": "track05_leberch-inspirational-calm-piano.mp3",
+   "metricool": {
+    "id": 414359586,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-4643102293434547665"
+   },
+   "pmids": [
+    "9548122",
+    "20580519",
+    "34974982"
+   ],
+   "dois": [
+    "10.1177/03635465980260021801",
+    "10.1016/j.jemermed.2010.05.015",
+    "10.1053/j.jfas.2021.12.003"
+   ],
+   "carousel": {
+    "headline": "96% TEST",
+    "sub": "Calf squeeze for Achilles rupture",
+    "points": [
+     "Prone calf squeeze: no plantar flexion = rupture (sens 96%, spec 93%)",
+     "Palpable gap sensitivity only 73%: no gap does not rule it out",
+     "Lateral film ankle in neutral (100 deg or less): test the Achilles"
+    ],
+    "ref": "Maffulli, Am J Sports Med 1998; Kiely et al., J Emerg Med 2010"
+   }
+  },
+  {
+   "n": 16,
+   "slug": "ep16_canadian_cspine",
+   "title": "Canadian C-spine rule: who needs neck imaging after trauma",
+   "status": "published",
+   "source_hint": "Stiell IG et al. JAMA 2001 (derivation); Stiell NEJM 2003 (CCR vs NEXUS)",
+   "series": "rules",
+   "part": 4,
+   "published": "scheduled 2026-11-05 10:00 Africa/Tripoli (TikTok + Instagram; 2026-11-04 taken by EP13)",
+   "release": "media branch: ep16_canadian_cspine.mp4",
+   "music": "track01_the-mountain-study-music.mp3",
+   "metricool": {
+    "id": 415579085,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1054082236253162794"
+   },
+   "pmids": [
+    "11597285",
+    "14695411"
+   ],
+   "dois": [
+    "10.1001/jama.286.15.1841",
+    "10.1056/NEJMoa031375"
+   ],
+   "carousel": {
+    "headline": "3 QUESTIONS",
+    "sub": "Canadian C-spine rule: image or not?",
+    "points": [
+     "High-risk factor (age 65+, dangerous mechanism, paresthesias): image",
+     "Low-risk factor present + rotates 45 deg left and right: no imaging",
+     "Vs NEXUS: sensitivity 99.4% vs 90.7%, missed 1 vs 16 injuries"
+    ],
+    "ref": "Stiell et al., JAMA 2001; Stiell et al., NEJM 2003"
+   }
+  },
+  {
+   "n": 18,
+   "slug": "ep18_lisfranc",
+   "title": "Lisfranc injury: fleck sign and the weight-bearing X-ray",
+   "status": "published",
+   "source_hint": "Myerson MS 1986; Sherief TI et al. 2007 (missed Lisfranc); weight-bearing radiograph studies",
+   "series": "dontmiss",
+   "part": 4,
+   "source": "Lau S et al. Emerg Med J 2017;34(1):52-6; Ponkilainen VT et al. Arch Orthop Trauma Surg 2020;140(10):1423-9; Chen C et al. J Foot Ankle Res 2023;16(1):9; Rikken QGH et al. Injury 2022;53(6):2326-32; Kennelly H et al. Emerg Med Australas 2019;31(5):741-4; Ross G et al. J Orthop Trauma 1996;10(2):119-22; Pourmorteza M, Vosoughi AR. Eur J Trauma Emerg Surg 2022;48(1):471-9; Pearsall C et al. Foot Ankle Spec 2024;17(6):632-8; Lattermann C et al. Clin J Sport Med 2007;17(4):311-5 (caption)",
+   "published": "scheduled 2026-11-08 10:00 Africa/Tripoli (Sunday; TikTok + Instagram; 2026-11-05 taken by EP16, Fri/Sat off)",
+   "release": "media branch: ep18_lisfranc.mp4",
+   "music": "track05_leberch-inspirational-calm-piano.mp3 (from music/vault; private repo not reachable)",
+   "metricool": {
+    "id": 416817095,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6558702588296512913"
+   },
+   "pmids": [
+    "27013521",
+    "32140830",
+    "36855126",
+    "35279293",
+    "30780193",
+    "8932671",
+    "32561962",
+    "37278226",
+    "17620787"
+   ],
+   "dois": [
+    "10.1136/emermed-2015-205317",
+    "10.1007/s00402-020-03391-w",
+    "10.1186/s13047-023-00608-0",
+    "10.1016/j.injury.2022.02.044",
+    "10.1111/1742-6723.13237",
+    "10.1097/00005131-199602000-00008",
+    "10.1007/s00068-020-01415-z",
+    "10.1177/19386400231175376",
+    "10.1097/JSM.0b013e31811ed0ba"
+   ],
+   "cover_ms": 2400,
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "checks": "design review ALL PASS (3rd round); independent fact check 11/12 PASS, 1 wording FAIL fixed before render (Lau: \"can follow minor trauma\") + 3 optional wording fixes applied",
+   "carousel": {
+    "headline": "LISFRANC?",
+    "sub": "1 in 5 is missed: load both feet",
+    "points": [
+     "Medial MT2 base must line up with medial C2 on the AP film",
+     "Non-weight-bearing films miss 24% of Lisfranc injuries",
+     "Bilateral WB: C1-MT2 2.1 mm wider than the other side = specific"
+    ],
+    "ref": "Ponkilainen et al., Arch Orthop Trauma Surg 2020"
+   }
+  },
+  {
+   "n": 17,
+   "slug": "ep17_garden",
+   "title": "Garden classification of femoral neck fractures: fix or replace",
+   "status": "published",
+   "source_hint": "Garden RS JBJS Br 1961; Parker MJ / Kazley JM reviews (displaced vs undisplaced)",
+   "series": "classified",
+   "part": 4,
+   "source": "Lu-Yao GL et al. J Bone Joint Surg Am 1994;76(1):15-25; Bjorgul K, Reikeras O. Acta Orthop Scand 2002;73(3):307-10; Palm H et al. Acta Orthop 2009;80(3):303-7; Dolatowski FC et al. J Bone Joint Surg Am 2019;101(2):136-44; Slullitel PA et al. J Arthroplasty 2024;39(1):111-7; Riaz O et al. Ann R Coll Surg Engl 2016;98(6):376-9; Fu X et al. Medicine 2015;94(39):e1393; Pietrzak JRT et al. Orthop Rev 2026;18:158940; Kazley JM et al. Clin Orthop Relat Res 2018;476(2):441-5; Garden RS. J Bone Joint Surg Br 1961;43-B:647-63",
+   "published": "scheduled 2026-11-09 10:00 Africa/Tripoli (Monday; TikTok + Instagram; 2026-11-08 taken by EP18, Fri/Sat off)",
+   "release": "media branch: ep17_garden.mp4",
+   "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
+   "metricool": {
+    "id": 420118620,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=6716037400839277553"
+   },
+   "pmids": [
+    "8288658",
+    "12143978",
+    "19634021",
+    "30653043",
+    "37380144",
+    "27055409",
+    "26426607",
+    "41868737",
+    "29389800"
+   ],
+   "dois": [
+    "10.2106/00004623-199401000-00003",
+    "10.1080/000164702320155301",
+    "10.3109/17453670902967281",
+    "10.2106/JBJS.18.00316",
+    "10.1016/j.arth.2023.06.035",
+    "10.1308/rcsann.2016.0124",
+    "10.1097/MD.0000000000001393",
+    "10.52965/001c.158940",
+    "10.1007/s11999.0000000000000066"
+   ],
+   "cover_ms": 2400,
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "checks": "design review: round 1 6 FAIL (head position III/IV, colours, margins, refs) fixed; round 2 2 FAIL (text past card edge) fixed and verified; independent fact check 9/10 PASS, summary rule FAIL fixed before render (I-II 'usually fix', 'fix unless posterior tilt 20 deg or more'; 'fixation' instead of 'screws' for Lu-Yao)",
+   "carousel": {
+    "headline": "GARDEN",
+    "sub": "Displaced? Replace. Undisplaced? Tilt?",
+    "points": [
+     "Displaced + fixation: nonunion 33%, AVN 16% (106 reports)",
+     "Kappa 0.4 for 4 stages, 0.6 for undisplaced vs displaced",
+     "Posterior tilt 20 deg or more: 56% reoperated vs 14%"
+    ],
+    "ref": "Lu-Yao et al., J Bone Joint Surg Am 1994"
+   }
+  },
+  {
+   "n": 19,
+   "slug": "ep19_mirels",
+   "title": "Mirels score 9: impending pathological fracture",
+   "status": "published",
+   "source_hint": "Mirels H. Clin Orthop 1989 (score 8 or more fracture risk, 9 or more prophylactic fixation); Damron validation 2003",
+   "series": "numbers",
+   "part": 5,
+   "source": "Mirels H. Clin Orthop Relat Res 1989;(249):256-64; Damron TA et al. Clin Orthop Relat Res 2003;(415 Suppl):S201-7; Benca E et al. Bone Rep 2016;5:51-6; Hoban KA et al. JSES Int 2022;6(4):675-81; Crenn V et al. Orthop Traumatol Surg Res 2020;106(6):1005-11",
+   "published": "scheduled 2026-11-10 10:00 Africa/Tripoli (Tuesday; TikTok + Instagram; 2026-11-09 taken by EP17)",
+   "release": "media branch: ep19_mirels.mp4",
+   "music": "user_track2_calm_tiktok.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": 2400,
+   "metricool": {
+    "id": 420924418,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=7998557432092118775"
+   },
+   "pmids": [
+    "2684463",
+    "14600587",
+    "14600611",
+    "28326347",
+    "35813136",
+    "32782175"
+   ],
+   "dois": [
+    "10.1097/01.blo.0000093045.56370.dd",
+    "10.1097/01.blo.0000093842.72468.73",
+    "10.1016/j.bonr.2016.02.003",
+    "10.1016/j.jseint.2022.03.006",
+    "10.1016/j.otsr.2020.03.034"
+   ],
+   "checks": "design review: round 1 FAIL (cover 9 vs worked score 11, title overflow, refs card margin, size row timing) fixed; round 2 PASS. Independent fact check 15/15 PASS (7/8/9 scheme cited to Benca 2016, not the 1989 abstract which says 8 or more = fix)",
+   "carousel": {
+    "headline": "MIRELS 9",
+    "sub": "Score 4-12: 9 or more, fix first",
+    "points": [
+     "Site, pain, lesion type, size: 1-3 points each",
+     "Sensitivity 91%, specificity 35% (53 raters)",
+     "Upper limb: 9 or more caught 14%, 7 or more 63%"
+    ],
+    "ref": "Mirels, Clin Orthop Relat Res 1989"
+   }
+  },
+  {
+   "n": 22,
+   "slug": "ep22_kanavel",
+   "title": "Pyogenic flexor tenosynovitis: Kanavel's 4 signs, their accuracy and why tonight",
+   "status": "published",
+   "source_hint": "Kanavel AB 1912; Kennedy CD et al. J Hand Surg Am 2017 (sensitivity of each sign)",
+   "series": "dontmiss",
+   "part": 5,
+   "source": "Kennedy CD et al. Hand (N Y) 2017;12(6):585-90; Pang HN et al. J Bone Joint Surg Am 2007;89(8):1742-8; Idarrha F et al. Injury 2026;57(10):113631; Frenkel Rutenberg T et al. J Plast Surg Hand Surg 2020;54(1):14-8; Siska RC et al. Plast Reconstr Surg Glob Open 2022;10(3):e4165; Yi A et al. J Hand Surg Am 2019;44(5):394-9",
+   "published": "scheduled 2026-11-11 10:00 Africa/Tripoli (Wednesday; TikTok + Instagram; 2026-11-10 taken by EP19)",
+   "release": "media branch: ep22_kanavel.mp4",
+   "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": 2400,
+   "metricool": {
+    "id": 422154432,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-8433615054936914187"
+   },
+   "pmids": [
+    "28720000",
+    "17671013",
+    "42721565",
+    "31453741",
+    "35261842",
+    "30797654"
+   ],
+   "dois": [
+    "10.1177/1558944717692089",
+    "10.2106/JBJS.F.01356",
+    "10.1016/j.injury.2026.113631",
+    "10.1080/2000656X.2019.1657434",
+    "10.1097/GOX.0000000000004165",
+    "10.1016/j.jhsa.2019.01.013"
+   ],
+   "checks": "design review: round 1 2 FAIL (hook headline past x 960, sheath label left of x 60) fixed; round 2 ALL PASS. Independent fact check 11/12 PASS, 1 FAIL (IV antibiotics \"early cases only\" -> \"uncomplicated, inpatient, under a hand surgeon\") fixed before render",
+   "carousel": {
+    "headline": "KANAVEL x4",
+    "sub": "Finger infection: wash out tonight?",
+    "points": [
+     "4 signs: flexed posture, fusiform swelling, sheath tenderness, pain on extension",
+     "Each sign: sensitivity 91-97%, specificity only 51-69%",
+     "Amputation 0% vs 8% vs 59% as pus and ischaemia appear"
+    ],
+    "ref": "Kennedy et al, Hand 2017; Pang et al, JBJS Am 2007"
+   }
+  },
+  {
+   "n": 20,
+   "slug": "ep20_ottawa_knee",
+   "title": "Ottawa knee rule: does this knee need an X-ray?",
+   "status": "published",
+   "source_hint": "Stiell IG et al. JAMA 1996/1997; Bachmann LM et al. Ann Intern Med 2004 meta-analysis",
+   "series": "rules",
+   "part": "5",
+   "source": "Stiell IG et al. Ann Emerg Med 1995;26(4):405-13; Stiell IG et al. JAMA 1996;275(8):611-5; Stiell IG et al. JAMA 1997;278(23):2075-9; Bachmann LM et al. Ann Intern Med 2004;140(2):121-4; Bulloch B et al. Ann Emerg Med 2003;42(1):48-55; Seaberg DC et al. Ann Emerg Med 1998;32(1):8-13",
+   "published": "scheduled 2026-11-12 10:00 Africa/Tripoli (Thursday; TikTok + Instagram; 2026-11-11 taken by EP22)",
+   "release": "media branch: ep20_ottawa_knee.mp4",
+   "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 423455762,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-2322964789473554532"
+   },
+   "pmids": [
+    "7574120",
+    "8594242",
+    "9403421",
+    "14734335",
+    "12827123",
+    "9656942"
+   ],
+   "dois": [
+    "10.1016/s0196-0644(95)70106-0",
+    "10.7326/0003-4819-140-5-200403020-00013",
+    "10.1067/mem.2003.196",
+    "10.1016/s0196-0644(98)70092-7"
+   ],
+   "checks": "design review: round 1 4 FAIL (tibia leader off-bone, fibular head label/leader overlap, AP label on femur, 60 deg label 1 px past x 960) fixed; round 2 ALL PASS after re-rendering stills; independent fact check 8/8 PASS",
+   "carousel": {
+    "headline": "OTTAWA KNEE",
+    "sub": "X-ray if ANY 1 of 5 criteria",
+    "points": [
+     "55+, fibular head, isolated patella, cannot flex to 90, cannot take 4 steps",
+     "Sensitivity 100% in derivation and validation; meta-analysis 98.5%",
+     "Knee X-rays fell from 77.6% to 57.1% with no missed fractures"
+    ],
+    "ref": "Stiell et al., JAMA 1996"
+   }
+  },
+  {
+   "n": 21,
+   "slug": "ep21_weber",
+   "title": "Danis-Weber ankle fractures: fix or cast? (Weber B and the syndesmosis)",
+   "status": "published",
+   "source_hint": "Weber BG 1972; medial clear space / stress view studies (e.g. Michelson 2004)",
+   "series": "classified",
+   "part": "5",
+   "source": "Kortekangas T et al. BMJ 2026;392:e085295 (SUPER-FIN); Kortekangas T et al. BMJ 2019;364:k5432; Kellam PJ et al. J Orthop Trauma 2021;35(9):473-8; Harper MC, Keller TS. Foot Ankle 1989;10(3):156-60; Tornetta P et al. J Orthop Trauma 2012;26(11):659-61; Weber BG 1972 (definition)",
+   "published": "scheduled 2026-11-15 10:00 Africa/Tripoli (Sunday; TikTok + Instagram; Nov 12 taken by EP20, Fri/Sat off)",
+   "release": "media branch: ep21_weber.mp4",
+   "music": "track01_the-mountain-study-music.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 424716531,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-1547757818936473724"
+   },
+   "pmids": [
+    "41534905",
+    "30674451",
+    "33395177",
+    "2613128",
+    "23100079",
+    "35047809"
+   ],
+   "dois": [
+    "10.1136/bmj-2025-085295",
+    "10.1136/bmj.k5432",
+    "10.1097/BOT.0000000000002052",
+    "10.1177/107110078901000308",
+    "10.1097/BOT.0b013e31825cf39c"
+   ],
+   "checks": "design review: round 1 4 FAIL (arrow over label, 3 right-edge overflows, ref box) fixed; round 2 1 FAIL (medial malleolus label on talus outline) fixed; round 3 ALL PASS; independent fact check 10/10 PASS",
+   "carousel": {
+    "headline": "WEBER B",
+    "sub": "Congruent mortise: cast, not plate",
+    "points": [
+     "Syndesmotic injury 17% / 42% / 74% by the zone where the line starts",
+     "Stable: 3 weeks cast or orthosis = 6 weeks cast (247 patients)",
+     "Stress-unstable, congruent: cast = plate at 2 y, OMAS 89 vs 87"
+    ],
+    "ref": "Kortekangas et al., BMJ 2026"
+   }
+  },
+  {
+   "n": 11,
+   "slug": "ep11_klein_line",
+   "title": "SCFE: Klein's line and Trethowan sign",
+   "status": "published",
+   "source_hint": "Klein 1951; Green DW et al. JPO 2009 (modified Klein line sensitivity)",
+   "series": "dontmiss",
+   "part": "6",
+   "source": "Green DW et al. J Pediatr Orthop 2009;29(5):449-53; Rebich EJ et al. J Emerg Med 2018;54(6):835-43; Loder RT et al. J Bone Joint Surg Am 1993;75(8):1134-40; Ortegren J et al. J Pediatr Orthop B 2021;30(2):105-10; Shnaekel AW et al. Orthopedics 2020;43(2):e114-8",
+   "published": "scheduled 2026-11-16 10:00 Africa/Tripoli (Monday; TikTok + Instagram; Nov 15 taken by EP21, Fri/Sat off)",
+   "release": "media branch: ep11_klein_line.mp4",
+   "music": "track01_the-mountain-study-music.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 428196569,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=4769442488740630352"
+   },
+   "pmids": [
+    "19568015",
+    "29550284",
+    "8354671",
+    "32371650",
+    "31930409"
+   ],
+   "dois": [
+    "10.1097/BPO.0b013e3181aa20cd",
+    "10.1016/j.jemermed.2018.01.023",
+    "10.2106/00004623-199308000-00002",
+    "10.1097/BPB.0000000000000738",
+    "10.3928/01477447-20200107-04"
+   ],
+   "checks": "design review: round 1 FAIL (Klein's line crossed the neck flare, cover text past x 960, titles at y 197) fixed; round 2 ALL PASS; independent fact check 9/10 PASS, 1 wording FAIL (contralateral 8.9% denominator) fixed to '8.9% of patients (5/56)' before render",
+   "carousel": {
+    "headline": "KLEIN'S LINE",
+    "sub": "Knee pain in a teen: image the hip",
+    "points": [
+     "Classic Klein's line caught only 40.3% of slips; modified (2 mm) 79%",
+     "Add the frog-leg lateral: Klein + S-sign sensitivity 96.5%",
+     "Unstable (no weight-bearing even on crutches): AVN 47% vs 0%"
+    ],
+    "ref": "Green et al., J Pediatr Orthop 2009"
+   }
+  },
+  {
+   "n": 15,
+   "slug": "ep15_schatzker",
+   "title": "Schatzker classification of tibial plateau fractures: fix now or span first?",
+   "status": "published",
+   "source_hint": "Schatzker J et al. Clin Orthop 1979",
+   "series": "classified",
+   "part": "6",
+   "source": "Schatzker J et al. Clin Orthop Relat Res 1979;(138):94-104; Gardner MJ et al. J Orthop Trauma 2005;19(2):79-84; Gardner MJ et al. J Trauma 2006;60(2):319-23; Deng X et al. J Orthop Surg Res 2021;16(1):502; Gamulin A et al. BMC Musculoskelet Disord 2017;18(1):307; Egol KA et al. J Orthop Trauma 2005;19(7):448-55; Ringus VM et al. Orthopedics 2010;33(2):80-4; Yacoubian SV et al. J Orthop Trauma 2002;16(9):632-7",
+   "published": "scheduled 2026-11-17 10:00 Africa/Tripoli (Tuesday; TikTok + Instagram; Nov 16 taken by EP11)",
+   "release": "media branch: ep15_schatzker.mp4",
+   "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 429086691,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-3640153260401408492"
+   },
+   "pmids": [
+    "445923",
+    "15677922",
+    "16508489",
+    "34399816",
+    "28720096",
+    "16056075",
+    "20192139",
+    "12368643"
+   ],
+   "dois": [
+    "10.1097/00005131-200502000-00002",
+    "10.1097/01.ta.0000203548.50829.92",
+    "10.1186/s13018-021-02660-7",
+    "10.1186/s12891-017-1680-4",
+    "10.1097/01.bot.0000171881.11205.80",
+    "10.3928/01477447-20100104-05",
+    "10.1097/00005131-200210000-00004"
+   ],
+   "checks": "design review: 12/13 PASS, 1 FAIL (METAPHYSIS pointer on the diaphysis) fixed, plus advisories applied (thicker hook fracture lines, legible dimmed legend, bicortical ex-fix pins, overflowing stat line); independent fact check 11/11 PASS, wording tightened (Type III 'operative patients', Gamulin IV-VI 'age/sex-adjusted') before render",
+   "carousel": {
+    "headline": "SCHATZKER",
+    "sub": "Plateau fracture: fix or span?",
+    "points": [
+     "IV-VI high energy: ACS 3.1% of 1119, Schatzker VI OR 5.78",
+     "Swollen? Span first: deep infection 5% in 57 staged fractures",
+     "MRI: lateral meniscus pathology 91%, soft tissue intact in only 1%"
+    ],
+    "ref": "Gardner et al., J Orthop Trauma 2005"
+   }
+  },
+  {
+   "n": 30,
+   "slug": "ep30_amsterdam_wrist",
+   "title": "Amsterdam wrist rules: who needs a wrist X-ray",
+   "status": "published",
+   "source_hint": "Walenkamp MM et al. Emerg Med J 2015; Bentohami A et al. 2014",
+   "series": "rules",
+   "part": "6",
+   "source": "Walenkamp MMJ et al. BMC Musculoskelet Disord 2015;16:389; Walenkamp MMJ et al. Eur J Trauma Emerg Surg 2016;42(2):185-90; Mulders MAM et al. Eur J Trauma Emerg Surg 2020;46(3):573-582; Slaar A et al. Pediatr Radiol 2016;46(1):50-60; Mallee WH et al. Arch Orthop Trauma Surg 2020;140(4):575-581",
+   "published": "scheduled 2026-11-18 10:00 Africa/Tripoli (Wednesday; TikTok + Instagram; Nov 17 taken by EP15)",
+   "release": "media branch: ep30_amsterdam_wrist.mp4",
+   "music": "user_track_calm95_loop.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 430420142,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-1538817268976171303"
+   },
+   "pmids": [
+    "26682537",
+    "26038045",
+    "31541258",
+    "26298555",
+    "32125528"
+   ],
+   "dois": [
+    "10.1186/s12891-015-0829-2",
+    "10.1007/s00068-015-0527-7",
+    "10.1007/s00068-019-01194-2",
+    "10.1007/s00247-015-3436-3",
+    "10.1007/s00402-020-03383-w"
+   ],
+   "checks": "design review: 3 FAIL (reference lines overflowing the card, cover title 12 px past x 960, RADIUS/ULNA leaders crossing) fixed and re-checked PASS, advisories applied; independent fact check 14/14 PASS, wording tightened before render (39% vs 99.6% labelled as separate cohorts, paediatric 4.1% missed, scaphoid rule internal validation, 'absolute' kept)",
+   "carousel": {
+    "headline": "AMSTERDAM",
+    "sub": "Wrist injury: X-ray or not?",
+    "points": [
+     "8 predictors: sensitivity 98%, specificity 21%, NPV 90%",
+     "In practice: wrist X-rays down 15% (absolute), 1 irrelevant miss",
+     "Only 39% of wrist trauma patients have a fracture"
+    ],
+    "ref": "Walenkamp et al., BMC Musculoskelet Disord 2015"
+   }
+  },
+  {
+   "n": 28,
+   "slug": "ep28_posterior_shoulder",
+   "title": "Posterior shoulder dislocation: the light bulb sign and why it is missed",
+   "status": "published",
+   "source_hint": "Hawkins RJ et al. JBJS Am 1987; Robinson CM et al. JBJS Am 2011",
+   "series": "dontmiss",
+   "part": "7",
+   "source": "Hawkins RJ et al. J Bone Joint Surg Am 1987;69(1):9-18; Rowe CR, Zarins B. J Bone Joint Surg Am 1982;64(4):494-505; Robinson CM et al. J Bone Joint Surg Am 2011;93(17):1605-13; Magnussen AP et al. BMJ Open Qual 2020;9(1):e000550; Espag MP et al. Ann R Coll Surg Engl 2002;84(5):334-7; Mimura T et al. J Orthop Surg (Hong Kong) 2006;14(3):336-9; Koutserimpas C et al. Cureus 2023;15(10):e47800; Postacchini F, Facchini M. Ital J Orthop Traumatol 1987;13(1):15-26",
+   "published": "scheduled 2026-11-19 10:00 Africa/Tripoli (Thursday; TikTok + Instagram; Nov 18 taken by EP30)",
+   "release": "media branch: ep28_posterior_shoulder.mp4",
+   "music": "track05_leberch-inspirational-calm-piano.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 431784758,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-356837698629253945"
+   },
+   "pmids": [
+    "3805075",
+    "7068692",
+    "21915575",
+    "32193195",
+    "12398127",
+    "17200541",
+    "38022099",
+    "3692794"
+   ],
+   "dois": [
+    "10.2106/JBJS.J.00973",
+    "10.1136/bmjoq-2018-000550",
+    "10.1308/003588402760452466",
+    "10.1177/230949900601400321",
+    "10.7759/cureus.47800"
+   ],
+   "checks": "design review: 4 FAIL (title over safe area, crossing label leaders, Hill-Sachs label past x 960, tip text overflowing card) fixed and re-checked, advisories applied (Postacchini cited, refs complete, bigger cover diagram, 'Seizure?' tip wording); independent fact check 16/17 PASS, 1 FAIL (Espag 75% is of cases, not doctors) reworded before render; 'symmetric round head' softened to 'internally rotated head'",
+   "carousel": {
+    "headline": "LIGHT BULB",
+    "sub": "Shoulder X-ray normal? Get the axillary",
+    "points": [
+     "Axillary view confirmed all 41 locked posterior dislocations",
+     "79% of chronic posterior dislocations missed by the first doctor",
+     "Recurrence 17.7% in year 1: under 40, seizure, big reverse Hill-Sachs"
+    ],
+    "ref": "Hawkins et al., JBJS Am 1987"
+   }
+  },
+  {
+   "n": 24,
+   "slug": "ep24_neer",
+   "title": "Neer classification of proximal humerus fractures and when surgery helps",
+   "status": "todo",
+   "source_hint": "Neer CS JBJS Am 1970; Rangan A et al. JAMA 2015 (PROFHER trial)",
+   "series": "classified"
+  },
+  {
+   "n": 27,
+   "slug": "ep27_knee_dislocation_abi",
+   "title": "Knee dislocation: ABI under 0.9 and the popliteal artery",
+   "status": "todo",
+   "source_hint": "Mills WJ et al. J Trauma 2004 (ABI in knee dislocation)",
+   "series": "numbers"
+  },
+  {
+   "n": 32,
+   "slug": "ep32_nec_fasc",
+   "title": "Necrotising fasciitis: LRINEC score and the finger test",
+   "status": "todo",
+   "source_hint": "Wong CH et al. Crit Care Med 2004 (LRINEC); Fernando SM et al. Ann Surg 2019",
+   "series": "dontmiss"
+  },
+  {
+   "n": 26,
+   "slug": "ep26_nexus",
+   "title": "NEXUS low-risk criteria: clearing the C-spine without imaging",
+   "status": "todo",
+   "source_hint": "Hoffman JR et al. NEJM 2000 (NEXUS, 34,069 patients)",
+   "series": "rules"
+  },
+  {
+   "n": 33,
+   "slug": "ep33_vancouver",
+   "title": "Vancouver classification of periprosthetic femoral fractures: fix or revise",
+   "status": "todo",
+   "source_hint": "Duncan CP, Masri BA. Instr Course Lect 1995; Brady OH et al. JBJS Br 2000 (validation)",
+   "series": "classified"
+  },
+  {
+   "n": 31,
+   "slug": "ep31_septic_knee_wbc",
+   "title": "Hot swollen knee: synovial WBC 50,000 and the likelihood of septic arthritis",
+   "status": "todo",
+   "source_hint": "Margaretten ME et al. JAMA 2007",
+   "series": "numbers"
+  },
+  {
+   "n": 25,
+   "slug": "ep25_ddh",
+   "title": "DDH: Ortolani, Barlow and the Graf alpha angle",
+   "status": "todo",
+   "source_hint": "Graf R. Arch Orthop Trauma Surg 1980; Ortolani / Barlow screening reviews",
+   "series": "dontmiss"
+  },
+  {
+   "n": 29,
+   "slug": "ep29_tlics",
+   "title": "TLICS: thoracolumbar injury classification and severity score, brace or fix",
+   "status": "todo",
+   "source_hint": "Vaccaro AR et al. Spine 2005 (TLICS)",
+   "series": "classified"
+  },
+  {
+   "n": 35,
+   "slug": "ep35_hip_fracture_48h",
+   "title": "Hip fracture surgery within 48 hours: the mortality number",
+   "status": "todo",
+   "source_hint": "Klestil T et al. Sci Rep 2018; HIP ATTACK Lancet 2020",
+   "series": "numbers"
+  },
+  {
+   "n": 34,
+   "slug": "ep34_sins",
+   "title": "SINS: spinal instability neoplastic score, when to call the spine surgeon",
+   "status": "todo",
+   "source_hint": "Fisher CG et al. Spine 2010; Fourney DR et al. J Clin Oncol 2011",
+   "series": "rules"
+  },
+  {
+   "n": 23,
+   "slug": "ep23_cobb",
+   "title": "Cobb angle thresholds in adolescent idiopathic scoliosis: brace vs surgery",
+   "status": "todo",
+   "source_hint": "Weinstein SL et al. NEJM 2013 (BrAIST, bracing 20-40 degrees, 18 h/day)",
+   "series": "numbers"
+  }
+ ],
+ "youtube_note": "2026-10-20: YouTube Content ID blocked EP01/EP02 (Pixabay tracks). YouTube always gets a separate copy with an ORIGINAL multi-instrument Orthojets theme (music repo youtube_safe/, made by tools/compose_ensemble.py) + logo chime only. These themes are YouTube-only: never on TikTok/Instagram (owner).",
+ "carousels": [
+  {
+   "date": "2026-10-25 18:00 Africa/Tripoli",
+   "week": "Oct 19 - 25",
+   "episodes": [
+    "ep01_tad",
+    "ep02_acs",
+    "ep03_kocher",
+    "ep04_ottawa_ankle",
+    "ep05_gustilo"
+   ],
+   "slides": 7,
+   "networks": [
+    "instagram",
+    "tiktok"
+   ],
+   "media": "media branch: carousel_20261025/slide01-07.jpg",
+   "metricool_post_id": 405208614,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-5415755961258390488",
+   "note": "EP01 included: its Instagram/YouTube cross-post went live 2026-10-19 and it had never been in a carousel"
+  },
+  {
+   "date": "2026-11-01 18:00 Africa/Tripoli",
+   "week": "Oct 26 - Nov 1",
+   "episodes": [
+    "ep06_hip_dislocation",
+    "ep07_scaphoid",
+    "ep08_salter_harris",
+    "ep14_cauda_equina",
+    "ep09_gartland"
+   ],
+   "slides": 7,
+   "networks": [
+    "instagram",
+    "tiktok"
+   ],
+   "media": "media branch: carousel_20261101/slide01-07.jpg",
+   "metricool_post_id": 412398421,
+   "planner_url": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=490881107550031169"
+  },
+  {
+   "date": "2026-11-08 18:00 Africa/Tripoli",
+   "week": "Nov 2 - 8",
+   "episodes": [
+    "ep10_mess",
+    "ep12_fat_embolism",
+    "ep13_achilles",
+    "ep16_canadian_cspine",
+    "ep18_lisfranc"
+   ],
+   "slides": 7,
+   "networks": [
+    "instagram",
+    "tiktok"
+   ],
+   "media": "media branch: carousel_20261108/slide01-07.jpg",
+   "manual": true,
+   "note": "Delivered to the owner 2026-11-07 for manual posting (no Metricool post)"
+  },
+  {
+   "date": "2026-11-15 18:00 Africa/Tripoli",
+   "week": "Nov 9 - 15",
+   "episodes": [
+    "ep17_garden",
+    "ep19_mirels",
+    "ep22_kanavel",
+    "ep20_ottawa_knee",
+    "ep21_weber"
+   ],
+   "slides": 7,
+   "networks": [
+    "instagram",
+    "tiktok"
+   ],
+   "media": "media branch: carousel_20261115/slide01-07.jpg",
+   "manual": true,
+   "note": "Delivered to the owner 2026-11-14 for manual posting (no Metricool post)"
+  }
+ ]
 }
