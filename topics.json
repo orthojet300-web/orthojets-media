@@ -1135,9 +1135,50 @@
    "n": 24,
    "slug": "ep24_neer",
    "title": "Neer classification of proximal humerus fractures and when surgery helps",
-   "status": "todo",
+   "status": "published",
    "source_hint": "Neer CS JBJS Am 1970; Rangan A et al. JAMA 2015 (PROFHER trial)",
-   "series": "classified"
+   "series": "classified",
+   "part": "7",
+   "source": "Neer CS. J Bone Joint Surg Am 1970;52(6):1077-89; Rangan A et al. JAMA 2015;313(10):1037-47 (PROFHER); Court-Brown CM et al. Acta Orthop Scand 2001;72(4):365-71; Sidor ML et al. J Bone Joint Surg Am 1993;75(12):1745-50; Hertel R et al. J Shoulder Elbow Surg 2004;13(4):427-33; Mitsuzawa S et al. J Orthop Surg Res 2025;20(1):18",
+   "published": "scheduled 2026-11-22 10:00 Africa/Tripoli (Sunday; TikTok + Instagram; Nov 19 taken by EP28, Fri/Sat off)",
+   "release": "media branch: ep24_neer.mp4",
+   "music": "user_track2_calm_tiktok.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 433157092,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=9095004095140940142"
+   },
+   "pmids": [
+    "5455339",
+    "25756440",
+    "11580125",
+    "8258543",
+    "15220884",
+    "39773752"
+   ],
+   "dois": [
+    "10.1001/jama.2015.1629",
+    "10.1080/000164701753542023",
+    "10.2106/00004623-199312000-00002",
+    "10.1016/j.jse.2004.01.034",
+    "10.1186/s13018-024-05423-2",
+    "10.1097/01.blo.0000198718.91223.ca"
+   ],
+   "checks": "design review: round 1 FAILs (label contrast on scapula, pills on card border, citation/sub-line overflow past x 960, 4-part head overlap) fixed; round 2 FAILs (measurement pills past x 60, 45-degree arc invisible, head overlap) fixed and checked on stills; independent fact check 13/14 PASS, 1 FAIL (valgus impacted 'not in Neer' only true of the 1970 scheme) reworded to 'not in Neer 1970'; hook narrowed to displaced surgical neck; PROFHER wording softened to 'no significant difference'",
+   "carousel": {
+    "headline": "1 cm · 45°",
+    "sub": "Neer: when is it a part?",
+    "points": [
+     "A part = displaced over 1 cm or angulated over 45°",
+     "PROFHER: surgery vs sling, no significant difference at 2 years",
+     "Calcar under 8 mm + broken hinge: ischaemia PPV up to 97%"
+    ],
+    "ref": "Rangan et al., JAMA 2015"
+   }
   },
   {
    "n": 27,
