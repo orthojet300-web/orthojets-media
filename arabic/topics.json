@@ -71,8 +71,24 @@
       "n": 4,
       "slug": "ar04_greenstick",
       "title_ar": "لماذا تنثني عظام الأطفال ولا تنكسر؟ (كسر الغصن الأخضر)",
-      "status": "todo",
-      "source_hint": "paediatric bone biomechanics, greenstick/torus (buckle) fractures"
+      "status": "published",
+      "source_hint": "paediatric bone biomechanics, greenstick/torus (buckle) fractures",
+      "manual": true,
+      "publish": "manual post by owner 2026-11-21 10:00 Africa/Tripoli (TikTok + Instagram Reel)",
+      "series_name": "عظامك ببساطة",
+      "dois": [
+        "10.1302/2633-1462.36.BJO-2022-0040.R1",
+        "10.1016/j.injury.2024.111897",
+        "10.3310/BDNS6122",
+        "10.1007/s00247-015-3436-3",
+        "10.3390/medsci14040432",
+        "10.1177/18632521261508965"
+      ],
+      "pmids_extra": [
+        "1158919",
+        "33719378"
+      ],
+      "review": "design review PASS (2nd round) + PubMed fact-check PASS (2nd round) 2026-11-20"
     },
     {
       "n": 5,
