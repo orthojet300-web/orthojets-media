@@ -1184,9 +1184,48 @@
    "n": 27,
    "slug": "ep27_knee_dislocation_abi",
    "title": "Knee dislocation: ABI under 0.9 and the popliteal artery",
-   "status": "todo",
+   "status": "published",
    "source_hint": "Mills WJ et al. J Trauma 2004 (ABI in knee dislocation)",
-   "series": "numbers"
+   "series": "numbers",
+   "part": "6",
+   "source": "Mills WJ et al. J Trauma 2004;56(6):1261-5; Medina O et al. Clin Orthop Relat Res 2014;472(9):2621-9; Green NE, Allen BL. J Bone Joint Surg Am 1977;59(2):236-9; Stannard JP et al. J Bone Joint Surg Am 2004;86(5):910-5; Sillanpää PJ et al. J Trauma Acute Care Surg 2014;76(3):715-9; Teissier V et al. Ann Vasc Surg 2019;61:238-245",
+   "published": "scheduled 2026-11-23 10:00 Africa/Tripoli (Monday; TikTok + Instagram; Nov 22 taken by EP24)",
+   "release": "media branch: ep27_knee_dislocation_abi.mp4",
+   "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 436864458,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=4019394807212687924"
+   },
+   "pmids": [
+    "15211135",
+    "24554457",
+    "845209",
+    "15118031",
+    "24553539",
+    "31344468"
+   ],
+   "dois": [
+    "10.1097/01.ta.0000068995.63201.0b",
+    "10.1007/s11999-014-3511-3",
+    "10.1097/TA.0000000000000136",
+    "10.1016/j.avsg.2019.04.016"
+   ],
+   "checks": "design review: 2 FAIL (STRETCHED label crossed by the artery; Bernhoff credited for the 46% fall figure) fixed, advisories applied (bigger/brighter citations, KD-IIIL card reworded, FIBULA label, larger cover knee, 'example 0.50' marker label); independent fact check 14/15 PASS, 1 FAIL (Bernhoff 'mostly falls' overstated) -> Bernhoff removed; nits applied (patients not dislocations, 'detected', duplex in takeaway, 'Normal ABI or exam?')",
+   "carousel": {
+    "headline": "ABI 0.9",
+    "sub": "Knee dislocation: is the artery injured?",
+    "points": [
+     "ABI under 0.9: all 11 had an arterial injury needing surgery",
+     "ABI 0.9 or more: 0 of 27 had a vascular injury detected",
+     "Repair within 6-8 h: 86% amputated if not treated in time"
+    ],
+    "ref": "Mills et al., J Trauma 2004"
+   }
   },
   {
    "n": 32,
