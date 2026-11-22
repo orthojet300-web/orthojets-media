@@ -1278,20 +1278,20 @@
    }
   },
   {
-   "n": 26,
-   "slug": "ep26_nexus",
-   "title": "NEXUS low-risk criteria: clearing the C-spine without imaging",
-   "status": "todo",
-   "source_hint": "Hoffman JR et al. NEJM 2000 (NEXUS, 34,069 patients)",
-   "series": "rules"
-  },
-  {
    "n": 33,
    "slug": "ep33_vancouver",
    "title": "Vancouver classification of periprosthetic femoral fractures: fix or revise",
    "status": "todo",
    "source_hint": "Duncan CP, Masri BA. Instr Course Lect 1995; Brady OH et al. JBJS Br 2000 (validation)",
    "series": "classified"
+  },
+  {
+   "n": 26,
+   "slug": "ep26_nexus",
+   "title": "NEXUS low-risk criteria: clearing the C-spine without imaging",
+   "status": "todo",
+   "source_hint": "Hoffman JR et al. NEJM 2000 (NEXUS, 34,069 patients)",
+   "series": "rules"
   },
   {
    "n": 31,
@@ -1310,20 +1310,20 @@
    "series": "dontmiss"
   },
   {
-   "n": 29,
-   "slug": "ep29_tlics",
-   "title": "TLICS: thoracolumbar injury classification and severity score, brace or fix",
-   "status": "todo",
-   "source_hint": "Vaccaro AR et al. Spine 2005 (TLICS)",
-   "series": "classified"
-  },
-  {
    "n": 35,
    "slug": "ep35_hip_fracture_48h",
    "title": "Hip fracture surgery within 48 hours: the mortality number",
    "status": "todo",
    "source_hint": "Klestil T et al. Sci Rep 2018; HIP ATTACK Lancet 2020",
    "series": "numbers"
+  },
+  {
+   "n": 29,
+   "slug": "ep29_tlics",
+   "title": "TLICS: thoracolumbar injury classification and severity score, brace or fix",
+   "status": "todo",
+   "source_hint": "Vaccaro AR et al. Spine 2005 (TLICS)",
+   "series": "classified"
   },
   {
    "n": 34,
