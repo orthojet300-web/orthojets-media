@@ -1231,9 +1231,51 @@
    "n": 32,
    "slug": "ep32_nec_fasc",
    "title": "Necrotising fasciitis: LRINEC score and the finger test",
-   "status": "todo",
+   "status": "published",
    "source_hint": "Wong CH et al. Crit Care Med 2004 (LRINEC); Fernando SM et al. Ann Surg 2019",
-   "series": "dontmiss"
+   "series": "dontmiss",
+   "part": "8",
+   "source": "Wong CH et al. J Bone Joint Surg Am 2003;85(8):1454-60; Wong CH et al. Crit Care Med 2004;32(7):1535-41; Fernando SM et al. Ann Surg 2019;269(1):58-65; Hsiao CT et al. PLoS One 2020;15(1):e0227748; Nawijn F et al. World J Emerg Surg 2020;15:4; Gelbard RB et al. J Trauma Acute Care Surg 2018;85(1):208-14; Kazi FN et al. Surg J (N Y) 2022;8(1):e1-e7",
+   "published": "scheduled 2026-11-24 10:00 Africa/Tripoli (Tuesday; TikTok + Instagram; Nov 23 taken by EP27)",
+   "release": "media branch: ep32_nec_fasc.mp4",
+   "music": "track04_sigmamusicart-emotional-piano.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 437763926,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-6584498192948901818"
+   },
+   "pmids": [
+    "12925624",
+    "15241098",
+    "29672405",
+    "31978094",
+    "31921330",
+    "29485428",
+    "35059495"
+   ],
+   "dois": [
+    "10.1097/01.ccm.0000129486.35458.7d",
+    "10.1097/SLA.0000000000002774",
+    "10.1371/journal.pone.0227748",
+    "10.1186/s13017-019-0286-6",
+    "10.1097/TA.0000000000001857",
+    "10.1055/s-0041-1740629"
+   ],
+   "checks": "design review: 1 FAIL (86% sensitivity attributed to Andreasen instead of Kazi) fixed + advisories (decimals 68.2%/25.2%, nail on finger, AA fat septa, horizontal fascia leader); re-check all PASS. Independent fact check 16/16 PASS; nits applied ('often masked', '23 studies' instead of n = 5982, finger test specificity 25% added, CT tip reworded to not delay surgery, takeaway = early surgical consultation)",
+   "carousel": {
+    "headline": "LRINEC 6",
+    "sub": "Necrotising fasciitis: a low score misses it",
+    "points": [
+     "Only 13 of 89 NF patients diagnosed on admission",
+     "LRINEC 6 or more: sensitivity 68.2% (meta), 43% in limbs",
+     "Surgery within 6 h: mortality 19% vs 32%"
+    ],
+    "ref": "Fernando et al., Ann Surg 2019"
+   }
   },
   {
    "n": 26,
