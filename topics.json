@@ -1281,9 +1281,49 @@
    "n": 33,
    "slug": "ep33_vancouver",
    "title": "Vancouver classification of periprosthetic femoral fractures: fix or revise",
-   "status": "todo",
+   "status": "published",
    "source_hint": "Duncan CP, Masri BA. Instr Course Lect 1995; Brady OH et al. JBJS Br 2000 (validation)",
-   "series": "classified"
+   "series": "classified",
+   "part": "8",
+   "source": "Duncan CP, Masri BA. Instr Course Lect 1995;44:293-304; Lindahl H et al. J Bone Joint Surg Am 2006;88(6):1215-22; Lee S et al. J Arthroplasty 2019;34(7S):S277-S281; Lewis DP et al. J Orthop Trauma 2022;36(1):7-16; Haider T et al. JBJS Rev 2021;9(8); Mondanelli N et al. Geriatr Orthop Surg Rehabil 2022;13:21514593221097608",
+   "published": "scheduled 2026-11-25 10:00 Africa/Tripoli (Wednesday; TikTok + Instagram; Nov 23 EP27, Nov 24 EP32)",
+   "release": "media branch: ep33_vancouver.mp4",
+   "music": "track05_leberch-inspirational-calm-piano.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 439156712,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=-7329922482785006594"
+   },
+   "pmids": [
+    "7797866",
+    "16757753",
+    "30922672",
+    "33942785",
+    "34415859",
+    "35573905"
+   ],
+   "dois": [
+    "10.2106/JBJS.E.00457",
+    "10.1016/j.arth.2019.02.062",
+    "10.1097/BOT.0000000000002148",
+    "10.2106/JBJS.RVW.21.00008",
+    "10.1177/21514593221097608"
+   ],
+   "checks": "design review: round 1 FAILs (x-margins on cover/labels/pills/CTA, management footer should cite Mondanelli, 66% needs 'after primary THA', 'at least 2 diameters') fixed; round 2 one FAIL (summary footer citation) fixed. Independent fact check 16/16 PASS",
+   "carousel": {
+    "headline": "FIX OR REVISE",
+    "sub": "Vancouver: the stem decides",
+    "points": [
+     "Stable stem (B1, C): fix. Loose stem (B2, B3): revise",
+     "1 in 5 'stable' stems was loose at surgery",
+     "B2 revision: long stem, at least 2 diameters past the fracture"
+    ],
+    "ref": "Lindahl et al., JBJS Am 2006"
+   }
   },
   {
    "n": 26,
