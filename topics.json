@@ -1329,9 +1329,49 @@
    "n": 26,
    "slug": "ep26_nexus",
    "title": "NEXUS low-risk criteria: clearing the C-spine without imaging",
-   "status": "todo",
+   "status": "published",
    "source_hint": "Hoffman JR et al. NEJM 2000 (NEXUS, 34,069 patients)",
-   "series": "rules"
+   "series": "rules",
+   "part": 7,
+   "source": "Hoffman JR et al. N Engl J Med 2000;343(2):94-9; Stiell IG et al. N Engl J Med 2003;349(26):2510-8; Viccellio P et al. Pediatrics 2001;108(2):e20; Denver D et al. J Emerg Med 2015;49(3):294-300; Paykin G et al. Emerg Med Australas 2018;30(4):450-5",
+   "published": "scheduled 2026-11-26 10:00 Africa/Tripoli (Thursday; TikTok + Instagram; Nov 25 EP33)",
+   "release": "media branch: ep26_nexus.mp4",
+   "music": "track01_the-mountain-study-music.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "metricool": {
+    "id": 440647872,
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7507086&openWithPostUuid=1285839157498433091"
+   },
+   "metricool_month_count": "20 of 20 (November 2026)",
+   "pmids": [
+    "10891516",
+    "14695411",
+    "11483830",
+    "26022935",
+    "29232770"
+   ],
+   "dois": [
+    "10.1056/NEJM200007133430203",
+    "10.1056/NEJMoa031375",
+    "10.1542/peds.108.2.e20",
+    "10.1016/j.jemermed.2015.03.005",
+    "10.1111/1742-6723.12880"
+   ],
+   "checks": "design review: round 1 FAILs (finger past x 60, leaders, cord under bones/not to foramen magnum, clipped occiput, boxy neck, sawtooth posterior elements, flat shading) fixed; round 2 one FAIL (dens label over cord) fixed. Independent fact check 14/14 PASS. Final 61.5 s, body music -33.1 LUFS",
+   "carousel": {
+    "headline": "ALL 5 ABSENT",
+    "sub": "NEXUS: clear the C-spine, no imaging",
+    "points": [
+     "No midline tenderness, no deficit, alert, sober, no distracting injury",
+     "Missed 8 of 818 injuries: sensitivity 99.0%, NPV 99.8%",
+     "Over 65 after a fall: sensitivity only 88.9%"
+    ],
+    "ref": "Hoffman et al., NEJM 2000"
+   }
   },
   {
    "n": 31,
