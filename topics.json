@@ -1376,10 +1376,40 @@
   {
    "n": 31,
    "slug": "ep31_septic_knee_wbc",
-   "title": "Hot swollen knee: synovial WBC 50,000 and the likelihood of septic arthritis",
-   "status": "todo",
+   "title": "Hot swollen knee: septic or not? Synovial WBC 50,000 and the likelihood of septic arthritis",
+   "status": "published",
    "source_hint": "Margaretten ME et al. JAMA 2007",
-   "series": "numbers"
+   "series": "numbers",
+   "part": "7",
+   "source": "Margaretten ME, Kohlwes J, Moore D, Bent S. JAMA 2007;297(13):1478-88; Ghanem E, Parvizi J, et al. J Bone Joint Surg Am 2008;90(8):1637-43",
+   "published": "manual post 2026-11-29 10:00 Africa/Tripoli (Sunday; TikTok + Instagram by hand: Metricool November quota 20/20 full; Nov 26 taken by EP26, Fri/Sat off)",
+   "manual": true,
+   "release": "media branch: ep31_septic_knee_wbc.mp4",
+   "music": "track01_the-mountain-study-music.mp3 (from music/vault; private repo not reachable)",
+   "networks": [
+    "tiktok",
+    "instagram"
+   ],
+   "cover_ms": "2400",
+   "pmids": [
+    "17405973",
+    "18676892"
+   ],
+   "dois": [
+    "10.1001/jama.297.13.1478",
+    "10.2106/JBJS.G.00470"
+   ],
+   "checks": "design review: FAIL round 1 (gold fluid colour off-brand, unanchored SUPRAPATELLAR POUCH label, syringe and LR 0.32 label outside x 60, flat LR bars) fixed -> PASS round 2; independent fact check 12/12 PASS (nit 'strongly' -> 'markedly' applied)",
+   "carousel": {
+    "headline": "WBC 50,000",
+    "sub": "Hot swollen knee: septic or not?",
+    "points": [
+     "Synovial WBC over 50,000: LR 7.7; over 100,000: LR 28",
+     "Under 25,000: LR 0.32, lowers the odds, not a rule-out",
+     "Infected TKA: WBC over 1,100 and PMN over 64%"
+    ],
+    "ref": "Margaretten et al., JAMA 2007"
+   }
   },
   {
    "n": 25,
