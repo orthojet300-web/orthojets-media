@@ -94,8 +94,25 @@
       "n": 5,
       "slug": "ar05_back_pain_red_flags",
       "title_ar": "ألم الظهر: متى يكون خطيراً؟",
-      "status": "todo",
-      "source_hint": "low back pain red flags; most acute LBP improves within weeks; cauda equina warning signs"
+      "status": "published",
+      "source_hint": "low back pain red flags; most acute LBP improves within weeks; cauda equina warning signs",
+      "manual": true,
+      "publish": "manual post by owner 2026-11-28 10:00 Africa/Tripoli (TikTok + Instagram Reel)",
+      "series_name": "عظامك ببساطة",
+      "dois": [
+        "10.1016/S0140-6736(18)30480-X",
+        "10.1002/art.24853",
+        "10.1503/cmaj.111271",
+        "10.1002/14651858.CD007612.pub2",
+        "10.1016/S0140-6736(09)60172-0",
+        "10.12968/hmed.2023.0012",
+        "10.2519/jospt.2020.9971",
+        "10.1136/bmj.f7095"
+      ],
+      "pmids_extra": [
+        "37470755"
+      ],
+      "review": "design review PASS (2nd round) + PubMed fact-check PASS 2026-11-27"
     },
     {
       "n": 6,
@@ -117,6 +134,48 @@
       "title_ar": "كيف يلتئم الكسر؟ رحلة العظم من الكسر إلى الشفاء",
       "status": "todo",
       "source_hint": "fracture healing stages: haematoma, soft callus, hard callus, remodelling; smoking delays union"
+    },
+    {
+      "n": 9,
+      "slug": "ar09_knee_osteoarthritis",
+      "title_ar": "خشونة الركبة: هل الحركة تؤذيها أم تحميها؟",
+      "status": "todo",
+      "source_hint": "knee osteoarthritis; exercise therapy reduces pain; weight loss; walking is safe"
+    },
+    {
+      "n": 10,
+      "slug": "ar10_sciatica",
+      "title_ar": "عرق النسا: لماذا يمتد ألم الظهر إلى الساق؟",
+      "status": "todo",
+      "source_hint": "sciatica/lumbar radiculopathy natural history; most improve without surgery; red flags"
+    },
+    {
+      "n": 11,
+      "slug": "ar11_vitamin_d_children",
+      "title_ar": "الكساح: لماذا تتقوس ساقا الطفل؟",
+      "status": "todo",
+      "source_hint": "nutritional rickets, vitamin D, sunlight; physiological bowing vs rickets"
+    },
+    {
+      "n": 12,
+      "slug": "ar12_flat_feet_kids",
+      "title_ar": "القدم المسطحة عند الأطفال: متى نقلق؟",
+      "status": "todo",
+      "source_hint": "flexible flatfoot in children is common and usually normal; painful/rigid flatfoot needs review"
+    },
+    {
+      "n": 13,
+      "slug": "ar13_frozen_shoulder",
+      "title_ar": "الكتف المتجمد: لماذا يتيبس الكتف؟",
+      "status": "todo",
+      "source_hint": "adhesive capsulitis stages, diabetes association, natural course"
+    },
+    {
+      "n": 14,
+      "slug": "ar14_school_backpack",
+      "title_ar": "الحقيبة المدرسية وظهر الطفل",
+      "status": "todo",
+      "source_hint": "backpack load and back pain in children, evidence on weight limits"
     }
   ]
 }
